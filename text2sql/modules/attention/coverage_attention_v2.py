@@ -10,7 +10,7 @@ from allennlp.common.registrable import Registrable
 @Attention.register("coveragev2")
 class CoverageAdditiveAttention(torch.nn.Module, Registrable):
     """
-    This attention was introduced in <> by See et al.,
+    This attention was introduced in <https://arxiv.org/pdf/1704.04368.pdf> by See et al.,
     based on <https://arxiv.org/abs/1409.0473> by Bahdanau et al. (additive attention)
 
     # Parameters

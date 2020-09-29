@@ -1,15 +1,9 @@
-import json
-from pathlib import Path
+# util functions to anonymize all KB constants in a sql program
+
 import re
-import collections
-import numpy as np
-from random import shuffle
-from typing import List, Dict, Tuple, Any
-from collections import defaultdict
-from text2sql.data.dataset_readers.dataset_utils.text2sql_utils import read_schema_dict
+from typing import List, Dict, Tuple
 from text2sql.data.dataset_readers.dataset_utils.text2sql_utils import clean_unneeded_aliases, \
-    clean_and_split_sql, \
-    resolve_primary_keys_in_schema
+    clean_and_split_sql
 
 # in the schema I got columns and tables. I should get all the columns and tables appearing in a query and then create
 # a dictionary replacing them with tokens COL# and TAB#

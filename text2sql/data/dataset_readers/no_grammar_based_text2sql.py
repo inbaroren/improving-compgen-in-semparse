@@ -24,36 +24,7 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 @DatasetReader.register("no_grammar_based_text2sql")
 class NoGrammarBasedText2SqlDatasetReader(DatasetReader):
     """
-    Reads text2sql data from
-    `"Improving Text to SQL Evaluation Methodology" <https://arxiv.org/abs/1806.09029>`_
-    for a type constrained semantic parser.
-
-    Parameters
-    ----------
-    schema_path : ``str``, required.
-        The path to the database schema.
-    database_path : ``str``, optional (default = None)
-        The path to a database.
-    use_all_sql : ``bool``, optional (default = False)
-        Whether to use all of the sql queries which have identical semantics,
-        or whether to just use the first one.
-    remove_unneeded_aliases : ``bool``, (default = True)
-        Whether or not to remove table aliases in the SQL which
-        are not required.
-    use_prelinked_entities : ``bool``, (default = True)
-        Whether or not to use the pre-linked entities in the text2sql data.
-    use_untyped_entities : ``bool``, (default = True)
-        Whether or not to attempt to infer the pre-linked entity types.
-    token_indexers : ``Dict[str, TokenIndexer]``, optional (default=``{"tokens": SingleIdTokenIndexer()}``)
-        We use this to define the input representation for the text.  See :class:`TokenIndexer`.
-        Note that the `output` tags will always correspond to single token IDs based on how they
-        are pre-tokenised in the data file.
-    cross_validation_split_to_exclude : ``int``, optional (default = None)
-        Some of the text2sql datasets are very small, so you may need to do cross validation.
-        Here, you can specify a integer corresponding to a split_{int}.json file not to include
-        in the training set.
-    keep_if_unparsable : ``bool``, optional (default = True)
-        Whether or not to keep examples that we can't parse using the grammar.
+    Reads text2sql data. Uses dummy grammar
     """
     def __init__(self,
                  schema_path: str,

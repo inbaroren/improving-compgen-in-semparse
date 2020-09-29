@@ -29,36 +29,7 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 @DatasetReader.register("grmr_based_spans")
 class GrammarBasedSpansText2SqlDatasetReader(DatasetReader):
     """
-    Reads text2sql data from
-    `"Improving Text to SQL Evaluation Methodology" <https://arxiv.org/abs/1806.09029>`_
-    for a type constrained semantic parser.
-
-    Parameters
-    ----------
-    schema_path : ``str``, required.
-        The path to the database schema.
-    database_path : ``str``, optional (default = None)
-        The path to a database.
-    use_all_sql : ``bool``, optional (default = False)
-        Whether to use all of the sql queries which have identical semantics,
-        or whether to just use the first one.
-    remove_unneeded_aliases : ``bool``, (default = True)
-        Whether or not to remove table aliases in the SQL which
-        are not required.
-    use_prelinked_entities : ``bool``, (default = True)
-        Whether or not to use the pre-linked entities in the text2sql data.
-    use_untyped_entities : ``bool``, (default = True)
-        Whether or not to attempt to infer the pre-linked entity types.
-    token_indexers : ``Dict[str, TokenIndexer]``, optional (default=``{"tokens": SingleIdTokenIndexer()}``)
-        We use this to define the input representation for the text.  See :class:`TokenIndexer`.
-        Note that the `output` tags will always correspond to single token IDs based on how they
-        are pre-tokenised in the data file.
-    cross_validation_split_to_exclude : ``int``, optional (default = None)
-        Some of the text2sql datasets are very small, so you may need to do cross validation.
-        Here, you can specify a integer corresponding to a split_{int}.json file not to include
-        in the training set.
-    keep_if_unparsable : ``bool``, optional (default = True)
-        Whether or not to keep examples that we can't parse using the grammar.
+    Reads text2sql data and adds spans over the input tokens
     """
     def __init__(self,
                  schema_path: str,
@@ -75,6 +46,27 @@ class GrammarBasedSpansText2SqlDatasetReader(DatasetReader):
                  load_cache: bool = False,
                  save_cache: bool = True,
                  loading_limit: int = -1) -> None:
+        """
+        :param schema_path: str path to csv file that describes the database schema
+        :param database_file: str optional, used to load values from the database as terminal rules. unused in case of anonymization
+        :param use_all_sql: bool if false, for each english query only one example is read, using the first SQL program.
+        :param use_all_queries: bool if false, read only one example out of all the examples with the same SQL
+        :param remove_unneeded_aliases: bool not supported, default False
+        :param use_prelinked_entities: bool not supported, default True
+        :param use_untyped_entities: bool not supported, default True
+        :param token_indexers: Dict[str, TokenIndexer], optional (default=``{"tokens": SingleIdTokenIndexer()}``)
+        We use this to define the input representation for the text.  See :class:`TokenIndexer`.
+        Note that the `output` tags will always correspond to single token IDs based on how they
+        are pre-tokenised in the data file.
+        :param cross_validation_split_to_exclude: int, optional (default = None)
+        Some of the text2sql datasets are very small, so you may need to do cross validation.
+        Here, you can specify a integer corresponding to a split_{int}.json file not to include
+        in the training set.
+        :param keep_if_unparsable bool if true, read only examples with parsable programs
+        :param load_cache: bool if true, loads dataset from cahce
+        :param save_cache: bool if true, saves dataset to cache
+        :param loading_limit: int if larger than -1, read only loading_limit examples (for debug)
+        """
         super().__init__(lazy)
         self._token_tokenizer = WhitespaceTokenizer()
         self._token_indexers = token_indexers or {'tokens': SingleIdTokenIndexer()}

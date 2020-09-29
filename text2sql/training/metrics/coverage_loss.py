@@ -25,9 +25,7 @@ def calculate_coverage_loss(data, mask):
 
 class CoverageAttentionLossMetric:
     """
-    Checks batch-equality of two token lists and computes an accuracy metric based on that.
-    Also, checks if the same number of clauses of each type (SELECT, FROM, WHERE, END) as in target
-    appears in the prediction.
+    Calculates batch attention loss (<https://arxiv.org/pdf/1704.04368.pdf>)
     """
     def __init__(self) -> None:
         self._total_coverage_loss = 0.

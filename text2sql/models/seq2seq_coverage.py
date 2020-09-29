@@ -32,11 +32,8 @@ from text2sql.training.metrics.sql_global_templ_acc import GlobalTemplAccuracy
 @Model.register("coverage_seq2seq")
 class AttentionCoverageSeq2Seq(Model):
     """
-    This ``SimpleSeq2Seq`` class is a :class:`Model` which takes a sequence, encodes it, and then
-    uses the encoded representations to decode another sequence.  You can use this as the basis for
-    a neural machine translation system, an abstractive summarization system, or any other common
-    seq2seq problem.  The model here is simple, but should be a decent starting place for
-    implementing recent models for these tasks.
+    Adaptation of the ``SimpleSeq2Seq`` class in allennlp_models, to support coverage attention module and with
+    auxiliary coverage loss
 
     Parameters
     ----------

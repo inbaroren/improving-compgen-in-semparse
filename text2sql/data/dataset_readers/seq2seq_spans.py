@@ -27,35 +27,6 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 @DatasetReader.register("seq2seq_spans")
 class Seq2SeqSpansDatasetReader(DatasetReader):
-    """
-    Read a tsv file containing paired sequences, and create a dataset suitable for a
-    ``SimpleSeq2Seq`` model, or any model with a matching API.
-
-    Expected format for each input line: <source_sequence_string>\t<target_sequence_string>
-
-    The output of ``read`` is a list of ``Instance`` s with the fields:
-        source_tokens: ``TextField`` and
-        target_tokens: ``TextField``
-
-    `START_SYMBOL` and `END_SYMBOL` tokens are added to the source and target sequences.
-
-    Parameters
-    ----------
-    source_tokenizer : ``Tokenizer``, optional
-        Tokenizer to use to split the input sequences into words or other kinds of tokens. Defaults
-        to ``WordTokenizer()``.
-    target_tokenizer : ``Tokenizer``, optional
-        Tokenizer to use to split the output sequences (during training) into words or other kinds
-        of tokens. Defaults to ``source_tokenizer``.
-    source_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define input (source side) token representations. Defaults to
-        ``{"tokens": SingleIdTokenIndexer()}``.
-    target_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define output (target side) token representations. Defaults to
-        ``source_token_indexers``.
-    source_add_start_token : bool, (optional, default=True)
-        Whether or not to add `START_SYMBOL` to the beginning of the source sequence.
-    """
     def __init__(self,
                  schema_path: str,
                  database_path: str = None,
@@ -74,7 +45,8 @@ class Seq2SeqSpansDatasetReader(DatasetReader):
                  schema_free_supervision=False) -> None:
         super().__init__(lazy)
         self._random_seed = random_seed
-        # becuase the spans were preproceessed, it is essential to enforce the same tokenization
+        # because the spans are preproceessed, it is essential to enforce the same
+        # tokenization
         self._source_tokenizer = WhitespaceTokenizer()
         self._target_tokenizer = StandardTokenizer()
         self._source_token_indexers = source_token_indexers or {"tokens": SingleIdTokenIndexer()}
@@ -100,10 +72,6 @@ class Seq2SeqSpansDatasetReader(DatasetReader):
     @overrides
     def _read(self, file_path: str):
         """
-        This dataset reader consumes the data from
-        https://github.com/jkkummerfeld/text2sql-data/tree/master/data
-        formatted using ``scripts/reformat_text2sql_data.py``.
-
         Parameters
         ----------
         file_path : ``str``, required.

@@ -40,14 +40,3 @@ def main(path, tokenizer, span_extractor):
         json.dump(data, f)
     print(path, using_anonymized_for_parsing)
 
-
-if __name__ == '__main__':
-    tokenizer = WhitespaceTokenizer()
-    span_extractor = EcpSpanExtractor()
-    for split in ['aligned_final_dev', 'aligned_train']:
-        for dataset in ['geography','scholar','atis','advising']:
-            if dataset == 'advising':
-                split = '_'.join(split.split('_')[:-1])+'_new_no_join_'+split.split('_')[-1]
-            for split_type in ['new_question_split', 'schema_full_split']:
-                path = f'/datainbaro2/text2sql/parsers_models/allennlp_text2sql/data/sql data/{dataset}/{split_type}/{split}.json'
-                main(path, tokenizer, span_extractor)

@@ -5,6 +5,9 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 
 class SqlStatelet:
+    """
+    This class implements the SQL generation rules that are context based
+    """
     def __init__(self,
                  possible_actions,
                  enabled):

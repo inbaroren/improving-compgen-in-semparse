@@ -25,27 +25,7 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 @DatasetReader.register("attn_sup_seq2seq")
 class AttnSupSeq2SeqDatasetReader(DatasetReader):
     """
-    Read a tsv file containing paired sequences, and create a dataset suitable for a
-    ``SimpleSeq2Seq`` model, or any model with a matching API.
-
-    Expected format for each input line: <source_sequence_string>\t<target_sequence_string>
-
-    The output of ``read`` is a list of ``Instance`` s with the fields:
-        source_tokens: ``TextField`` and
-        target_tokens: ``TextField``
-
-    `START_SYMBOL` and `END_SYMBOL` tokens are added to the source and target sequences.
-
-    Parameters
-    ----------
-    source_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define input (source side) token representations. Defaults to
-        ``{"tokens": SingleIdTokenIndexer()}``.
-    target_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define output (target side) token representations. Defaults to
-        ``source_token_indexers``.
-    source_add_start_token : bool, (optional, default=True)
-        Whether or not to add `START_SYMBOL` to the beginning of the source sequence.
+    Reads Text2Sql data with token-to-token alignments from FastAlign
     """
     def __init__(self,
                  schema_path: str,
@@ -89,10 +69,6 @@ class AttnSupSeq2SeqDatasetReader(DatasetReader):
     @overrides
     def _read(self, file_path: str):
         """
-        This dataset reader consumes the data from
-        https://github.com/jkkummerfeld/text2sql-data/tree/master/data
-        formatted using ``scripts/reformat_text2sql_data.py``.
-
         Parameters
         ----------
         file_path : ``str``, required.
@@ -162,18 +138,4 @@ class AttnSupSeq2SeqDatasetReader(DatasetReader):
             return Instance({"source_tokens": source_field, "target_tokens": target_field, "alignment_sequence": alignment_field})
         else:
             return Instance({'source_tokens': source_field})
-
-
-if __name__ == '__main__':
-    for use_all_sql in [False]:
-        for use_all_queries in [True]:
-            c = AttnSupSeq2SeqDatasetReader('target',
-                                            use_all_sql=use_all_sql,
-                                            use_all_queries=use_all_queries,
-                                            use_prelinked_entities=True)
-            for dataset in ['scholar']:
-                for split_type in ['schema_full_split']:
-                    for split in ['aligned_train']:
-                        data = c.read(f'../../../data/sql data/{dataset}/{split_type}/{split}.json')
-
 

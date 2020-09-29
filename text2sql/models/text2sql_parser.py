@@ -39,6 +39,9 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 @Model.register("my_text2sql_parser")
 class Text2SqlParser(Model):
     """
+    Adaptation of (an early version) of
+    https://github.com/allenai/allennlp-semparse/blob/master/allennlp_semparse/models/text2sql_parser.py
+
     Parameters
     ----------
     vocab : ``Vocabulary``

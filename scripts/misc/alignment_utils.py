@@ -11,7 +11,7 @@ import numpy as np
 from text2sql.data.tokenizers.whitespace_tokenizer import WhitespaceTokenizer, StandardTokenizer
 from text2sql.data.dataset_readers.grammar_based_text2sql_v3 import GrammarBasedText2SqlDatasetReader
 
-MAIN = Path('/datainbaro2/text2sql/parsers_models/allennlp_text2sql')
+MAIN = Path(os.getcwd())
 DATA_TRAIN_PATH = MAIN/Path('data/sql data')
 DATA_IN_PATH = MAIN/Path('data/alignments/in_short')
 DATA_IN_PATH.mkdir(exist_ok=True)
@@ -460,16 +460,3 @@ def fast_align_text2filteredsql(datasets, splits, filter=shorten_sql_tokens, rev
                 inspect_alignment_file(split_dataset_align_out / input_align_file,
                                        split_dataset_aligned_out / output_align_file,
                                        split_dataset_aligned_out / inspection_file)
-
-
-if __name__ == '__main__':
-    # fast_align_text2filteredsql(datasets=["scholar", "atis", "advising", "geography"],
-    #                             splits=["schema_full_split", "new_question_split"],
-    #                             filter=shorten_sql_tokens,
-    #                             reverse=True)
-    fast_align_text2filteredsql(datasets=["scholar", "atis", "advising", "geography"],
-                            splits=["schema_full_split", "new_question_split"],
-                            filter=shorten_sql_tokens,
-                            reverse=False)
-    # fast_align_text2filteredsql(datasets=["test"],
-    #                              splits=["schema_full_split"])

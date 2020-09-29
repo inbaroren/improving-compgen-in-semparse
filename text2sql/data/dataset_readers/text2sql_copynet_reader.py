@@ -29,42 +29,6 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 @DatasetReader.register("text2sql_copynet_reader")
 class CopyNetText2SqlDatasetReader(DatasetReader):
-    """
-    Reads text2sql data from
-    `"Improving Text to SQL Evaluation Methodology" <https://arxiv.org/abs/1806.09029>`_
-    for a seq2seq semantic parser.
-
-    Parameters
-    ----------
-    schema_path : ``str``, required.
-        The path to the database schema.
-    database_path : ``str``, optional (default = None)
-        The path to a database.
-    use_all_sql : ``bool``, optional (default = False)
-        Whether to use all of the sql queries which have identical semantics,
-        or whether to just use the first one.
-    remove_unneeded_aliases : ``bool``, (default = True)
-        Whether or not to remove table aliases in the SQL which
-        are not required.
-    use_prelinked_entities : ``bool``, (default = True)
-        Whether or not to use the pre-linked entities in the text2sql data.
-    cross_validation_split_to_exclude : ``int``, optional (default = None)
-        Some of the text2sql datasets are very small, so you may need to do cross validation.
-        Here, you can specify a integer corresponding to a split_{int}.json file not to include
-        in the training set.
-    target_namespace : ``str``, required
-        The vocab namespace for the targets. This needs to be passed to the dataset reader
-        in order to construct the NamespaceSwappingField.
-    source_tokenizer : ``Tokenizer``, optional
-        Tokenizer to use to split the input sequences into words or other kinds of tokens. Defaults
-        to ``WordTokenizer()``.
-    target_tokenizer : ``Tokenizer``, optional
-        Tokenizer to use to split the output sequences (during training) into words or other kinds
-        of tokens. Defaults to ``source_tokenizer``.
-    source_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define input (source side) token representations. Defaults to
-        ``{"tokens": SingleIdTokenIndexer()}``.
-    """
     def __init__(self,
                  target_namespace: str,
                  schema_path: str = None,
@@ -118,10 +82,6 @@ class CopyNetText2SqlDatasetReader(DatasetReader):
     @overrides
     def _read(self, file_path: str):
         """
-        This dataset reader consumes the data from
-        https://github.com/jkkummerfeld/text2sql-data/tree/master/data
-        formatted using ``scripts/reformat_text2sql_data.py``.
-
         Parameters
         ----------
         file_path : ``str``, required.
@@ -213,12 +173,3 @@ class CopyNetText2SqlDatasetReader(DatasetReader):
         fields_dict["metadata"] = MetadataField(meta_fields)
 
         return Instance(fields_dict)
-
-
-if __name__ == '__main__':
-    c = CopyNetText2SqlDatasetReader('target', use_prelinked_entities=True)
-    data = c.read('/media/disk1/inbaro/data/tmp_semparse/atis/query_split/train.json')
-    print(len(data))
-    reader_templ = TemplateText2SqlDatasetReader()
-    data_2 = reader_templ.read('/media/disk1/inbaro/data/tmp_semparse/atis/query_split/train.json')
-    print(len(data_2))

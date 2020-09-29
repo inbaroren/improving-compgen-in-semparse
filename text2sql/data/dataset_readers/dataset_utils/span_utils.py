@@ -6,6 +6,7 @@ import allennlp_models.syntax.constituency_parser
 class EcpSpanExtractor:
     """
     Extracts spans from strings using a pretrained elmo-constituency-parser
+    Use code from allennlp >= 1.0
     """
     def __init__(self):
         self.predictor = Predictor.from_path(

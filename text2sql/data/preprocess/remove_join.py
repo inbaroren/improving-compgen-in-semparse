@@ -1,15 +1,10 @@
+# util functions to rephrase SQL programs with "joins" to use conditions in the "where" clause
+
 import os
 import re
 import json
 from pathlib import Path
 import copy
-
-
-def main():
-    base_path_s = '/media/disk1/inbaro/data/tmp_semparse/advising/'
-    base_path = Path(base_path_s)
-    for j in base_path.glob('*/*.json'):
-        remove_join_from_file(j, j.parent / f'no_join_{j.name}')
 
 
 def remove_join_from_file(path, new_path):
@@ -89,7 +84,3 @@ def test_remove_join():
         assert len(re.findall("INNER JOIN", n_sql)) == 0, "still inner join in new query..."
 
     print(no_on)
-
-
-if __name__ == '__main__':
-    main()

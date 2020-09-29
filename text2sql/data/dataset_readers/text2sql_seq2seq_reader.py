@@ -24,35 +24,6 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 @DatasetReader.register("text2sql_seq2seq_reader")
 class Seq2SeqDatasetReader(DatasetReader):
-    """
-    Read a tsv file containing paired sequences, and create a dataset suitable for a
-    ``SimpleSeq2Seq`` model, or any model with a matching API.
-
-    Expected format for each input line: <source_sequence_string>\t<target_sequence_string>
-
-    The output of ``read`` is a list of ``Instance`` s with the fields:
-        source_tokens: ``TextField`` and
-        target_tokens: ``TextField``
-
-    `START_SYMBOL` and `END_SYMBOL` tokens are added to the source and target sequences.
-
-    Parameters
-    ----------
-    source_tokenizer : ``Tokenizer``, optional
-        Tokenizer to use to split the input sequences into words or other kinds of tokens. Defaults
-        to ``WordTokenizer()``.
-    target_tokenizer : ``Tokenizer``, optional
-        Tokenizer to use to split the output sequences (during training) into words or other kinds
-        of tokens. Defaults to ``source_tokenizer``.
-    source_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define input (source side) token representations. Defaults to
-        ``{"tokens": SingleIdTokenIndexer()}``.
-    target_token_indexers : ``Dict[str, TokenIndexer]``, optional
-        Indexers used to define output (target side) token representations. Defaults to
-        ``source_token_indexers``.
-    source_add_start_token : bool, (optional, default=True)
-        Whether or not to add `START_SYMBOL` to the beginning of the source sequence.
-    """
     def __init__(self,
                  schema_path: str,
                  database_path: str = None,
@@ -96,10 +67,6 @@ class Seq2SeqDatasetReader(DatasetReader):
     @overrides
     def _read(self, file_path: str):
         """
-        This dataset reader consumes the data from
-        https://github.com/jkkummerfeld/text2sql-data/tree/master/data
-        formatted using ``scripts/reformat_text2sql_data.py``.
-
         Parameters
         ----------
         file_path : ``str``, required.
@@ -152,34 +119,3 @@ class Seq2SeqDatasetReader(DatasetReader):
             return Instance({"source_tokens": source_field, "target_tokens": target_field})
         else:
             return Instance({'source_tokens': source_field})
-
-
-if __name__ == '__main__':
-    import collections
-    import pandas as pd
-
-    results = collections.defaultdict(list)
-    for use_all_sql in [False]:
-        for use_all_queries in [True]:
-            c = Seq2SeqDatasetReader('target', use_all_sql=use_all_sql,
-                                     use_all_queries=use_all_queries,
-                                     use_prelinked_entities=True)
-            # c = GrammarBasedText2SqlDatasetReader(schema_path="/media/disk1/inbaro/data/tmp_semparse/advising-schema.csv",
-            #                                       use_all_sql=use_all_sql,
-            #                                       use_all_queries=use_all_queries,
-            #                                       use_prelinked_entities=True,
-            #                                       use_untyped_entities=True,
-            #                                       keep_if_unparseable=True)
-            for dataset in ['advising']:
-                for split_type in ['schema_free_split', 'new_question_split', 'schema_full_split']:
-                    for split in ['final_new_no_join_dev', 'final_new_no_join_test']:
-                        data = c.read(f'/media/disk1/inbaro/data/tmp_semparse/{dataset}/{split_type}/{split}.json')
-                        results['all-queries'].append(use_all_queries)
-                        results['all-sql'].append(use_all_sql)
-                        results['dataset'].append(dataset)
-                        results['split-type'].append(split_type)
-                        results['split'].append(split)
-                        results['count'].append(len(data))
-    print(results)
-    # pd.DataFrame(results).to_csv('/media/disk1/inbaro/data/tmp_semparse/expected_numbers_seq2seq_aligned_grmr.csv')
-

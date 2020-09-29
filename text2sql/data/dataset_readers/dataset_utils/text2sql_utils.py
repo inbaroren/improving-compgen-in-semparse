@@ -1,6 +1,7 @@
 """
 Utility functions for reading the standardised text2sql datasets presented in
 `"Improving Text to SQL Evaluation Methodology" <https://arxiv.org/abs/1806.09029>`_
+based on
 """
 
 import numpy as np
@@ -39,6 +40,11 @@ class SqlData(NamedTuple):
         A dictionary of variables associated with the text, e.g. {"city_name0": "san fransisco"}
     sql_variables : ``Dict[str, Dict[str, str]]``
         A dictionary of variables and column references associated with the sql query.
+    derived_tables: ''List[str]'', aliases for subqueries
+    derived_cols: ''List[Tuple[str, str]]'', aliases for derived columns
+    alignment_with_variables: ''List[str]'', FastAlign token-to-token alignment as a list, where the i'th element is
+    the input token that aligns to the program's i'th token
+    spans: ''List[Tuple[int, int]]'', spans over input that are the constituents of the query
     """
     text: List[str]
     text_with_variables: List[str]
@@ -681,25 +687,6 @@ def retokenize_gold(gold_tokens):
 
     return sql.split()
 
-
-if __name__ == '__main__':
-    split_data('/media/disk1/inbaro/data/tmp_semparse/geography', 'geo.json')
-    # split_data('/media/disk1/inbaro/data/tmp_semparse/scholar', 'scholar.json')
-    # data_1 = split_data('/media/disk1/inbaro/data/tmp_semparse', 'atis.json')
-    # split_data('/media/disk1/inbaro/data/tmp_semparse', 'advising.json')
-    # split_data('/media/disk1/inbaro/data/tmp_semparse', 'atis.json')
-    # path = '/media/disk1/inbaro/data/tmp_semparse/atis/query_split/dev.json'
-    # with open(path, "r") as data_file:
-    #     data = json.load(data_file)
-    # first_set = set()
-    # second_set = set()
-    # for text, sql in process_sql_data_standard(data, True):
-    #     first_set.add(text)
-    # for text, sql in process_sql_data_test(data, True):
-    #     second_set.add(text)
-    # print(len(second_set.difference(first_set)))
-    # print("++", len(second_set), len(first_set))
-    # print(len(first_set.difference(second_set)))
 
 
 

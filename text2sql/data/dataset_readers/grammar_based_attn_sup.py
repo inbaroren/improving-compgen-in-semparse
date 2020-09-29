@@ -28,38 +28,7 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 @DatasetReader.register("grammar_based_attn_sup")
 class GrammarBasedAttnSupText2SqlDatasetReader(DatasetReader):
     """
-    Reads text2sql data from
-    `"Improving Text to SQL Evaluation Methodology" <https://arxiv.org/abs/1806.09029>`_
-    for a type constrained semantic parser.
-
-    Parameters
-    ----------
-    schema_path : ``str``, required.
-        The path to the database schema.
-    alignment_file : ``str``, required.
-        The path to the pre processed alignment file for the data
-    database_path : ``str``, optional (default = None)
-        The path to a database.
-    use_all_sql : ``bool``, optional (default = False)
-        Whether to use all of the sql queries which have identical semantics,
-        or whether to just use the first one.
-    remove_unneeded_aliases : ``bool``, (default = True)
-        Whether or not to remove table aliases in the SQL which
-        are not required.
-    use_prelinked_entities : ``bool``, (default = True)
-        Whether or not to use the pre-linked entities in the text2sql data.
-    use_untyped_entities : ``bool``, (default = True)
-        Whether or not to attempt to infer the pre-linked entity types.
-    token_indexers : ``Dict[str, TokenIndexer]``, optional (default=``{"tokens": SingleIdTokenIndexer()}``)
-        We use this to define the input representation for the text.  See :class:`TokenIndexer`.
-        Note that the `output` tags will always correspond to single token IDs based on how they
-        are pre-tokenised in the data file.
-    cross_validation_split_to_exclude : ``int``, optional (default = None)
-        Some of the text2sql datasets are very small, so you may need to do cross validation.
-        Here, you can specify a integer corresponding to a split_{int}.json file not to include
-        in the training set.
-    keep_if_unparsable : ``bool``, optional (default = True)
-        Whether or not to keep examples that we can't parse using the grammar.
+    Reads text2sql data with the FastAlign token-to-token alignment
     """
     def __init__(self,
                  schema_path: str,
@@ -75,6 +44,26 @@ class GrammarBasedAttnSupText2SqlDatasetReader(DatasetReader):
                  load_cache: bool = True,
                  save_cache: bool = True,
                  loading_limit: int = -1) -> None:
+        """
+        :param schema_path: str path to csv file that describes the database schema
+        :param database_file: str optional, used to load values from the database as terminal rules. unused in case of anonymization
+        :param use_all_sql: bool if false, for each english query only one example is read, using the first SQL program.
+        :param use_all_queries: bool if false, read only one example out of all the examples with the same SQL
+        :param remove_unneeded_aliases: bool not supported, default False
+        :param use_prelinked_entities: bool not supported, default True
+        :param use_untyped_entities: bool not supported, default True
+        :param token_indexers: Dict[str, TokenIndexer], optional (default=``{"tokens": SingleIdTokenIndexer()}``)
+        We use this to define the input representation for the text.  See :class:`TokenIndexer`.
+        Note that the `output` tags will always correspond to single token IDs based on how they
+        are pre-tokenised in the data file.
+        :param cross_validation_split_to_exclude: int, optional (default = None)
+        Some of the text2sql datasets are very small, so you may need to do cross validation.
+        Here, you can specify a integer corresponding to a split_{int}.json file not to include
+        in the training set.
+        :param load_cache: bool if true, loads dataset from cahce
+        :param save_cache: bool if true, saves dataset to cache
+        :param loading_limit: int if larger than -1, read only loading_limit examples (for debug)
+        """
         super().__init__(lazy)
 
         self._load_cache = load_cache
@@ -280,66 +269,3 @@ class GrammarBasedAttnSupText2SqlDatasetReader(DatasetReader):
                                              prelinked_entities=linked_entities,
                                              sql=sql_data.sql)
             return instance
-
-
-def main():
-    results = collections.defaultdict(list)
-    for dataset in ['geography', 'scholar', 'atis', 'advising']:
-        c = GrammarBasedAttnSupText2SqlDatasetReader(
-            schema_path=f"/media/disk1/inbaro/text2sql-base-parsers/data/sql data/{dataset}-schema.csv",
-            use_all_sql=False,
-            use_all_queries=True,
-            use_prelinked_entities=True,
-            use_untyped_entities=True,
-            save_cache=True,
-            load_cache=False)
-        c_elmo = GrammarBasedAttnSupText2SqlDatasetReader(
-            schema_path=f"/media/disk1/inbaro/text2sql-base-parsers/data/sql data/{dataset}-schema.csv",
-            use_all_sql=False,
-            use_all_queries=True,
-            use_prelinked_entities=True,
-            use_untyped_entities=True,
-            save_cache=True,
-            load_cache=False,
-            token_indexers= {'tokens': SingleIdTokenIndexer(), 'elmo': ELMoTokenCharactersIndexer()})
-        c_bert = GrammarBasedAttnSupText2SqlDatasetReader(
-            schema_path=f"/media/disk1/inbaro/text2sql-base-parsers/data/sql data/{dataset}-schema.csv",
-            use_all_sql=False,
-            use_all_queries=True,
-            use_prelinked_entities=True,
-            use_untyped_entities=True,
-            save_cache=True,
-            load_cache=False,
-            token_indexers= {'tokens': SingleIdTokenIndexer(), 'bert': PretrainedBertIndexer(pretrained_model="bert-base-uncased")})
-        for split_type in ['schema_full_split', 'new_question_split']:
-            for split in ['aligned_train', 'aligned_final_dev', 'final_test']:
-                data = c.read(f'/media/disk1/inbaro/text2sql-base-parsers/data/sql data/{dataset}/{split_type}/{split}.json')
-                results['pre'].append('glove')
-                results['dataset'].append(dataset)
-                results['split-type'].append(split_type)
-                results['split'].append(split)
-                results['count'].append(len(data))
-                del data
-            for split in ['aligned_train', 'aligned_final_dev', 'final_test']:
-                data = c_elmo.read(f'/media/disk1/inbaro/text2sql-base-parsers/data/sql data/{dataset}/{split_type}/{split}.json')
-                results['pre'].append('elmo')
-                results['dataset'].append(dataset)
-                results['split-type'].append(split_type)
-                results['split'].append(split)
-                results['count'].append(len(data))
-                del data
-            for split in ['aligned_train', 'aligned_final_dev', 'final_test']:
-                data = c_bert.read(f'/media/disk1/inbaro/text2sql-base-parsers/data/sql data/{dataset}/{split_type}/{split}.json')
-                results['pre'].append('bert')
-                results['dataset'].append(dataset)
-                results['split-type'].append(split_type)
-                results['split'].append(split)
-                results['count'].append(len(data))
-                del data
-        del c
-        del c_elmo
-        del c_bert
-    print(results)
-
-if __name__ == '__main__':
-    main()
