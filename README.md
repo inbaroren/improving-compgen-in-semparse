@@ -6,4 +6,4 @@ This repo is basically an allennlp package, so allennlp installation is required
 For each model, an example for a configuration file is available at /training_config. To train a model, update the path, dataset name, and split name (for iid split use 'new_question_split', for program split use 'schema_full_split') in the configuration file.
 
 For example:
-`allennlp train ./improving-compgen-in-semparse/training_config/iid_ati_seq2seq_glove_config.jsonnet -s YOUR_OUTPUT_LOCATION --include-package text2sql
+`allennlp train ./improving-compgen-in-semparse/training_config/iid_ati_seq2seq_glove_config.jsonnet -s YOUR_OUTPUT_LOCATION --include-package text2sql`
