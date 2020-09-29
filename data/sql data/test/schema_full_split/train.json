@@ -1,0 +1,298 @@
+[
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "train",
+        "sentences": [
+            {
+                "text": "papers that are coauthored by authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "mayank goel",
+                    "authorname1": "shwetak patel"
+                }
+            },
+            {
+                "text": "papers written by authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "ras bodik",
+                    "authorname1": "emina torlak"
+                }
+            },
+            {
+                "text": "what are the papers that have authorname0 and authorname1 as co-authors",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Richard Ladner",
+                    "authorname1": "Linda Shapiro"
+                }
+            },
+            {
+                "text": "What papers have authorname0 and authorname1 written ?",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Richard Ladner",
+                    "authorname1": "Linda Shapiro"
+                }
+            },
+            {
+                "text": "what paper did authorname0 and authorname1 write together ?",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "ras bodik",
+                    "authorname1": "ameet soni"
+                }
+            },
+            {
+                "text": "Has authorname0 and authorname1 written a paper together ?",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Frank Keller",
+                    "authorname1": "Mirella Lapata"
+                }
+            },
+            {
+                "text": "Papers by authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Frank Keller",
+                    "authorname1": "Mirella Lapata"
+                }
+            },
+            {
+                "text": "papers by authors authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Richard Ladner",
+                    "authorname1": "Linda Shapiro"
+                }
+            },
+            {
+                "text": "What papers were written by authors authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Richard Ladner",
+                    "authorname1": "Linda Shapiro"
+                }
+            },
+            {
+                "text": "papers by authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "richard ladner",
+                    "authorname1": "linda shapiro"
+                }
+            },
+            {
+                "text": "papers written by authors authorname0 and authorname1",
+                "question-split": "dev",
+                "variables": {
+                    "authorname0": "Richard Ladner",
+                    "authorname1": "Linda Shapiro"
+                }
+            },
+            {
+                "text": "When did authorname0 and authorname1 collaborate ?",
+                "question-split": "dev",
+                "variables": {
+                    "authorname0": "ras bodik",
+                    "authorname1": "ameet soni"
+                }
+            },
+            {
+                "text": "what are the collaborations of authorname0 and authorname1 ?",
+                "question-split": "dev",
+                "variables": {
+                    "authorname0": "bharath hariharan",
+                    "authorname1": "ross girshick"
+                }
+            },
+            {
+                "text": "Have authorname0 and authorname1 written a paper together ?",
+                "question-split": "test",
+                "variables": {
+                    "authorname0": "emanuel todorov",
+                    "authorname1": "sergey levine"
+                }
+            },
+            {
+                "text": "authorname0 and authorname1 as co-authors",
+                "question-split": "test",
+                "variables": {
+                    "authorname0": "Richard Ladner",
+                    "authorname1": "Linda Shapiro"
+                }
+            },
+            {
+                "text": "Does authorname0 ever collaborated with authorname1 ?",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Philipp Haberstock",
+                    "authorname1": "Ludwig Nastansky"
+                }
+            },
+            {
+                "text": "Which papers have authorname0 and authorname1 as co-authors ?",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "X Jiang",
+                    "authorname1": "Frantzen"
+                }
+            },
+            {
+                "text": "papers coauthored by authorname0 and authorname1",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "X Jiang",
+                    "authorname1": "Frantzen"
+                }
+            },
+            {
+                "text": "What papers have been written by authorname0 and authorname1 ?",
+                "question-split": "train",
+                "variables": {
+                    "authorname0": "Peter Mertens",
+                    "authorname1": "Dina Barbian"
+                }
+            },
+            {
+                "text": "What papers have been written by both authorname0 and authorname1 ?",
+                "question-split": "test",
+                "variables": {
+                    "authorname0": "Peter Mertens",
+                    "authorname1": "Dina Barbian"
+                }
+            },
+            {
+                "text": "What papers have been written by authorname0 and authorname1 .",
+                "question-split": "test",
+                "variables": {
+                    "authorname0": "Peter Mertens",
+                    "authorname1": "Dina Barbian"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT WRITESalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , AUTHOR AS AUTHORalias1 , WRITES AS WRITESalias0 , WRITES AS WRITESalias1 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND AUTHORalias1.AUTHORNAME = \"authorname1\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias1.AUTHORID = AUTHORalias1.AUTHORID AND WRITESalias1.PAPERID = WRITESalias0.PAPERID ;",
+            "SELECT DISTINCT WRITESalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME IN ( \"authorname0\" , \"authorname1\" ) AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID GROUP BY WRITESalias0.PAPERID HAVING COUNT( DISTINCT WRITESalias0.AUTHORID ) = 2 ;"
+        ],
+        "variables": [
+            {
+                "example": "mayank goel",
+                "location": "unk",
+                "name": "authorname0",
+                "type": "authorname"
+            },
+            {
+                "example": "shwetak patel",
+                "location": "unk",
+                "name": "authorname1",
+                "type": "authorname"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "train",
+        "sentences": [
+            {
+                "text": "who has written the most keyphrasename0 papers ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "information retrieval"
+                }
+            },
+            {
+                "text": "who is the most published author in keyphrasename0 ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "semantic parsing"
+                }
+            },
+            {
+                "text": "who has the most publications in keyphrasename0 ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "question answering"
+                }
+            },
+            {
+                "text": "who has written the most papers on keyphrasename0 ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "syntactic parsing"
+                }
+            },
+            {
+                "text": "List prominent scholars in keyphrasename0 ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "Theoretical"
+                }
+            },
+            {
+                "text": "who has written the most papers on keyphrasename0 ?",
+                "question-split": "dev",
+                "variables": {
+                    "keyphrasename0": "semantic parsing"
+                }
+            },
+            {
+                "text": "who wrote the most papers on keyphrasename0 ?",
+                "question-split": "test",
+                "variables": {
+                    "keyphrasename0": "semantic parsing"
+                }
+            },
+            {
+                "text": "Who are the authors with the most published papers in keyphrasename0 ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "SIGMOD"
+                }
+            },
+            {
+                "text": "top keyphrasename0 author",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "syntactic parsing"
+                }
+            },
+            {
+                "text": "top author in keyphrasename0",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "syntactic parsing"
+                }
+            },
+            {
+                "text": "who published the most in keyphrasename0 ?",
+                "question-split": "train",
+                "variables": {
+                    "keyphrasename0": "syntactic parsing"
+                }
+            },
+            {
+                "text": "who published the most papers in keyphrasename0 ?",
+                "question-split": "dev",
+                "variables": {
+                    "keyphrasename0": "syntactic parsing"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) , WRITESalias0.AUTHORID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY WRITESalias0.AUTHORID ORDER BY COUNT( PAPERalias0.PAPERID ) DESC ;",
+            "SELECT DISTINCT COUNT( DISTINCT WRITESalias0.PAPERID ) , WRITESalias0.AUTHORID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND WRITESalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID GROUP BY WRITESalias0.AUTHORID ORDER BY COUNT( DISTINCT WRITESalias0.PAPERID ) DESC ;",
+            "SELECT DISTINCT AUTHORalias0.AUTHORID , COUNT( PAPERalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY AUTHORalias0.AUTHORID ORDER BY AUTHORalias0.AUTHORNAME DESC ;"
+        ],
+        "variables": [
+            {
+                "example": "information retrieval",
+                "location": "unk",
+                "name": "keyphrasename0",
+                "type": "keyphrasename"
+            }
+        ]
+    }]

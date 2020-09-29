@@ -1,0 +1,3284 @@
+[
+  {
+    "comments": [],
+    "old-name": "",
+    
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "papers published in venuename0 year0 by authorname0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "wei lu",
+          "year0": "2011",
+          "venuename0": "EMNLP"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "Does authorname0 have a paper in venuename0 in year0 ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "luke zettlemoyer",
+          "year0": "2016",
+          "venuename0": "siggraph"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 7, 9 ],
+          [ 5, 7 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "papers of authorname0 in venuename0 year0",
+        "question-split": "dev",
+        "variables": {
+          "authorname0": "ali farhadi",
+          "year0": "2016",
+          "venuename0": "eccv"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR = year0 AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "wei lu",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "2011",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      },
+      {
+        "example": "EMNLP",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "I want the co-authors of papers on keyphrasename0 with authorname0",
+        "question-split": "test",
+        "variables": {
+          "authorname0": "Philipp Koehn",
+          "keyphrasename0": "Machine Translation Output"
+        },
+        "constituency_parser_spans": [
+          [ 8, 9 ],
+          [ 3, 4 ],
+          [ 5, 10 ],
+          [ 6, 7 ],
+          [ 2, 10 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 3, 10 ],
+          [ 8, 10 ],
+          [ 3, 4 ],
+          [ 3, 4 ],
+          [ 7, 8 ],
+          [ 2, 3 ],
+          [ 4, 10 ],
+          [ 9, 10 ],
+          [ 0, 1 ],
+          [ 1, 10 ],
+          [ 6, 10 ],
+          [ 5, 6 ],
+          [ 2, 4 ],
+          [ 7, 10 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT AUTHORalias1.AUTHORID FROM AUTHOR AS AUTHORalias0 , AUTHOR AS AUTHORalias1 , KEYPHRASE AS KEYPHRASEalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 , WRITES AS WRITESalias1 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND WRITESalias1.AUTHORID = AUTHORalias1.AUTHORID AND WRITESalias1.PAPERID = WRITESalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "Philipp Koehn",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "Machine Translation Output",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "the papers on keyphrasename0 by authorname0 at venuename0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "li dong",
+          "keyphrasename0": "semantic parsing",
+          "year0": "2016",
+          "venuename0": "acl"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND PAPERalias0.YEAR = year0 AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "li dong",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "semantic parsing",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      },
+      {
+        "example": "2016",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      },
+      {
+        "example": "acl",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "When does authorname0 publish the first venuename0 paper ?",
+        "question-split": "dev",
+        "variables": {
+          "authorname0": "Michael Stonebraker",
+          "venuename0": "VLDB"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 8 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.YEAR FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ORDER BY PAPERalias0.YEAR ;" ],
+    "variables": [
+      {
+        "example": "Michael Stonebraker",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "VLDB",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "year0 papers using datasetname0",
+        "question-split": "train",
+        "variables": {
+          "datasetname0": "ImageNet",
+          "year0": "2014"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 3 ],
+          [ 2, 4 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM DATASET AS DATASETalias0 , PAPER AS PAPERalias0 , PAPERDATASET AS PAPERDATASETalias0 WHERE DATASETalias0.DATASETNAME = \"datasetname0\" AND PAPERDATASETalias0.DATASETID = DATASETalias0.DATASETID AND PAPERalias0.PAPERID = PAPERDATASETalias0.PAPERID AND PAPERalias0.YEAR = year0 ;" ],
+    "variables": [
+      {
+        "example": "ImageNet",
+        "location": "unk",
+        "name": "datasetname0",
+        "type": "datasetname"
+      },
+      {
+        "example": "2014",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "Who cites authorname0 the most",
+        "question-split": "train",
+        "variables": { "authorname0": "Luke Zettlemoyer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "Who cites authorname0 most ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Daniel A Reed" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "Who cites authorname0 most ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Neeraj Jain" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "Who cites authorname0 most ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Daniel A Reed" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( CITEalias0.CITINGPAPERID ) , WRITESalias1.AUTHORID FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , WRITES AS WRITESalias0 , WRITES AS WRITESalias1 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias1.PAPERID = CITEalias0.CITINGPAPERID GROUP BY WRITESalias1.AUTHORID ORDER BY COUNT( CITEalias0.CITINGPAPERID ) DESC ;", "SELECT DISTINCT COUNT( DISTINCT CITEalias0.CITINGPAPERID ) , WRITESalias1.AUTHORID FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 , WRITES AS WRITESalias1 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.PAPERID = CITEalias0.CITINGPAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias1.PAPERID = PAPERalias0.PAPERID GROUP BY WRITESalias1.AUTHORID ORDER BY COUNT( DISTINCT CITEalias0.CITINGPAPERID ) DESC ;" ],
+    "variables": [
+      {
+        "example": "Luke Zettlemoyer",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "What keyphrasename0 paper published in venuename0 ?",
+        "question-split": "test",
+        "variables": {
+          "keyphrasename0": "data cleaning",
+          "venuename0": "vldb"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "List the papers on keyphrasename0 that were published in venuename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "data cleaning",
+          "venuename0": "vldb"
+        },
+        "constituency_parser_spans": [
+          [ 1, 3 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 0, 10 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 3, 10 ],
+          [ 6, 10 ],
+          [ 8, 10 ],
+          [ 7, 10 ],
+          [ 1, 10 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 3, 5 ],
+          [ 0, 1 ],
+          [ 5, 10 ],
+          [ 7, 8 ]
+        ]
+      },
+      {
+        "text": "what are the papers in venuename0 about keyphrasename0 ?",
+        "question-split": "dev",
+        "variables": {
+          "keyphrasename0": "learning",
+          "venuename0": "NIPS"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "Papers about keyphrasename0 in venuename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "image annotation",
+          "venuename0": "chi"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "papers at venuename0 related to keyphrasename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "augmented reality",
+          "venuename0": "chi"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "papers about keyphrasename0 published at venuename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "program slicing",
+          "venuename0": "pldi"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "keyphrasename0 papers in venuename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "semantic parsing",
+          "venuename0": "acl"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 3 ],
+          [ 2, 4 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "keyphrasename0 papers in venuename0",
+        "question-split": "exclude",
+        "variables": {
+          "keyphrasename0": "semantic parsing",
+          "venuename0": "acl"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 3 ],
+          [ 2, 4 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "papers on keyphrasename0 venuename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "Liquid",
+          "venuename0": "Automatica"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "keyphrasename0 papers used in venuename0",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "TAIL",
+          "venuename0": "NIPS"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "keyphrasename0 papers in venuename0",
+        "question-split": "exclude",
+        "variables": {
+          "keyphrasename0": "TAIL",
+          "venuename0": "NIPS"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 3 ],
+          [ 2, 4 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , VENUE AS VENUEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;", "SELECT DISTINCT PAPERalias0.PAPERID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , VENUE AS VENUEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;", "SELECT DISTINCT KEYPHRASEalias0.KEYPHRASENAME , PAPERalias0.PAPERID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , VENUE AS VENUEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;" ],
+    "variables": [
+      {
+        "example": "data cleaning",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      },
+      {
+        "example": "vldb",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "Who are the prominent researchers in keyphrasename0 in year0 ?",
+        "question-split": "train",
+        "variables": {
+          "keyphrasename0": "Neutralizing Antibody",
+          "year0": "2012"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 3, 4 ],
+          [ 2, 5 ],
+          [ 7, 8 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) , WRITESalias0.AUTHORID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND PAPERalias0.YEAR = year0 AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY WRITESalias0.AUTHORID ORDER BY COUNT( PAPERalias0.PAPERID ) DESC ;" ],
+    "variables": [
+      {
+        "example": "Neutralizing Antibody",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      },
+      {
+        "example": "2012",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "How many papers has authorname0 written ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Omer Lev" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Srinivasan Iyer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Jeffrey Heer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 ?",
+        "question-split": "test",
+        "variables": { "authorname0": "Jeffrey Heer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Christopher D. Manning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Jeffrey Heer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Christopher D. Manning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Mirella Lapata" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Emily M Bender" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "how many papers has authorname0 written ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Mirella Lapata" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "stefan savage" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "Has authorname0 published any papers ?",
+        "question-split": "train",
+        "variables": { "authorname0": "dan suciu" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "how many papers has authorname0 published ?",
+        "question-split": "test",
+        "variables": { "authorname0": "ameet soni" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "luke zettlemoyer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "kentaro toyama" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "robert wood" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "how many papers does authorname0 have ?",
+        "question-split": "train",
+        "variables": { "authorname0": "fahad pervaiz" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "how many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "mangpo" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "how many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "jeff dean" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "jeff dean" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many paper does authorname0 have ?",
+        "question-split": "dev",
+        "variables": { "authorname0": "samia razaq" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "jennifer widom" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "eric brewer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many publications does authorname0 have ?",
+        "question-split": "dev",
+        "variables": { "authorname0": "scott klemmer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many publications does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Donald E Knuth" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have",
+        "question-split": "train",
+        "variables": { "authorname0": "linda shapiro" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "kurtis heimerl" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 written ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "dominik moritz" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "number of papers written by authorname0",
+        "question-split": "test",
+        "variables": { "authorname0": "lorenzo bruzzone" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 written ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "ras bodik" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "james fogarty" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "huamin qu" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 written ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "yin tat lee" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "benjamin mako hill" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Chris Mattmann" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Emily M Bender" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Andrew King" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Christopher D Manning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Srinivasan Iyer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many papers has authorname0 published ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Christopher D. Manning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( DISTINCT WRITESalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID ;", "SELECT DISTINCT COUNT( DISTINCT PAPERalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT COUNT( 1 ) FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT COUNT( WRITESalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID ;" ],
+    "variables": [
+      {
+        "example": "Omer Lev",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "count of venuename0 papers by author",
+        "question-split": "train",
+        "variables": { "venuename0": "ACL" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 0, 4 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "how many venuename0 papers by author",
+        "question-split": "test",
+        "variables": { "venuename0": "ACL" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "number of venuename0 papers by author",
+        "question-split": "test",
+        "variables": { "venuename0": "ACL" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 0, 4 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) , WRITESalias0.AUTHORID FROM PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY WRITESalias0.AUTHORID ;" ],
+    "variables": [
+      {
+        "example": "ACL",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "Find journals about keyphrasename0 .",
+        "question-split": "train",
+        "variables": { "keyphrasename0": "Neutralizing Antibody Languages" },
+        "constituency_parser_spans": [
+          [ 1, 2 ],
+          [ 0, 1 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 0, 4 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "List the journals related to keyphrasename0",
+        "question-split": "test",
+        "variables": { "keyphrasename0": "Temporal Data" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 0, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.JOURNALID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID GROUP BY PAPERalias0.JOURNALID ;", "SELECT DISTINCT PAPERalias0.JOURNALID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID GROUP BY PAPERalias0.JOURNALID ;" ],
+    "variables": [
+      {
+        "example": "Neutralizing Antibody",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "How many papers used datasetname0 datasets in venuename0 ?",
+        "question-split": "train",
+        "variables": {
+          "datasetname0": "ImageNet",
+          "venuename0": "cvpr"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) FROM DATASET AS DATASETalias0 , PAPER AS PAPERalias0 , PAPERDATASET AS PAPERDATASETalias0 , VENUE AS VENUEalias0 WHERE DATASETalias0.DATASETNAME = \"datasetname0\" AND PAPERDATASETalias0.DATASETID = DATASETalias0.DATASETID AND PAPERalias0.PAPERID = PAPERDATASETalias0.PAPERID AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;" ],
+    "variables": [
+      {
+        "example": "ImageNet",
+        "location": "unk",
+        "name": "datasetname0",
+        "type": "datasetname"
+      },
+      {
+        "example": "cvpr",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "datasets mentioned at venuename0",
+        "question-split": "train",
+        "variables": { "venuename0": "icml" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "what datasets do papers at venuename0 use most ?",
+        "question-split": "test",
+        "variables": { "venuename0": "ACL" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT DATASETalias0.DATASETID FROM DATASET AS DATASETalias0 , PAPER AS PAPERalias0 , PAPERDATASET AS PAPERDATASETalias0 , VENUE AS VENUEalias0 WHERE PAPERDATASETalias0.DATASETID = DATASETalias0.DATASETID AND PAPERalias0.PAPERID = PAPERDATASETalias0.PAPERID AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;", "SELECT DISTINCT DATASETalias0.DATASETNAME FROM DATASET AS DATASETalias0 , PAPER AS PAPERalias0 , PAPERDATASET AS PAPERDATASETalias0 , VENUE AS VENUEalias0 WHERE PAPERDATASETalias0.DATASETID = DATASETalias0.DATASETID AND PAPERalias0.PAPERID = PAPERDATASETalias0.PAPERID AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;" ],
+    "variables": [
+      {
+        "example": "icml",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "Has authorname0 written any papers in year0 ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "mirella lapata",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 7, 8 ],
+          [ 3, 5 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) , WRITESalias0.AUTHORID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR = year0 AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY WRITESalias0.AUTHORID ;" ],
+    "variables": [
+      {
+        "example": "mirella lapata",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "2016",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "What papers were published at venuename0 in year0 about title0 applied to datasetname0 ?",
+        "question-split": "train",
+        "variables": {
+          "datasetname0": "RGB-D Object Dataset",
+          "title0": "Class consistent multi-modal fusion with binary features",
+          "year0": "2016",
+          "venuename0": "CVPR"
+        },
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 12, 13 ],
+          [ 3, 10 ],
+          [ 6, 10 ],
+          [ 8, 10 ],
+          [ 11, 13 ],
+          [ 3, 13 ],
+          [ 4, 5 ],
+          [ 10, 13 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 7, 8 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 13, 14 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "What papers were published at venuename0 '16 about title0 applied to datasetname0 ?",
+        "question-split": "dev",
+        "variables": {
+          "datasetname0": "RGB-D Object Dataset",
+          "title0": "Class consistent multi-modal fusion with binary features",
+          "year0": "2016",
+          "venuename0": "CVPR"
+        },
+        "constituency_parser_spans": [
+          [ 7, 12 ],
+          [ 9, 10 ],
+          [ 4, 7 ],
+          [ 5, 6 ],
+          [ 7, 8 ],
+          [ 5, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 11, 12 ],
+          [ 3, 4 ],
+          [ 10, 12 ],
+          [ 4, 5 ],
+          [ 9, 12 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 10, 11 ],
+          [ 0, 1 ],
+          [ 12, 13 ],
+          [ 6, 7 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM DATASET AS DATASETalias0 , PAPER AS PAPERalias0 , PAPERDATASET AS PAPERDATASETalias0 , VENUE AS VENUEalias0 WHERE DATASETalias0.DATASETNAME = \"datasetname0\" AND PAPERDATASETalias0.DATASETID = DATASETalias0.DATASETID AND PAPERalias0.PAPERID = PAPERDATASETalias0.PAPERID AND PAPERalias0.TITLE = \"title0\" AND PAPERalias0.YEAR = year0 AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" ;" ],
+    "variables": [
+      {
+        "example": "RGB-D Object Dataset",
+        "location": "unk",
+        "name": "datasetname0",
+        "type": "datasetname"
+      },
+      {
+        "example": "Class consistent multi-modal fusion with binary features",
+        "location": "unk",
+        "name": "title0",
+        "type": "title"
+      },
+      {
+        "example": "2016",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      },
+      {
+        "example": "CVPR",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "what are most cited papers of authorname0 and authorname1 ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "tom mitchell",
+          "authorname1": "oren etzioni"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "what are commonly cited papers by authorname0 and authorname1 ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "tom mitchell",
+          "authorname1": "oren etzioni"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "what papers are typically cited by authorname0 and authorname1",
+        "question-split": "test",
+        "variables": {
+          "authorname0": "tom mitchell",
+          "authorname1": "oren etzioni"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "most cited by authorname0 and authorname1",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "tom mitchell",
+          "authorname1": "oren etzioni"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT AUTHORalias0.AUTHORNAME , CITEalias0.CITEDPAPERID , COUNT( CITEalias0.CITEDPAPERID ) FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME IN ( \"authorname0\" , \"authorname1\" ) AND PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY CITEalias0.CITEDPAPERID , AUTHORalias0.AUTHORNAME ORDER BY COUNT( CITEalias0.CITEDPAPERID ) DESC ;" ],
+    "variables": [
+      {
+        "example": "tom mitchell",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "oren etzioni",
+        "location": "unk",
+        "name": "authorname1",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "How many citations does authorname0 have per year",
+        "question-split": "train",
+        "variables": { "authorname0": "luke zettlemoyer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( CITEalias0.CITEDPAPERID ) , PAPERalias0.YEAR FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY PAPERalias0.YEAR ;" ],
+    "variables": [
+      {
+        "example": "luke zettlemoyer",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "what topics does authorname0 write about most ?",
+        "question-split": "train",
+        "variables": { "authorname0": "oren etzioni" },
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 7, 8 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERKEYPHRASEalias0.KEYPHRASEID ) , PAPERKEYPHRASEalias0.KEYPHRASEID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID GROUP BY PAPERKEYPHRASEalias0.KEYPHRASEID ORDER BY COUNT( PAPERKEYPHRASEalias0.KEYPHRASEID ) DESC ;" ],
+    "variables": [
+      {
+        "example": "oren etzioni",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "How many authors published at venuename0 in year0 ?",
+        "question-split": "train",
+        "variables": {
+          "year0": "2010",
+          "venuename0": "sigcse"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) FROM PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE PAPERalias0.YEAR = year0 AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "2010",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      },
+      {
+        "example": "sigcse",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "where does authorname0 publish ?",
+        "question-split": "train",
+        "variables": { "authorname0": "li dong" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "in what venues does authorname0 publish ?",
+        "question-split": "train",
+        "variables": { "authorname0": "chasins" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "in what venues does authorname0 publish ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "mangpo" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "Where does authorname0 publish ?",
+        "question-split": "test",
+        "variables": { "authorname0": "Peter Mertens" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.JOURNALID , VENUEalias0.VENUEID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "li dong",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "how many venuename0 year0 papers have more than misc0 citations ?",
+        "question-split": "test",
+        "variables": {
+          "year0": "2012",
+          "venuename0": "ACL",
+          "misc0": "7"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 9 ],
+          [ 7, 8 ],
+          [ 5, 10 ],
+          [ 10, 11 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 10 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 0, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT ( PAPERalias0.PAPERID ) , COUNT( CITEalias0.CITINGPAPERID ) FROM CITE AS CITEalias0 , PAPER AS PAPERalias0 , VENUE AS VENUEalias0 WHERE PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID AND PAPERalias0.YEAR = year0 AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" GROUP BY PAPERalias0.PAPERID HAVING COUNT( CITEalias0.CITINGPAPERID ) > misc0 ;" ],
+    "variables": [
+      {
+        "example": "2012",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      },
+      {
+        "example": "ACL",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      },
+      {
+        "example": "7",
+        "location": "unk",
+        "name": "misc0",
+        "type": "misc"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "When did authorname0 publish ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Luke S Zettlemoyer" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 4 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.YEAR FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ORDER BY PAPERalias0.YEAR ;" ],
+    "variables": [
+      {
+        "example": "Luke S Zettlemoyer",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "How many papers were written on keyphrasename0 in the past misc0 years ?",
+        "question-split": "test",
+        "variables": {
+          "keyphrasename0": "question answering",
+          "misc0": "5"
+        },
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 7, 12 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 4, 12 ],
+          [ 0, 3 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 12, 13 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 3, 12 ],
+          [ 8, 12 ],
+          [ 5, 7 ],
+          [ 7, 8 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND PAPERalias0.YEAR >= YEAR(CURDATE()) - misc0 ;" ],
+    "variables": [
+      {
+        "example": "question answering",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      },
+      {
+        "example": "5",
+        "location": "unk",
+        "name": "misc0",
+        "type": "misc"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "How many citation authorname0 has ?",
+        "question-split": "train",
+        "variables": { "authorname0": "richard anderson" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "authorname0 citation count",
+        "question-split": "test",
+        "variables": { "authorname0": "Donald Elmazi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "how many citations does authorname0 have ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Donald E Knuth" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "how many citations does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "mark steedman" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 have ?",
+        "question-split": "test",
+        "variables": { "authorname0": "michael i. jordan" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "fahad pervaiz" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "number of citations of authorname0",
+        "question-split": "train",
+        "variables": { "authorname0": "linda shapiro" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 have",
+        "question-split": "train",
+        "variables": { "authorname0": "yejin choi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many times was authorname0 cited ?",
+        "question-split": "train",
+        "variables": { "authorname0": "alex snoeren" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Christopher D Manning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 has ?",
+        "question-split": "train",
+        "variables": { "authorname0": "Yann Lecun" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 has ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Yann Lecun" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "number of citations of authorname0",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Michael I. Jordan" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "How many citations does authorname0 has ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "Yann Lecun" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "how many citations does authorname0 have ?",
+        "question-split": "exclude",
+        "variables": { "authorname0": "noah a smith" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( CITEalias0.CITEDPAPERID ) FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT COUNT( DISTINCT CITEalias0.CITINGPAPERID ) FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME LIKE \"authorname0\" AND PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT SUM( PAPERalias0.NUMCITEDBY ) FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT COUNT( CITEalias0.CITINGPAPERID ) FROM AUTHOR AS AUTHORalias0 , CITE AS CITEalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "richard anderson",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "what papers are in the venuename0 of year0",
+        "question-split": "train",
+        "variables": {
+          "year0": "2014",
+          "venuename0": "ACL"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM PAPER AS PAPERalias0 , VENUE AS VENUEalias0 WHERE PAPERalias0.YEAR = year0 AND PAPERalias0.VENUEID = VENUEalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\";" ],
+    "variables": [
+      {
+        "example": "2014",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      },
+      {
+        "example": "ACL",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "papers with at least misc0 citations",
+        "question-split": "train",
+        "variables": { "misc0": "5" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "papers cited by at least misc0 papers",
+        "question-split": "dev",
+        "variables": { "misc0": "5" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 1, 7 ],
+          [ 3, 7 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT CITEalias0.CITINGPAPERID FROM CITE AS CITEalias0 , PAPER AS PAPERalias0 WHERE PAPERalias0.PAPERID = CITEalias0.CITEDPAPERID GROUP BY CITEalias0.CITINGPAPERID HAVING COUNT( DISTINCT CITEalias0.CITEDPAPERID ) >= misc0 ;" ],
+    "variables": [
+      {
+        "example": "5",
+        "location": "unk",
+        "name": "misc0",
+        "type": "misc"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "How many papers does authorname0 publish outside of venuename0 area ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "Samuel Madden",
+          "venuename0": "PVLDB"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 10, 11 ],
+          [ 5, 10 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 10 ],
+          [ 6, 10 ],
+          [ 8, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 10 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( DISTINCT PAPERalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME <> \"venuename0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "Samuel Madden",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "PVLDB",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "authorname0 's publications by year",
+        "question-split": "dev",
+        "variables": { "authorname0": "jamie callan" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID , PAPERalias0.YEAR FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ORDER BY PAPERalias0.YEAR ;" ],
+    "variables": [
+      {
+        "example": "alvin cheung",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "How many publications were added to the venuename0 journal this year ?",
+        "question-split": "dev",
+        "variables": {
+          "venuename0": "Cell",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 3, 11 ],
+          [ 8, 9 ],
+          [ 0, 3 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 9, 11 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 11, 12 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 7, 8 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "How many articles were published in the venuename0 journal in year0 ?",
+        "question-split": "train",
+        "variables": {
+          "venuename0": "Cell",
+          "year0": "2015"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 10, 11 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 11 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 9, 11 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 3 ],
+          [ 11, 12 ],
+          [ 4, 11 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( PAPERalias0.PAPERID ) FROM JOURNAL AS JOURNALalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE JOURNALalias0.JOURNALID = \"venuename0\" AND PAPERalias0.JOURNALID = JOURNALalias0.JOURNALID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND PAPERalias0.YEAR = year0 ;" ],
+    "variables": [
+      {
+        "example": "Cell",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      },
+      {
+        "example": "2016",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "venue for keyphrasename0",
+        "question-split": "train",
+        "variables": { "keyphrasename0": "Semantic Parsing" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 3 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "conferences for keyphrasename0",
+        "question-split": "train",
+        "variables": { "keyphrasename0": "Semantic Parsing" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 3 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "what conferences are related to keyphrasename0",
+        "question-split": "test",
+        "variables": { "keyphrasename0": "sensor fusion" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "What was the conference name that approved keyphrasename0 ?",
+        "question-split": "train",
+        "variables": { "keyphrasename0": "Trophic Cascade" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.VENUEID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID ;", "SELECT DISTINCT PAPERalias0.JOURNALID FROM KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID GROUP BY PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "Semantic Parsing",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "What is the name of authorname0 's keyphrasename0 paper ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "Ranjit Jhala",
+          "keyphrasename0": "Liquid Haskell"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 9, 10 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.TITLE FROM AUTHOR AS AUTHORalias0 , KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME LIKE \"authorname0\" AND KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERKEYPHRASEalias0.PAPERID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "Ranjit Jhala",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "Liquid Haskell",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "What papers has authorname0 written in year0",
+        "question-split": "test",
+        "variables": {
+          "authorname0": "li dong",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "papers by authorname0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "linda shapiro",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "What did authorname0 published in year0 ?",
+        "question-split": "test",
+        "variables": {
+          "authorname0": "Luke S Zettlemoyer",
+          "year0": "2009"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "Papers written by authorname0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "daniel a. epstein",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "What are the papers of authorname0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "ali farhadi",
+          "year0": "2014"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "papers by authorname0 from year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "emina torlak",
+          "year0": "2010"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "Papers written by authorname0 in year0",
+        "question-split": "exclude",
+        "variables": {
+          "authorname0": "james fogarty",
+          "year0": "2015"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "Papers published in year0 by authorname0",
+        "question-split": "dev",
+        "variables": {
+          "authorname0": "li dong",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "what has authorname0 done in the past year",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "ali farhadi",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "text": "What papers did authorname0 publish last year ?",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "li dong",
+          "year0": "2015"
+        },
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 7, 8 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "text": "papers published in year0 by authorname0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "luke zettlemoyer",
+          "year0": "2011"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "authorname0 's papers in year0 ?",
+        "question-split": "dev",
+        "variables": {
+          "authorname0": "mirella lapata",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "authorname0 's papers in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "ali farhadi",
+          "year0": "2015"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "authorname0 publication year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "daniel a. epstein",
+          "year0": "2016"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "Papers authored by authorname0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "Daniel S. Weld",
+          "year0": "2011"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "text": "Papers from authorname0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "Aida Kasumovic",
+          "year0": "2015"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "text": "what papers are published by authorname0 in year0",
+        "question-split": "train",
+        "variables": {
+          "authorname0": "Liwen Xiong",
+          "year0": "2015"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR = year0 AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT AUTHORalias0.AUTHORID , PAPERalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR = year0 AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT WRITESalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR = year0 AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;", "SELECT DISTINCT AUTHORalias0.AUTHORNAME , PAPERalias0.PAPERID FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR = year0 AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "li dong",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "2016",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "dev",
+    "sentences": [
+      {
+        "text": "what was the first keyphrasename0 paper ?",
+        "question-split": "test",
+        "variables": { "keyphrasename0": "deep learning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "text": "what year was the first keyphrasename0 paper published ?",
+        "question-split": "train",
+        "variables": { "keyphrasename0": "deep learning" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 7 ],
+          [ 7, 8 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT DATASETalias0.DATASETID , PAPERalias0.YEAR FROM DATASET AS DATASETalias0 , KEYPHRASE AS KEYPHRASEalias0 , PAPER AS PAPERalias0 , PAPERDATASET AS PAPERDATASETalias0 , PAPERKEYPHRASE AS PAPERKEYPHRASEalias0 WHERE KEYPHRASEalias0.KEYPHRASENAME = \"keyphrasename0\" AND PAPERDATASETalias0.DATASETID = DATASETalias0.DATASETID AND PAPERKEYPHRASEalias0.KEYPHRASEID = KEYPHRASEalias0.KEYPHRASEID AND PAPERKEYPHRASEalias0.PAPERID = PAPERDATASETalias0.PAPERID AND PAPERalias0.PAPERID = PAPERDATASETalias0.PAPERID ORDER BY PAPERalias0.YEAR ASC ;" ],
+    "variables": [
+      {
+        "example": "deep learning",
+        "location": "unk",
+        "name": "keyphrasename0",
+        "type": "keyphrasename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "test",
+    "sentences": [
+      {
+        "text": "How many papers are there ?",
+        "question-split": "test",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 6 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( DISTINCT PAPERalias0.PAPERID ) FROM PAPER AS PAPERalias0 ;" ],
+    "variables": []
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "How many venuename0 papers did authorname0 written in the last year ?",
+        "question-split": "test",
+        "variables": {
+          "authorname0": "John Lee",
+          "misc0": "1",
+          "venuename0": "ACL"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 10, 11 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 11 ],
+          [ 8, 11 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 0, 4 ],
+          [ 3, 4 ],
+          [ 7, 11 ],
+          [ 11, 12 ],
+          [ 4, 11 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT COUNT( DISTINCT PAPERalias0.PAPERID ) FROM AUTHOR AS AUTHORalias0 , PAPER AS PAPERalias0 , VENUE AS VENUEalias0 , WRITES AS WRITESalias0 WHERE AUTHORalias0.AUTHORNAME = \"authorname0\" AND PAPERalias0.YEAR >= YEAR(CURDATE()) - misc0 AND VENUEalias0.VENUEID = PAPERalias0.VENUEID AND VENUEalias0.VENUENAME = \"venuename0\" AND WRITESalias0.AUTHORID = AUTHORalias0.AUTHORID AND WRITESalias0.PAPERID = PAPERalias0.PAPERID ;" ],
+    "variables": [
+      {
+        "example": "John Lee",
+        "location": "unk",
+        "name": "authorname0",
+        "type": "authorname"
+      },
+      {
+        "example": "1",
+        "location": "unk",
+        "name": "misc0",
+        "type": "misc"
+      },
+      {
+        "example": "ACL",
+        "location": "unk",
+        "name": "venuename0",
+        "type": "venuename"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "papers from year0",
+        "question-split": "dev",
+        "variables": { "year0": "2014" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 3 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "year0 papers",
+        "question-split": "train",
+        "variables": { "year0": "2014" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "papers from year0",
+        "question-split": "exclude",
+        "variables": { "year0": "2014" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 3 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "text": "year0 papers",
+        "question-split": "exclude",
+        "variables": { "year0": "2014" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.PAPERID FROM PAPER AS PAPERalias0 WHERE PAPERalias0.YEAR = year0 ;" ],
+    "variables": [
+      {
+        "example": "2014",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  },
+  {
+    "comments": [],
+    "old-name": "",
+    "query-split": "train",
+    "sentences": [
+      {
+        "text": "conferences in year0",
+        "question-split": "dev",
+        "variables": { "year0": "2013" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 3 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT PAPERalias0.VENUEID FROM PAPER AS PAPERalias0 WHERE PAPERalias0.YEAR = year0 ;" ],
+    "variables": [
+      {
+        "example": "2013",
+        "location": "unk",
+        "name": "year0",
+        "type": "year"
+      }
+    ]
+  }
+]

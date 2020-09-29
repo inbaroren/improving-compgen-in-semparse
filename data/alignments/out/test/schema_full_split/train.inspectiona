@@ -1,0 +1,1005 @@
+papers that are coauthored by authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	2	are
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	7	authorname1
+3	WRITESalias0	-	0	papers
+4	WRITESalias1	-	7	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	0	papers
+7	AUTHORalias1.AUTHORNAME	-	5	authorname0
+8	'authorname1'	-	5	authorname0
+9	WRITESalias0.AUTHORID	-	0	papers
+10	AUTHORalias0.AUTHORID	-	0	papers
+11	WRITESalias1.AUTHORID	-	5	authorname0
+12	AUTHORalias1.AUTHORID	-	5	authorname0
+13	WRITESalias1.PAPERID	-	5	authorname0
+14	WRITESalias0.PAPERID	-	2	are
+papers written by authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	1	written
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	1	written
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	1	written
+7	AUTHORalias1.AUTHORNAME	-	3	authorname0
+8	'authorname1'	-	3	authorname0
+9	WRITESalias0.AUTHORID	-	1	written
+10	AUTHORalias0.AUTHORID	-	0	papers
+11	WRITESalias1.AUTHORID	-	3	authorname0
+12	AUTHORalias1.AUTHORID	-	3	authorname0
+13	WRITESalias1.PAPERID	-	3	authorname0
+14	WRITESalias0.PAPERID	-	1	written
+what are the papers that have authorname0 and authorname1 as co-authors
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	9	as
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	8	authorname1
+3	WRITESalias0	-	3	papers
+4	WRITESalias1	-	8	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	3	papers
+7	AUTHORalias1.AUTHORNAME	-	6	authorname0
+8	'authorname1'	-	6	authorname0
+9	WRITESalias0.AUTHORID	-	3	papers
+10	AUTHORalias0.AUTHORID	-	3	papers
+11	WRITESalias1.AUTHORID	-	6	authorname0
+12	AUTHORalias1.AUTHORID	-	6	authorname0
+13	WRITESalias1.PAPERID	-	6	authorname0
+14	WRITESalias0.PAPERID	-	9	as
+What papers have authorname0 and authorname1 written ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	What
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	6	written
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	6	written
+7	AUTHORalias1.AUTHORNAME	-	3	authorname0
+8	'authorname1'	-	3	authorname0
+9	WRITESalias0.AUTHORID	-	6	written
+10	AUTHORalias0.AUTHORID	-	1	papers
+11	WRITESalias1.AUTHORID	-	3	authorname0
+12	AUTHORalias1.AUTHORID	-	3	authorname0
+13	WRITESalias1.PAPERID	-	3	authorname0
+14	WRITESalias0.PAPERID	-	0	What
+what paper did authorname0 and authorname1 write together ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	7	together
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	_	NO_ALIGN
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	_	NO_ALIGN
+7	AUTHORalias1.AUTHORNAME	-	3	authorname0
+8	'authorname1'	-	3	authorname0
+9	WRITESalias0.AUTHORID	-	8	?
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	3	authorname0
+12	AUTHORalias1.AUTHORID	-	3	authorname0
+13	WRITESalias1.PAPERID	-	3	authorname0
+14	WRITESalias0.PAPERID	-	7	together
+Has authorname0 and authorname1 written a paper together ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	7	together
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	3	authorname1
+3	WRITESalias0	-	4	written
+4	WRITESalias1	-	3	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	4	written
+7	AUTHORalias1.AUTHORNAME	-	1	authorname0
+8	'authorname1'	-	1	authorname0
+9	WRITESalias0.AUTHORID	-	4	written
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	1	authorname0
+12	AUTHORalias1.AUTHORID	-	1	authorname0
+13	WRITESalias1.PAPERID	-	1	authorname0
+14	WRITESalias0.PAPERID	-	7	together
+Papers by authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	_	NO_ALIGN
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	4	authorname1
+3	WRITESalias0	-	_	NO_ALIGN
+4	WRITESalias1	-	4	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	_	NO_ALIGN
+7	AUTHORalias1.AUTHORNAME	-	2	authorname0
+8	'authorname1'	-	2	authorname0
+9	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	2	authorname0
+12	AUTHORalias1.AUTHORID	-	2	authorname0
+13	WRITESalias1.PAPERID	-	2	authorname0
+14	WRITESalias0.PAPERID	-	_	NO_ALIGN
+papers by authors authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	2	authors
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	0	papers
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	0	papers
+7	AUTHORalias1.AUTHORNAME	-	3	authorname0
+8	'authorname1'	-	3	authorname0
+9	WRITESalias0.AUTHORID	-	0	papers
+10	AUTHORalias0.AUTHORID	-	0	papers
+11	WRITESalias1.AUTHORID	-	3	authorname0
+12	AUTHORalias1.AUTHORID	-	3	authorname0
+13	WRITESalias1.PAPERID	-	3	authorname0
+14	WRITESalias0.PAPERID	-	2	authors
+What papers were written by authors authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	What
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	8	authorname1
+3	WRITESalias0	-	3	written
+4	WRITESalias1	-	8	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	3	written
+7	AUTHORalias1.AUTHORNAME	-	6	authorname0
+8	'authorname1'	-	6	authorname0
+9	WRITESalias0.AUTHORID	-	3	written
+10	AUTHORalias0.AUTHORID	-	1	papers
+11	WRITESalias1.AUTHORID	-	6	authorname0
+12	AUTHORalias1.AUTHORID	-	6	authorname0
+13	WRITESalias1.PAPERID	-	6	authorname0
+14	WRITESalias0.PAPERID	-	0	What
+papers by authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	papers
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	4	authorname1
+3	WRITESalias0	-	0	papers
+4	WRITESalias1	-	4	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	0	papers
+7	AUTHORalias1.AUTHORNAME	-	2	authorname0
+8	'authorname1'	-	2	authorname0
+9	WRITESalias0.AUTHORID	-	0	papers
+10	AUTHORalias0.AUTHORID	-	0	papers
+11	WRITESalias1.AUTHORID	-	2	authorname0
+12	AUTHORalias1.AUTHORID	-	2	authorname0
+13	WRITESalias1.PAPERID	-	2	authorname0
+14	WRITESalias0.PAPERID	-	0	papers
+papers written by authors authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	3	authors
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	6	authorname1
+3	WRITESalias0	-	1	written
+4	WRITESalias1	-	6	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	1	written
+7	AUTHORalias1.AUTHORNAME	-	4	authorname0
+8	'authorname1'	-	4	authorname0
+9	WRITESalias0.AUTHORID	-	1	written
+10	AUTHORalias0.AUTHORID	-	0	papers
+11	WRITESalias1.AUTHORID	-	4	authorname0
+12	AUTHORalias1.AUTHORID	-	4	authorname0
+13	WRITESalias1.PAPERID	-	4	authorname0
+14	WRITESalias0.PAPERID	-	3	authors
+When did authorname0 and authorname1 collaborate ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	1	did
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	4	authorname1
+3	WRITESalias0	-	_	NO_ALIGN
+4	WRITESalias1	-	4	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	_	NO_ALIGN
+7	AUTHORalias1.AUTHORNAME	-	2	authorname0
+8	'authorname1'	-	2	authorname0
+9	WRITESalias0.AUTHORID	-	6	?
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	2	authorname0
+12	AUTHORalias1.AUTHORID	-	2	authorname0
+13	WRITESalias1.PAPERID	-	2	authorname0
+14	WRITESalias0.PAPERID	-	1	did
+what are the collaborations of authorname0 and authorname1 ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	what
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	7	authorname1
+3	WRITESalias0	-	_	NO_ALIGN
+4	WRITESalias1	-	7	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	_	NO_ALIGN
+7	AUTHORalias1.AUTHORNAME	-	5	authorname0
+8	'authorname1'	-	5	authorname0
+9	WRITESalias0.AUTHORID	-	8	?
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	5	authorname0
+12	AUTHORalias1.AUTHORID	-	5	authorname0
+13	WRITESalias1.PAPERID	-	5	authorname0
+14	WRITESalias0.PAPERID	-	0	what
+Have authorname0 and authorname1 written a paper together ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	7	together
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	3	authorname1
+3	WRITESalias0	-	4	written
+4	WRITESalias1	-	3	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	4	written
+7	AUTHORalias1.AUTHORNAME	-	1	authorname0
+8	'authorname1'	-	1	authorname0
+9	WRITESalias0.AUTHORID	-	4	written
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	1	authorname0
+12	AUTHORalias1.AUTHORID	-	1	authorname0
+13	WRITESalias1.PAPERID	-	1	authorname0
+14	WRITESalias0.PAPERID	-	7	together
+authorname0 and authorname1 as co-authors
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	3	as
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	2	authorname1
+3	WRITESalias0	-	_	NO_ALIGN
+4	WRITESalias1	-	2	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	_	NO_ALIGN
+7	AUTHORalias1.AUTHORNAME	-	0	authorname0
+8	'authorname1'	-	0	authorname0
+9	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	0	authorname0
+12	AUTHORalias1.AUTHORID	-	0	authorname0
+13	WRITESalias1.PAPERID	-	0	authorname0
+14	WRITESalias0.PAPERID	-	3	as
+Does authorname0 ever collaborated with authorname1 ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	4	with
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	_	NO_ALIGN
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	_	NO_ALIGN
+7	AUTHORalias1.AUTHORNAME	-	1	authorname0
+8	'authorname1'	-	1	authorname0
+9	WRITESalias0.AUTHORID	-	6	?
+10	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+11	WRITESalias1.AUTHORID	-	1	authorname0
+12	AUTHORalias1.AUTHORID	-	1	authorname0
+13	WRITESalias1.PAPERID	-	1	authorname0
+14	WRITESalias0.PAPERID	-	4	with
+Which papers have authorname0 and authorname1 as co-authors ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	6	as
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	1	papers
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	1	papers
+7	AUTHORalias1.AUTHORNAME	-	3	authorname0
+8	'authorname1'	-	3	authorname0
+9	WRITESalias0.AUTHORID	-	1	papers
+10	AUTHORalias0.AUTHORID	-	1	papers
+11	WRITESalias1.AUTHORID	-	3	authorname0
+12	AUTHORalias1.AUTHORID	-	3	authorname0
+13	WRITESalias1.PAPERID	-	3	authorname0
+14	WRITESalias0.PAPERID	-	6	as
+papers coauthored by authorname0 and authorname1
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	1	coauthored
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	5	authorname1
+3	WRITESalias0	-	0	papers
+4	WRITESalias1	-	5	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	0	papers
+7	AUTHORalias1.AUTHORNAME	-	3	authorname0
+8	'authorname1'	-	3	authorname0
+9	WRITESalias0.AUTHORID	-	0	papers
+10	AUTHORalias0.AUTHORID	-	0	papers
+11	WRITESalias1.AUTHORID	-	3	authorname0
+12	AUTHORalias1.AUTHORID	-	3	authorname0
+13	WRITESalias1.PAPERID	-	3	authorname0
+14	WRITESalias0.PAPERID	-	1	coauthored
+What papers have been written by authorname0 and authorname1 ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	What
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	8	authorname1
+3	WRITESalias0	-	4	written
+4	WRITESalias1	-	8	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	4	written
+7	AUTHORalias1.AUTHORNAME	-	6	authorname0
+8	'authorname1'	-	6	authorname0
+9	WRITESalias0.AUTHORID	-	4	written
+10	AUTHORalias0.AUTHORID	-	1	papers
+11	WRITESalias1.AUTHORID	-	6	authorname0
+12	AUTHORalias1.AUTHORID	-	6	authorname0
+13	WRITESalias1.PAPERID	-	6	authorname0
+14	WRITESalias0.PAPERID	-	0	What
+What papers have been written by both authorname0 and authorname1 ?
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	What
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	9	authorname1
+3	WRITESalias0	-	4	written
+4	WRITESalias1	-	9	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	4	written
+7	AUTHORalias1.AUTHORNAME	-	7	authorname0
+8	'authorname1'	-	7	authorname0
+9	WRITESalias0.AUTHORID	-	4	written
+10	AUTHORalias0.AUTHORID	-	1	papers
+11	WRITESalias1.AUTHORID	-	7	authorname0
+12	AUTHORalias1.AUTHORID	-	7	authorname0
+13	WRITESalias1.PAPERID	-	7	authorname0
+14	WRITESalias0.PAPERID	-	0	What
+What papers have been written by authorname0 and authorname1 .
+WRITESalias0.PAPERID AUTHORalias0 AUTHORalias1 WRITESalias0 WRITESalias1 AUTHORalias0.AUTHORNAME 'authorname0' AUTHORalias1.AUTHORNAME 'authorname1' WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias1.AUTHORID AUTHORalias1.AUTHORID WRITESalias1.PAPERID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	0	What
+1	AUTHORalias0	-	_	NO_ALIGN
+2	AUTHORalias1	-	8	authorname1
+3	WRITESalias0	-	4	written
+4	WRITESalias1	-	8	authorname1
+5	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+6	'authorname0'	-	4	written
+7	AUTHORalias1.AUTHORNAME	-	6	authorname0
+8	'authorname1'	-	6	authorname0
+9	WRITESalias0.AUTHORID	-	4	written
+10	AUTHORalias0.AUTHORID	-	1	papers
+11	WRITESalias1.AUTHORID	-	6	authorname0
+12	AUTHORalias1.AUTHORID	-	6	authorname0
+13	WRITESalias1.PAPERID	-	6	authorname0
+14	WRITESalias0.PAPERID	-	0	What
+who has written the most keyphrasename0 papers ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	1	has
+1	WRITESalias0.AUTHORID	-	2	written
+2	KEYPHRASEalias0	-	5	keyphrasename0
+3	PAPERalias0	-	5	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	5	keyphrasename0
+5	WRITESalias0	-	2	written
+6	KEYPHRASEalias0.KEYPHRASENAME	-	5	keyphrasename0
+7	'authorname0'	-	2	written
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+9	KEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+10	PAPERalias0.PAPERID	-	1	has
+11	PAPERKEYPHRASEalias0.PAPERID	-	5	keyphrasename0
+12	WRITESalias0.PAPERID	-	2	written
+13	PAPERalias0.PAPERID	-	1	has
+14	WRITESalias0.AUTHORID	-	2	written
+15	PAPERalias0.PAPERID	-	1	has
+who has written the most keyphrasename0 papers ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	2	written
+1	WRITESalias0.AUTHORID	-	2	written
+2	KEYPHRASEalias0	-	5	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	5	keyphrasename0
+4	WRITESalias0	-	2	written
+5	KEYPHRASEalias0.KEYPHRASENAME	-	5	keyphrasename0
+6	'authorname0'	-	2	written
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+8	KEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+9	WRITESalias0.PAPERID	-	2	written
+10	PAPERKEYPHRASEalias0.PAPERID	-	5	keyphrasename0
+11	WRITESalias0.AUTHORID	-	2	written
+12	WRITESalias0.PAPERID	-	2	written
+who has written the most keyphrasename0 papers ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	6	papers
+1	PAPERalias0.PAPERID	-	1	has
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	5	keyphrasename0
+4	PAPERalias0	-	5	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	5	keyphrasename0
+6	WRITESalias0	-	2	written
+7	KEYPHRASEalias0.KEYPHRASENAME	-	5	keyphrasename0
+8	'authorname0'	-	2	written
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+10	KEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+11	PAPERalias0.PAPERID	-	1	has
+12	PAPERKEYPHRASEalias0.PAPERID	-	5	keyphrasename0
+13	WRITESalias0.AUTHORID	-	2	written
+14	AUTHORalias0.AUTHORID	-	6	papers
+15	WRITESalias0.PAPERID	-	2	written
+16	PAPERalias0.PAPERID	-	1	has
+17	AUTHORalias0.AUTHORID	-	6	papers
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who is the most published author in keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	1	is
+1	WRITESalias0.AUTHORID	-	8	?
+2	KEYPHRASEalias0	-	7	keyphrasename0
+3	PAPERalias0	-	7	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+5	WRITESalias0	-	_	NO_ALIGN
+6	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+7	'authorname0'	-	_	NO_ALIGN
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	6	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+10	PAPERalias0.PAPERID	-	1	is
+11	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+12	WRITESalias0.PAPERID	-	8	?
+13	PAPERalias0.PAPERID	-	1	is
+14	WRITESalias0.AUTHORID	-	8	?
+15	PAPERalias0.PAPERID	-	1	is
+who is the most published author in keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	8	?
+1	WRITESalias0.AUTHORID	-	8	?
+2	KEYPHRASEalias0	-	7	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+4	WRITESalias0	-	_	NO_ALIGN
+5	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+6	'authorname0'	-	_	NO_ALIGN
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	6	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+9	WRITESalias0.PAPERID	-	8	?
+10	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+11	WRITESalias0.AUTHORID	-	8	?
+12	WRITESalias0.PAPERID	-	8	?
+who is the most published author in keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+1	PAPERalias0.PAPERID	-	1	is
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	7	keyphrasename0
+4	PAPERalias0	-	7	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+6	WRITESalias0	-	_	NO_ALIGN
+7	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+8	'authorname0'	-	_	NO_ALIGN
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	6	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+11	PAPERalias0.PAPERID	-	1	is
+12	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+13	WRITESalias0.AUTHORID	-	8	?
+14	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+15	WRITESalias0.PAPERID	-	8	?
+16	PAPERalias0.PAPERID	-	1	is
+17	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who has the most publications in keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	4	publications
+1	WRITESalias0.AUTHORID	-	7	?
+2	KEYPHRASEalias0	-	6	keyphrasename0
+3	PAPERalias0	-	6	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+5	WRITESalias0	-	_	NO_ALIGN
+6	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+7	'authorname0'	-	_	NO_ALIGN
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+10	PAPERalias0.PAPERID	-	4	publications
+11	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+12	WRITESalias0.PAPERID	-	7	?
+13	PAPERalias0.PAPERID	-	4	publications
+14	WRITESalias0.AUTHORID	-	7	?
+15	PAPERalias0.PAPERID	-	4	publications
+who has the most publications in keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	7	?
+1	WRITESalias0.AUTHORID	-	7	?
+2	KEYPHRASEalias0	-	6	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+4	WRITESalias0	-	_	NO_ALIGN
+5	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+6	'authorname0'	-	_	NO_ALIGN
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+9	WRITESalias0.PAPERID	-	7	?
+10	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+11	WRITESalias0.AUTHORID	-	7	?
+12	WRITESalias0.PAPERID	-	7	?
+who has the most publications in keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+1	PAPERalias0.PAPERID	-	4	publications
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	6	keyphrasename0
+4	PAPERalias0	-	6	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+6	WRITESalias0	-	_	NO_ALIGN
+7	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+8	'authorname0'	-	_	NO_ALIGN
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+11	PAPERalias0.PAPERID	-	4	publications
+12	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+13	WRITESalias0.AUTHORID	-	7	?
+14	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+15	WRITESalias0.PAPERID	-	7	?
+16	PAPERalias0.PAPERID	-	4	publications
+17	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who has written the most papers on keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	6	on
+1	WRITESalias0.AUTHORID	-	2	written
+2	KEYPHRASEalias0	-	7	keyphrasename0
+3	PAPERalias0	-	7	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+5	WRITESalias0	-	2	written
+6	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+7	'authorname0'	-	2	written
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+9	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+10	PAPERalias0.PAPERID	-	6	on
+11	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+12	WRITESalias0.PAPERID	-	2	written
+13	PAPERalias0.PAPERID	-	6	on
+14	WRITESalias0.AUTHORID	-	2	written
+15	PAPERalias0.PAPERID	-	6	on
+who has written the most papers on keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	2	written
+1	WRITESalias0.AUTHORID	-	2	written
+2	KEYPHRASEalias0	-	7	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+4	WRITESalias0	-	2	written
+5	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+6	'authorname0'	-	2	written
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+8	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+9	WRITESalias0.PAPERID	-	2	written
+10	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+11	WRITESalias0.AUTHORID	-	2	written
+12	WRITESalias0.PAPERID	-	2	written
+who has written the most papers on keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	5	papers
+1	PAPERalias0.PAPERID	-	6	on
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	7	keyphrasename0
+4	PAPERalias0	-	7	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+6	WRITESalias0	-	2	written
+7	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+8	'authorname0'	-	2	written
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+10	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+11	PAPERalias0.PAPERID	-	6	on
+12	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+13	WRITESalias0.AUTHORID	-	2	written
+14	AUTHORalias0.AUTHORID	-	5	papers
+15	WRITESalias0.PAPERID	-	2	written
+16	PAPERalias0.PAPERID	-	6	on
+17	AUTHORalias0.AUTHORID	-	5	papers
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+List prominent scholars in keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	0	List
+1	WRITESalias0.AUTHORID	-	5	?
+2	KEYPHRASEalias0	-	4	keyphrasename0
+3	PAPERalias0	-	4	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	4	keyphrasename0
+5	WRITESalias0	-	_	NO_ALIGN
+6	KEYPHRASEalias0.KEYPHRASENAME	-	4	keyphrasename0
+7	'authorname0'	-	_	NO_ALIGN
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	3	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	4	keyphrasename0
+10	PAPERalias0.PAPERID	-	0	List
+11	PAPERKEYPHRASEalias0.PAPERID	-	4	keyphrasename0
+12	WRITESalias0.PAPERID	-	5	?
+13	PAPERalias0.PAPERID	-	0	List
+14	WRITESalias0.AUTHORID	-	5	?
+15	PAPERalias0.PAPERID	-	0	List
+List prominent scholars in keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	5	?
+1	WRITESalias0.AUTHORID	-	5	?
+2	KEYPHRASEalias0	-	4	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	4	keyphrasename0
+4	WRITESalias0	-	_	NO_ALIGN
+5	KEYPHRASEalias0.KEYPHRASENAME	-	4	keyphrasename0
+6	'authorname0'	-	_	NO_ALIGN
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	3	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	4	keyphrasename0
+9	WRITESalias0.PAPERID	-	5	?
+10	PAPERKEYPHRASEalias0.PAPERID	-	4	keyphrasename0
+11	WRITESalias0.AUTHORID	-	5	?
+12	WRITESalias0.PAPERID	-	5	?
+List prominent scholars in keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+1	PAPERalias0.PAPERID	-	0	List
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	4	keyphrasename0
+4	PAPERalias0	-	4	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	4	keyphrasename0
+6	WRITESalias0	-	_	NO_ALIGN
+7	KEYPHRASEalias0.KEYPHRASENAME	-	4	keyphrasename0
+8	'authorname0'	-	_	NO_ALIGN
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	3	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	4	keyphrasename0
+11	PAPERalias0.PAPERID	-	0	List
+12	PAPERKEYPHRASEalias0.PAPERID	-	4	keyphrasename0
+13	WRITESalias0.AUTHORID	-	5	?
+14	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+15	WRITESalias0.PAPERID	-	5	?
+16	PAPERalias0.PAPERID	-	0	List
+17	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who has written the most papers on keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	6	on
+1	WRITESalias0.AUTHORID	-	2	written
+2	KEYPHRASEalias0	-	7	keyphrasename0
+3	PAPERalias0	-	7	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+5	WRITESalias0	-	2	written
+6	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+7	'authorname0'	-	2	written
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+9	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+10	PAPERalias0.PAPERID	-	6	on
+11	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+12	WRITESalias0.PAPERID	-	2	written
+13	PAPERalias0.PAPERID	-	6	on
+14	WRITESalias0.AUTHORID	-	2	written
+15	PAPERalias0.PAPERID	-	6	on
+who has written the most papers on keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	2	written
+1	WRITESalias0.AUTHORID	-	2	written
+2	KEYPHRASEalias0	-	7	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+4	WRITESalias0	-	2	written
+5	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+6	'authorname0'	-	2	written
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+8	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+9	WRITESalias0.PAPERID	-	2	written
+10	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+11	WRITESalias0.AUTHORID	-	2	written
+12	WRITESalias0.PAPERID	-	2	written
+who has written the most papers on keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	5	papers
+1	PAPERalias0.PAPERID	-	6	on
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	7	keyphrasename0
+4	PAPERalias0	-	7	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	7	keyphrasename0
+6	WRITESalias0	-	2	written
+7	KEYPHRASEalias0.KEYPHRASENAME	-	7	keyphrasename0
+8	'authorname0'	-	2	written
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+10	KEYPHRASEalias0.KEYPHRASEID	-	7	keyphrasename0
+11	PAPERalias0.PAPERID	-	6	on
+12	PAPERKEYPHRASEalias0.PAPERID	-	7	keyphrasename0
+13	WRITESalias0.AUTHORID	-	2	written
+14	AUTHORalias0.AUTHORID	-	5	papers
+15	WRITESalias0.PAPERID	-	2	written
+16	PAPERalias0.PAPERID	-	6	on
+17	AUTHORalias0.AUTHORID	-	5	papers
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who wrote the most papers on keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	1	wrote
+1	WRITESalias0.AUTHORID	-	4	papers
+2	KEYPHRASEalias0	-	6	keyphrasename0
+3	PAPERalias0	-	6	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+5	WRITESalias0	-	4	papers
+6	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+7	'authorname0'	-	4	papers
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+9	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+10	PAPERalias0.PAPERID	-	1	wrote
+11	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+12	WRITESalias0.PAPERID	-	4	papers
+13	PAPERalias0.PAPERID	-	1	wrote
+14	WRITESalias0.AUTHORID	-	4	papers
+15	PAPERalias0.PAPERID	-	1	wrote
+who wrote the most papers on keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	4	papers
+1	WRITESalias0.AUTHORID	-	4	papers
+2	KEYPHRASEalias0	-	6	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+4	WRITESalias0	-	4	papers
+5	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+6	'authorname0'	-	4	papers
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+8	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+9	WRITESalias0.PAPERID	-	4	papers
+10	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+11	WRITESalias0.AUTHORID	-	4	papers
+12	WRITESalias0.PAPERID	-	4	papers
+who wrote the most papers on keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	4	papers
+1	PAPERalias0.PAPERID	-	1	wrote
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	6	keyphrasename0
+4	PAPERalias0	-	6	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+6	WRITESalias0	-	4	papers
+7	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+8	'authorname0'	-	4	papers
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+10	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+11	PAPERalias0.PAPERID	-	1	wrote
+12	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+13	WRITESalias0.AUTHORID	-	4	papers
+14	AUTHORalias0.AUTHORID	-	4	papers
+15	WRITESalias0.PAPERID	-	4	papers
+16	PAPERalias0.PAPERID	-	1	wrote
+17	AUTHORalias0.AUTHORID	-	4	papers
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+Who are the authors with the most published papers in keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	0	Who
+1	WRITESalias0.AUTHORID	-	8	papers
+2	KEYPHRASEalias0	-	10	keyphrasename0
+3	PAPERalias0	-	10	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	10	keyphrasename0
+5	WRITESalias0	-	8	papers
+6	KEYPHRASEalias0.KEYPHRASENAME	-	10	keyphrasename0
+7	'authorname0'	-	8	papers
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	9	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	10	keyphrasename0
+10	PAPERalias0.PAPERID	-	0	Who
+11	PAPERKEYPHRASEalias0.PAPERID	-	10	keyphrasename0
+12	WRITESalias0.PAPERID	-	4	with
+13	PAPERalias0.PAPERID	-	0	Who
+14	WRITESalias0.AUTHORID	-	8	papers
+15	PAPERalias0.PAPERID	-	0	Who
+Who are the authors with the most published papers in keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	4	with
+1	WRITESalias0.AUTHORID	-	8	papers
+2	KEYPHRASEalias0	-	10	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	10	keyphrasename0
+4	WRITESalias0	-	8	papers
+5	KEYPHRASEalias0.KEYPHRASENAME	-	10	keyphrasename0
+6	'authorname0'	-	8	papers
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	9	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	10	keyphrasename0
+9	WRITESalias0.PAPERID	-	4	with
+10	PAPERKEYPHRASEalias0.PAPERID	-	10	keyphrasename0
+11	WRITESalias0.AUTHORID	-	8	papers
+12	WRITESalias0.PAPERID	-	4	with
+Who are the authors with the most published papers in keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	8	papers
+1	PAPERalias0.PAPERID	-	0	Who
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	10	keyphrasename0
+4	PAPERalias0	-	10	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	10	keyphrasename0
+6	WRITESalias0	-	8	papers
+7	KEYPHRASEalias0.KEYPHRASENAME	-	10	keyphrasename0
+8	'authorname0'	-	8	papers
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	9	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	10	keyphrasename0
+11	PAPERalias0.PAPERID	-	0	Who
+12	PAPERKEYPHRASEalias0.PAPERID	-	10	keyphrasename0
+13	WRITESalias0.AUTHORID	-	8	papers
+14	AUTHORalias0.AUTHORID	-	8	papers
+15	WRITESalias0.PAPERID	-	4	with
+16	PAPERalias0.PAPERID	-	0	Who
+17	AUTHORalias0.AUTHORID	-	8	papers
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+top keyphrasename0 author
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	0	top
+1	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+2	KEYPHRASEalias0	-	1	keyphrasename0
+3	PAPERalias0	-	1	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	1	keyphrasename0
+5	WRITESalias0	-	_	NO_ALIGN
+6	KEYPHRASEalias0.KEYPHRASENAME	-	1	keyphrasename0
+7	'authorname0'	-	_	NO_ALIGN
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	1	keyphrasename0
+9	KEYPHRASEalias0.KEYPHRASEID	-	1	keyphrasename0
+10	PAPERalias0.PAPERID	-	0	top
+11	PAPERKEYPHRASEalias0.PAPERID	-	1	keyphrasename0
+12	WRITESalias0.PAPERID	-	_	NO_ALIGN
+13	PAPERalias0.PAPERID	-	0	top
+14	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+15	PAPERalias0.PAPERID	-	0	top
+top keyphrasename0 author
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	_	NO_ALIGN
+1	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+2	KEYPHRASEalias0	-	1	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	1	keyphrasename0
+4	WRITESalias0	-	_	NO_ALIGN
+5	KEYPHRASEalias0.KEYPHRASENAME	-	1	keyphrasename0
+6	'authorname0'	-	_	NO_ALIGN
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	1	keyphrasename0
+8	KEYPHRASEalias0.KEYPHRASEID	-	1	keyphrasename0
+9	WRITESalias0.PAPERID	-	_	NO_ALIGN
+10	PAPERKEYPHRASEalias0.PAPERID	-	1	keyphrasename0
+11	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+12	WRITESalias0.PAPERID	-	_	NO_ALIGN
+top keyphrasename0 author
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+1	PAPERalias0.PAPERID	-	0	top
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	1	keyphrasename0
+4	PAPERalias0	-	1	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	1	keyphrasename0
+6	WRITESalias0	-	_	NO_ALIGN
+7	KEYPHRASEalias0.KEYPHRASENAME	-	1	keyphrasename0
+8	'authorname0'	-	_	NO_ALIGN
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	1	keyphrasename0
+10	KEYPHRASEalias0.KEYPHRASEID	-	1	keyphrasename0
+11	PAPERalias0.PAPERID	-	0	top
+12	PAPERKEYPHRASEalias0.PAPERID	-	1	keyphrasename0
+13	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+14	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+15	WRITESalias0.PAPERID	-	_	NO_ALIGN
+16	PAPERalias0.PAPERID	-	0	top
+17	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+top author in keyphrasename0
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	0	top
+1	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+2	KEYPHRASEalias0	-	3	keyphrasename0
+3	PAPERalias0	-	3	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	3	keyphrasename0
+5	WRITESalias0	-	_	NO_ALIGN
+6	KEYPHRASEalias0.KEYPHRASENAME	-	3	keyphrasename0
+7	'authorname0'	-	_	NO_ALIGN
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	2	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	3	keyphrasename0
+10	PAPERalias0.PAPERID	-	0	top
+11	PAPERKEYPHRASEalias0.PAPERID	-	3	keyphrasename0
+12	WRITESalias0.PAPERID	-	_	NO_ALIGN
+13	PAPERalias0.PAPERID	-	0	top
+14	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+15	PAPERalias0.PAPERID	-	0	top
+top author in keyphrasename0
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	_	NO_ALIGN
+1	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+2	KEYPHRASEalias0	-	3	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	3	keyphrasename0
+4	WRITESalias0	-	_	NO_ALIGN
+5	KEYPHRASEalias0.KEYPHRASENAME	-	3	keyphrasename0
+6	'authorname0'	-	_	NO_ALIGN
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	2	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	3	keyphrasename0
+9	WRITESalias0.PAPERID	-	_	NO_ALIGN
+10	PAPERKEYPHRASEalias0.PAPERID	-	3	keyphrasename0
+11	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+12	WRITESalias0.PAPERID	-	_	NO_ALIGN
+top author in keyphrasename0
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+1	PAPERalias0.PAPERID	-	0	top
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	3	keyphrasename0
+4	PAPERalias0	-	3	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	3	keyphrasename0
+6	WRITESalias0	-	_	NO_ALIGN
+7	KEYPHRASEalias0.KEYPHRASENAME	-	3	keyphrasename0
+8	'authorname0'	-	_	NO_ALIGN
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	2	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	3	keyphrasename0
+11	PAPERalias0.PAPERID	-	0	top
+12	PAPERKEYPHRASEalias0.PAPERID	-	3	keyphrasename0
+13	WRITESalias0.AUTHORID	-	_	NO_ALIGN
+14	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+15	WRITESalias0.PAPERID	-	_	NO_ALIGN
+16	PAPERalias0.PAPERID	-	0	top
+17	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who published the most in keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	1	published
+1	WRITESalias0.AUTHORID	-	6	?
+2	KEYPHRASEalias0	-	5	keyphrasename0
+3	PAPERalias0	-	5	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	5	keyphrasename0
+5	WRITESalias0	-	_	NO_ALIGN
+6	KEYPHRASEalias0.KEYPHRASENAME	-	5	keyphrasename0
+7	'authorname0'	-	_	NO_ALIGN
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	4	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+10	PAPERalias0.PAPERID	-	1	published
+11	PAPERKEYPHRASEalias0.PAPERID	-	5	keyphrasename0
+12	WRITESalias0.PAPERID	-	6	?
+13	PAPERalias0.PAPERID	-	1	published
+14	WRITESalias0.AUTHORID	-	6	?
+15	PAPERalias0.PAPERID	-	1	published
+who published the most in keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	6	?
+1	WRITESalias0.AUTHORID	-	6	?
+2	KEYPHRASEalias0	-	5	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	5	keyphrasename0
+4	WRITESalias0	-	_	NO_ALIGN
+5	KEYPHRASEalias0.KEYPHRASENAME	-	5	keyphrasename0
+6	'authorname0'	-	_	NO_ALIGN
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	4	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+9	WRITESalias0.PAPERID	-	6	?
+10	PAPERKEYPHRASEalias0.PAPERID	-	5	keyphrasename0
+11	WRITESalias0.AUTHORID	-	6	?
+12	WRITESalias0.PAPERID	-	6	?
+who published the most in keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+1	PAPERalias0.PAPERID	-	1	published
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	5	keyphrasename0
+4	PAPERalias0	-	5	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	5	keyphrasename0
+6	WRITESalias0	-	_	NO_ALIGN
+7	KEYPHRASEalias0.KEYPHRASENAME	-	5	keyphrasename0
+8	'authorname0'	-	_	NO_ALIGN
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	4	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	5	keyphrasename0
+11	PAPERalias0.PAPERID	-	1	published
+12	PAPERKEYPHRASEalias0.PAPERID	-	5	keyphrasename0
+13	WRITESalias0.AUTHORID	-	6	?
+14	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+15	WRITESalias0.PAPERID	-	6	?
+16	PAPERalias0.PAPERID	-	1	published
+17	AUTHORalias0.AUTHORID	-	_	NO_ALIGN
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN
+who published the most papers in keyphrasename0 ?
+PAPERalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.PAPERID PAPERalias0.PAPERID WRITESalias0.AUTHORID PAPERalias0.PAPERID
+0	PAPERalias0.PAPERID	-	1	published
+1	WRITESalias0.AUTHORID	-	4	papers
+2	KEYPHRASEalias0	-	6	keyphrasename0
+3	PAPERalias0	-	6	keyphrasename0
+4	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+5	WRITESalias0	-	4	papers
+6	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+7	'authorname0'	-	4	papers
+8	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	in
+9	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+10	PAPERalias0.PAPERID	-	1	published
+11	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+12	WRITESalias0.PAPERID	-	4	papers
+13	PAPERalias0.PAPERID	-	1	published
+14	WRITESalias0.AUTHORID	-	4	papers
+15	PAPERalias0.PAPERID	-	1	published
+who published the most papers in keyphrasename0 ?
+WRITESalias0.PAPERID WRITESalias0.AUTHORID KEYPHRASEalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID WRITESalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID WRITESalias0.PAPERID
+0	WRITESalias0.PAPERID	-	4	papers
+1	WRITESalias0.AUTHORID	-	4	papers
+2	KEYPHRASEalias0	-	6	keyphrasename0
+3	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+4	WRITESalias0	-	4	papers
+5	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+6	'authorname0'	-	4	papers
+7	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	in
+8	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+9	WRITESalias0.PAPERID	-	4	papers
+10	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+11	WRITESalias0.AUTHORID	-	4	papers
+12	WRITESalias0.PAPERID	-	4	papers
+who published the most papers in keyphrasename0 ?
+AUTHORalias0.AUTHORID PAPERalias0.PAPERID AUTHORalias0 KEYPHRASEalias0 PAPERalias0 PAPERKEYPHRASEalias0 WRITESalias0 KEYPHRASEalias0.KEYPHRASENAME 'authorname0' PAPERKEYPHRASEalias0.KEYPHRASEID KEYPHRASEalias0.KEYPHRASEID PAPERalias0.PAPERID PAPERKEYPHRASEalias0.PAPERID WRITESalias0.AUTHORID AUTHORalias0.AUTHORID WRITESalias0.PAPERID PAPERalias0.PAPERID AUTHORalias0.AUTHORID AUTHORalias0.AUTHORNAME
+0	AUTHORalias0.AUTHORID	-	4	papers
+1	PAPERalias0.PAPERID	-	1	published
+2	AUTHORalias0	-	_	NO_ALIGN
+3	KEYPHRASEalias0	-	6	keyphrasename0
+4	PAPERalias0	-	6	keyphrasename0
+5	PAPERKEYPHRASEalias0	-	6	keyphrasename0
+6	WRITESalias0	-	4	papers
+7	KEYPHRASEalias0.KEYPHRASENAME	-	6	keyphrasename0
+8	'authorname0'	-	4	papers
+9	PAPERKEYPHRASEalias0.KEYPHRASEID	-	5	in
+10	KEYPHRASEalias0.KEYPHRASEID	-	6	keyphrasename0
+11	PAPERalias0.PAPERID	-	1	published
+12	PAPERKEYPHRASEalias0.PAPERID	-	6	keyphrasename0
+13	WRITESalias0.AUTHORID	-	4	papers
+14	AUTHORalias0.AUTHORID	-	4	papers
+15	WRITESalias0.PAPERID	-	4	papers
+16	PAPERalias0.PAPERID	-	1	published
+17	AUTHORalias0.AUTHORID	-	4	papers
+18	AUTHORalias0.AUTHORNAME	-	_	NO_ALIGN

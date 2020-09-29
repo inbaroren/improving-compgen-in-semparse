@@ -1,0 +1,2665 @@
+[
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "i'd like to see flights from city_name0 to city_name1 that arrive before arrival_time0 and i'd like to see flights from city_name2 to city_name1 that arrive before arrival_time0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "ATLANTA",
+                    "city_name2": "DENVER",
+                    "arrival_time0": "1200"
+                }
+            },
+            {
+                "text": "i'd like to see flights from city_name0 to city_name1 that arrive before arrival_time0 and i'd like to see flights from city_name2 to city_name1 that arrive before arrival_time0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "ATLANTA",
+                    "city_name2": "DENVER",
+                    "arrival_time0": "1200"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FLIGHT AS FLIGHTalias0 WHERE ( ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) OR ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name2\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) ) AND FLIGHTalias0.ARRIVAL_TIME < arrival_time0 ;"
+        ],
+        "variables": [
+            {
+                "example": "BALTIMORE",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "ATLANTA",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "DENVER",
+                "location": "unk",
+                "name": "city_name2",
+                "type": "city_name"
+            },
+            {
+                "example": "1200",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what is the cheapest one way fare between city_name0 and city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "OAKLAND",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "could you please find me the cheapest one way fare from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "all right what i'd like to do is find the cheapest one way fare from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "DENVER",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what is the cheapest fare one way between city_name0 and city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "DENVER",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "find the cheapest one way fare from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "OAKLAND",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what is the cheapest one way fare from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "BALTIMORE",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "find the cheapest one way fare from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "SAN FRANCISCO",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "i'd like the cheapest one way fare from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "SAN FRANCISCO",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what 's the cheapest one way flight from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "OAKLAND",
+                    "city_name1": "WASHINGTON",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "show me the cheapest one way tickets from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "DALLAS",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "i'd like to book the cheapest one way flight from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "PITTSBURGH",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what 's the cheapest one way ticket from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "ATLANTA",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what 's the cheapest one way flight from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "OAKLAND",
+                    "city_name1": "BOSTON",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "i'm looking for a flight traveling from city_name0 to city_name1 one way and the cheapest way possible",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "DENVER",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what are the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "DENVER",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what 's the cheapest one way flight from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "PITTSBURGH",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what is the cheapest flight from city_name0 to city_name1 one way",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "PITTSBURGH",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what is the cheapest flight from city_name0 to city_name1 one way",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "ATLANTA",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what is the cheapest one way flight from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "BOSTON",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what are the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "ATLANTA",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what are the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "ATLANTA",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "show me the cheapest one way flight from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "PITTSBURGH",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what are the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "ATLANTA",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "what are the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "dev",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "PITTSBURGH",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "can you list flights from city_name0 to city_name1 with the lowest one way fares",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "WASHINGTON",
+                    "city_name1": "TORONTO",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "i would like the flight from city_name0 to city_name1 that has the cheapest one way fare",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "DENVER",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "show me the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "test",
+                "variables": {
+                    "city_name0": "MONTREAL",
+                    "city_name1": "ORLANDO",
+                    "round_trip_required0": "NO"
+                }
+            },
+            {
+                "text": "show me the cheapest one way flights from city_name0 to city_name1",
+                "question-split": "test",
+                "variables": {
+                    "city_name0": "ORLANDO",
+                    "city_name1": "MONTREAL",
+                    "round_trip_required0": "NO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , CITY AS CITYalias2 , CITY AS CITYalias3 , FARE AS FAREalias1 , FLIGHT AS FLIGHTalias1 , FLIGHT_FARE AS FLIGHT_FAREalias1 WHERE CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name1\" AND FAREalias1.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FLIGHT_FAREalias1.FARE_ID = FAREalias1.FARE_ID AND FLIGHTalias1.FLIGHT_ID = FLIGHT_FAREalias1.FLIGHT_ID AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE ) AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ;",
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , CITY AS CITYalias2 , CITY AS CITYalias3 , FARE AS FAREalias1 , FLIGHT AS FLIGHTalias1 , FLIGHT_FARE AS FLIGHT_FAREalias1 WHERE CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name1\" AND FAREalias1.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FLIGHT_FAREalias1.FARE_ID = FAREalias1.FARE_ID AND FLIGHTalias1.FLIGHT_ID = FLIGHT_FAREalias1.FLIGHT_ID AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE ) AND FAREalias0.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ;",
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , CITY AS CITYalias2 , CITY AS CITYalias3 , FARE AS FAREalias1 , FLIGHT AS FLIGHTalias1 , FLIGHT_FARE AS FLIGHT_FAREalias1 WHERE CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name1\" AND FAREalias1.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FLIGHT_FAREalias1.FARE_ID = FAREalias1.FARE_ID AND FLIGHTalias1.FLIGHT_ID = FLIGHT_FAREalias1.FLIGHT_ID AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE ) AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ;",
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , CITY AS CITYalias3 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT AS FLIGHTalias1 , FLIGHT_FARE AS FLIGHT_FAREalias0 , FLIGHT_FARE AS FLIGHT_FAREalias1 WHERE ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name1\" AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias4 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias5 , CITY AS CITYalias4 , CITY AS CITYalias5 , FARE AS FAREalias1 , FLIGHT AS FLIGHTalias2 , FLIGHT_FARE AS FLIGHT_FAREalias2 WHERE CITYalias4.CITY_CODE = AIRPORT_SERVICEalias4.CITY_CODE AND CITYalias4.CITY_NAME = \"city_name0\" AND CITYalias5.CITY_CODE = AIRPORT_SERVICEalias5.CITY_CODE AND CITYalias5.CITY_NAME = \"city_name1\" AND FAREalias1.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FLIGHT_FAREalias2.FARE_ID = FAREalias1.FARE_ID AND FLIGHTalias2.FLIGHT_ID = FLIGHT_FAREalias2.FLIGHT_ID AND FLIGHTalias2.FROM_AIRPORT = AIRPORT_SERVICEalias4.AIRPORT_CODE AND FLIGHTalias2.TO_AIRPORT = AIRPORT_SERVICEalias5.AIRPORT_CODE ) AND FAREalias0.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHT_FAREalias1.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE AND FLIGHTalias1.FLIGHT_ID = FLIGHT_FAREalias1.FLIGHT_ID AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;",
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM FLIGHT AS FLIGHTalias0 WHERE ( ( FLIGHTalias0.FROM_AIRPORT IN ( SELECT AIRPORT_SERVICEalias2.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 WHERE AIRPORT_SERVICEalias2.CITY_CODE IN ( SELECT CITYalias2.CITY_CODE FROM CITY AS CITYalias2 WHERE CITYalias2.CITY_NAME = \"city_name0\" ) ) AND FLIGHTalias0.TO_AIRPORT IN ( SELECT AIRPORT_SERVICEalias3.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 WHERE AIRPORT_SERVICEalias3.CITY_CODE IN ( SELECT CITYalias3.CITY_CODE FROM CITY AS CITYalias3 WHERE CITYalias3.CITY_NAME = \"city_name1\" ) ) ) AND FLIGHTalias0.FLIGHT_ID IN ( SELECT FLIGHT_FAREalias0.FLIGHT_ID FROM FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE FLIGHT_FAREalias0.FARE_ID IN ( SELECT FAREalias0.FARE_ID FROM FARE AS FAREalias0 WHERE FAREalias0.ROUND_TRIP_REQUIRED = \"round_trip_required0\" AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM FARE AS FAREalias1 WHERE FAREalias1.FARE_ID IN ( SELECT FLIGHT_FAREalias1.FARE_ID FROM FLIGHT_FARE AS FLIGHT_FAREalias1 WHERE FLIGHT_FAREalias1.FLIGHT_ID IN ( SELECT FLIGHTalias1.FLIGHT_ID FROM FLIGHT AS FLIGHTalias1 WHERE ( FLIGHTalias1.FROM_AIRPORT IN ( SELECT AIRPORT_SERVICEalias0.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 WHERE AIRPORT_SERVICEalias0.CITY_CODE IN ( SELECT CITYalias0.CITY_CODE FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name0\" ) ) AND FLIGHTalias1.TO_AIRPORT IN ( SELECT AIRPORT_SERVICEalias1.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 WHERE AIRPORT_SERVICEalias1.CITY_CODE IN ( SELECT CITYalias1.CITY_CODE FROM CITY AS CITYalias1 WHERE CITYalias1.CITY_NAME = \"city_name1\" ) ) ) ) ) AND FAREalias1.ROUND_TRIP_REQUIRED = \"round_trip_required0\" ) ) ) ) ;"
+        ],
+        "variables": [
+            {
+                "example": "BOSTON",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "OAKLAND",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "NO",
+                "location": "unk",
+                "name": "round_trip_required0",
+                "type": "round_trip_required"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "list all the flights from city_name1 to city_name0 that return around 7pm",
+                "question-split": "train",
+                "variables": {
+                    "arrival_time0": "1930",
+                    "arrival_time1": "1830",
+                    "city_name0": "ATLANTA",
+                    "city_name1": "CHARLOTTE",
+                    "state_name0": "NORTH CAROLINA"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FLIGHT AS FLIGHTalias0 , STATE AS STATEalias0 WHERE ( ( FLIGHTalias0.ARRIVAL_TIME <= arrival_time0 AND FLIGHTalias0.ARRIVAL_TIME >= arrival_time1 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND STATEalias0.STATE_CODE = CITYalias0.STATE_CODE AND STATEalias0.STATE_NAME = \"state_name0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "1930",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "1830",
+                "location": "unk",
+                "name": "arrival_time1",
+                "type": "arrival_time"
+            },
+            {
+                "example": "ATLANTA",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "CHARLOTTE",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "NORTH CAROLINA",
+                "location": "unk",
+                "name": "state_name0",
+                "type": "state_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "can i take a single airline from city_name2 to city_name0 to city_name1 back to city_name2",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "CHARLOTTE",
+                    "city_name1": "NEWARK",
+                    "city_name2": "LOS ANGELES"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT AIRLINEalias0.AIRLINE_CODE FROM AIRLINE AS AIRLINEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias4 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias5 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , CITY AS CITYalias3 , CITY AS CITYalias4 , CITY AS CITYalias5 , FLIGHT AS FLIGHTalias0 , FLIGHT AS FLIGHTalias1 , FLIGHT AS FLIGHTalias2 WHERE ( CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name1\" AND CITYalias4.CITY_CODE = AIRPORT_SERVICEalias4.CITY_CODE AND CITYalias4.CITY_NAME = \"city_name1\" AND CITYalias5.CITY_CODE = AIRPORT_SERVICEalias5.CITY_CODE AND CITYalias5.CITY_NAME = \"city_name2\" AND FLIGHTalias1.AIRLINE_CODE = AIRLINEalias0.AIRLINE_CODE AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE AND FLIGHTalias2.AIRLINE_CODE = AIRLINEalias0.AIRLINE_CODE AND FLIGHTalias2.FROM_AIRPORT = AIRPORT_SERVICEalias4.AIRPORT_CODE AND FLIGHTalias2.TO_AIRPORT = AIRPORT_SERVICEalias5.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name2\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.AIRLINE_CODE = AIRLINEalias0.AIRLINE_CODE AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "CHARLOTTE",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "NEWARK",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "LOS ANGELES",
+                "location": "unk",
+                "name": "city_name2",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what is the round trip fare on airline_code0 flight_number0 from city_name1 to city_name0 and return",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SAN FRANCISCO",
+                    "city_name1": "DALLAS",
+                    "flight_number0": "1291",
+                    "airline_code0": "CO"
+                }
+            },
+            {
+                "text": "what is the round trip fare on airline_code0 flight_number0 from city_name1 to city_name0 and return",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SAN FRANCISCO",
+                    "city_name1": "DENVER",
+                    "flight_number0": "1291",
+                    "airline_code0": "CO"
+                }
+            },
+            {
+                "text": "airline_code0 flight_number0 city_name1 to city_name0 what is the round trip fare",
+                "question-split": "train",
+                "variables": {
+                    "airline_code0": "US",
+                    "flight_number0": "3724",
+                    "city_name0": "PHILADELPHIA",
+                    "city_name1": "BALTIMORE"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND FLIGHTalias0.FLIGHT_NUMBER = flight_number0 ) AND FAREalias0.ROUND_TRIP_COST IS NOT NULL AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ;",
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( ( FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ) AND FLIGHTalias0.FLIGHT_NUMBER = flight_number0 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FAREalias0.ROUND_TRIP_COST IS NOT NULL AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "DALLAS",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "1291",
+                "location": "unk",
+                "name": "flight_number0",
+                "type": "flight_number"
+            },
+            {
+                "example": "CO",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "where do the flights from city_name0 to city_name1 stop",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BOSTON",
+                    "city_name1": "OAKLAND"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHT_STOPalias0.STOP_AIRPORT FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_STOP AS FLIGHT_STOPalias0 WHERE CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_STOPalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "BOSTON",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "OAKLAND",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me the schedule for airlines leaving city_name1 going to city_name0 for next monday",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "21",
+                    "month_number0": "2",
+                    "year0": "1991",
+                    "city_name0": "SAN FRANCISCO",
+                    "city_name1": "PITTSBURGH"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.ARRIVAL_TIME , FLIGHTalias0.DEPARTURE_TIME FROM AIRLINE AS AIRLINEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT AS FLIGHTalias1 , FLIGHT_LEG AS FLIGHT_LEGalias0 WHERE ( ( DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias1.AIRLINE_CODE = AIRLINEalias0.AIRLINE_CODE AND FLIGHTalias1.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_LEGalias0.LEG_FLIGHT AND FLIGHTalias1.FLIGHT_ID = FLIGHT_LEGalias0.FLIGHT_ID AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "21",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "2",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "PITTSBURGH",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me all the airline_code0 flights leaving city_name0 between departure_time1 and departure_time0 in the afternoon",
+                "question-split": "train",
+                "variables": {
+                    "departure_time0": "1600",
+                    "departure_time1": "1200",
+                    "city_name0": "PITTSBURGH",
+                    "airline_code0": "DL"
+                }
+            },
+            {
+                "text": "show me all the airline_code0 flights leaving city_name0 between departure_time1 and departure_time0 in the afternoon",
+                "question-split": "train",
+                "variables": {
+                    "departure_time0": "1600",
+                    "departure_time1": "1200",
+                    "city_name0": "PITTSBURGH",
+                    "airline_code0": "US"
+                }
+            },
+            {
+                "text": "airline_code0 flights departing from city_name0 around 1pm",
+                "question-split": "dev",
+                "variables": {
+                    "departure_time0": "1330",
+                    "departure_time1": "1230",
+                    "city_name0": "CHARLOTTE",
+                    "airline_code0": "US"
+                }
+            },
+            {
+                "text": "show me all the airline_code0 flights leaving city_name0 between departure_time1 and departure_time0 in the afternoon",
+                "question-split": "dev",
+                "variables": {
+                    "departure_time0": "1600",
+                    "departure_time1": "1200",
+                    "city_name0": "PITTSBURGH",
+                    "airline_code0": "EA"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , CITY AS CITYalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( FLIGHTalias0.DEPARTURE_TIME <= departure_time0 AND FLIGHTalias0.DEPARTURE_TIME >= departure_time1 ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "1600",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "1200",
+                "location": "unk",
+                "name": "departure_time1",
+                "type": "departure_time"
+            },
+            {
+                "example": "PITTSBURGH",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "DL",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me all flights both direct and connecting to either city_name0 or city_name1 from city_name2 that arrive before arrival_time0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SAN FRANCISCO",
+                    "city_name1": "OAKLAND",
+                    "arrival_time0": "1400",
+                    "city_name2": "BOSTON"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" ) OR ( FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name1\" ) ) AND FLIGHTalias0.ARRIVAL_TIME < arrival_time0 ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name2\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "OAKLAND",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "1400",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "BOSTON",
+                "location": "unk",
+                "name": "city_name2",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me airline_code0 flights leaving city_name0 on saturday morning",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "CHICAGO",
+                    "day_number0": "26",
+                    "month_number0": "7",
+                    "year0": "1991",
+                    "airline_code0": "CO",
+                    "departure_time0": "0",
+                    "departure_time1": "1200"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , CITY AS CITYalias0 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ) AND FLIGHTalias0.DEPARTURE_TIME BETWEEN departure_time0 AND departure_time1 ;"
+        ],
+        "variables": [
+            {
+                "example": "CHICAGO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "26",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "7",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "CO",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            },
+            {
+                "example": "0",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "1200",
+                "location": "unk",
+                "name": "departure_time1",
+                "type": "departure_time"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what night flight do you have from city_name1 to city_name0 on airline_code0 on the evening of month_number0 day_number0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "day_number0": "27",
+                    "month_number0": "8",
+                    "year0": "1991",
+                    "city_name1": "SAN FRANCISCO",
+                    "departure_time0": "601",
+                    "departure_time1": "1759",
+                    "departure_time2": "1800",
+                    "departure_time3": "2200",
+                    "airline_code0": "UA"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FLIGHTalias0.DEPARTURE_TIME NOT BETWEEN departure_time0 AND departure_time1 ) AND FLIGHTalias0.DEPARTURE_TIME BETWEEN departure_time2 AND departure_time3 ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "DENVER",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "27",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "8",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "601",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "1759",
+                "location": "unk",
+                "name": "departure_time1",
+                "type": "departure_time"
+            },
+            {
+                "example": "1800",
+                "location": "unk",
+                "name": "departure_time2",
+                "type": "departure_time"
+            },
+            {
+                "example": "2200",
+                "location": "unk",
+                "name": "departure_time3",
+                "type": "departure_time"
+            },
+            {
+                "example": "UA",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what class_type0 class flights are available from city_name1 to city_name0 on month_number0 day_number0 year0",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "25",
+                    "month_number0": "7",
+                    "year0": "1991",
+                    "class_type0": "FIRST",
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "DENVER"
+                }
+            },
+            {
+                "text": "show me class_type0 class flights from city_name1 to city_name0 on friday",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "25",
+                    "month_number0": "6",
+                    "year0": "1991",
+                    "class_type0": "FIRST",
+                    "city_name0": "SAN FRANCISCO",
+                    "city_name1": "PITTSBURGH"
+                }
+            },
+            {
+                "text": "i'd like a class_type0 class flight from city_name1 to city_name0 on month_number0 day_number0",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "1",
+                    "month_number0": "1",
+                    "year0": "1991",
+                    "class_type0": "FIRST",
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "DENVER"
+                }
+            },
+            {
+                "text": "show me flights with class_type0 class reservations from city_name1 to city_name0 for monday",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "21",
+                    "month_number0": "2",
+                    "year0": "1991",
+                    "class_type0": "FIRST",
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "SAN FRANCISCO"
+                }
+            },
+            {
+                "text": "what class_type0 class flights are available on month_number0 day_number0 year0 from city_name1 to city_name0",
+                "question-split": "dev",
+                "variables": {
+                    "day_number0": "25",
+                    "month_number0": "7",
+                    "year0": "1991",
+                    "class_type0": "FIRST",
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "DENVER"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DATE_DAY AS DATE_DAYalias1 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FARE_BASIS AS FARE_BASISalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DATE_DAYalias1.DAY_NUMBER = day_number0 AND DATE_DAYalias1.MONTH_NUMBER = month_number0 AND DATE_DAYalias1.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND DAYSalias1.DAY_NAME = DATE_DAYalias1.DAY_NAME AND FARE_BASISalias0.CLASS_TYPE = \"class_type0\" AND FARE_BASISalias1.BASIS_DAYS = DAYSalias1.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias1.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "25",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "7",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "FIRST",
+                "location": "unk",
+                "name": "class_type0",
+                "type": "class_type"
+            },
+            {
+                "example": "BALTIMORE",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "DENVER",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "yes on the airline_code0 flight leaving city_name1 at departure_time0 arriving city_name0 arrival_time0 what type of equipment is used on that flight",
+                "question-split": "train",
+                "variables": {
+                    "arrival_time0": "2358",
+                    "departure_time0": "1425",
+                    "city_name0": "PHILADELPHIA",
+                    "city_name1": "SAN FRANCISCO",
+                    "airline_code0": "DL"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT AIRCRAFTalias0.AIRCRAFT_CODE FROM AIRCRAFT AS AIRCRAFTalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , EQUIPMENT_SEQUENCE AS EQUIPMENT_SEQUENCEalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( FLIGHTalias0.ARRIVAL_TIME = arrival_time0 AND FLIGHTalias0.DEPARTURE_TIME = departure_time0 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND EQUIPMENT_SEQUENCEalias0.AIRCRAFT_CODE = AIRCRAFTalias0.AIRCRAFT_CODE AND FLIGHTalias0.AIRCRAFT_CODE_SEQUENCE = EQUIPMENT_SEQUENCEalias0.AIRCRAFT_CODE_SEQUENCE AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "2358",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "1425",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "PHILADELPHIA",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "DL",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "where does flight airline_code0 flight_number0 from city_name1 to city_name0 stop",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "OAKLAND",
+                    "flight_number0": "281",
+                    "city_name1": "BOSTON",
+                    "airline_code0": "UA"
+                }
+            },
+            {
+                "text": "i would like to know if i fly on airline_code0 flight number flight_number0 from city_name1 to city_name0 if i will stop enroute at another city",
+                "question-split": "dev",
+                "variables": {
+                    "city_name0": "OAKLAND",
+                    "flight_number0": "813",
+                    "city_name1": "BOSTON",
+                    "airline_code0": "AA"
+                }
+            },
+            {
+                "text": "what stops does airline_code0 flight_number0 make from city_name1 to city_name0",
+                "question-split": "train",
+                "variables": {
+                    "airline_code0": "DL",
+                    "flight_number0": "838",
+                    "city_name0": "ATLANTA",
+                    "city_name1": "SAN FRANCISCO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHT_STOPalias0.STOP_AIRPORT FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_STOP AS FLIGHT_STOPalias0 WHERE ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FLIGHT_NUMBER = flight_number0 AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_STOPalias0.FLIGHT_ID ;",
+            "SELECT DISTINCT FLIGHT_STOPalias0.FLIGHT_ID , FLIGHT_STOPalias0.STOP_NUMBER FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_STOP AS FLIGHT_STOPalias0 WHERE ( ( FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias0.FLIGHT_NUMBER = flight_number0 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_STOPalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "OAKLAND",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "281",
+                "location": "unk",
+                "name": "flight_number0",
+                "type": "flight_number"
+            },
+            {
+                "example": "BOSTON",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "UA",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "i would like the least expensive airfare flight on sunday to city_name0 from city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "day_number0": "27",
+                    "month_number0": "8",
+                    "year0": "1991",
+                    "city_name1": "SAN FRANCISCO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , CITY AS CITYalias3 , DATE_DAY AS DATE_DAYalias0 , DATE_DAY AS DATE_DAYalias1 , DATE_DAY AS DATE_DAYalias2 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , DAYS AS DAYSalias2 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT AS FLIGHTalias1 , FLIGHT_FARE AS FLIGHT_FAREalias0 , FLIGHT_FARE AS FLIGHT_FAREalias1 WHERE ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND ( ( CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name0\" AND DATE_DAYalias2.DAY_NUMBER = day_number0 AND DATE_DAYalias2.MONTH_NUMBER = month_number0 AND DATE_DAYalias2.YEAR = year0 AND DAYSalias2.DAY_NAME = DATE_DAYalias2.DAY_NAME AND FLIGHTalias1.FLIGHT_DAYS = DAYSalias2.DAYS_CODE AND FLIGHTalias1.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE ) AND CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name1\" AND DATE_DAYalias1.DAY_NUMBER = day_number0 AND DATE_DAYalias1.MONTH_NUMBER = month_number0 AND DATE_DAYalias1.YEAR = year0 AND DAYSalias1.DAY_NAME = DATE_DAYalias1.DAY_NAME AND FARE_BASISalias0.BASIS_DAYS = DAYSalias1.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FLIGHT_FAREalias1.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias1.FLIGHT_ID = FLIGHT_FAREalias1.FLIGHT_ID AND FLIGHTalias1.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE ) AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias4 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias5 , CITY AS CITYalias4 , CITY AS CITYalias5 , DATE_DAY AS DATE_DAYalias3 , DATE_DAY AS DATE_DAYalias4 , DAYS AS DAYSalias3 , DAYS AS DAYSalias4 , FARE AS FAREalias1 , FARE_BASIS AS FARE_BASISalias1 , FLIGHT AS FLIGHTalias2 , FLIGHT_FARE AS FLIGHT_FAREalias2 WHERE ( CITYalias5.CITY_CODE = AIRPORT_SERVICEalias5.CITY_CODE AND CITYalias5.CITY_NAME = \"city_name0\" AND DATE_DAYalias4.DAY_NUMBER = day_number0 AND DATE_DAYalias4.MONTH_NUMBER = month_number0 AND DATE_DAYalias4.YEAR = year0 AND DAYSalias4.DAY_NAME = DATE_DAYalias4.DAY_NAME AND FLIGHTalias2.FLIGHT_DAYS = DAYSalias4.DAYS_CODE AND FLIGHTalias2.TO_AIRPORT = AIRPORT_SERVICEalias5.AIRPORT_CODE ) AND CITYalias4.CITY_CODE = AIRPORT_SERVICEalias4.CITY_CODE AND CITYalias4.CITY_NAME = \"city_name1\" AND DATE_DAYalias3.DAY_NUMBER = day_number0 AND DATE_DAYalias3.MONTH_NUMBER = month_number0 AND DATE_DAYalias3.YEAR = year0 AND DAYSalias3.DAY_NAME = DATE_DAYalias3.DAY_NAME AND FARE_BASISalias1.BASIS_DAYS = DAYSalias3.DAYS_CODE AND FAREalias1.FARE_BASIS_CODE = FARE_BASISalias1.FARE_BASIS_CODE AND FLIGHT_FAREalias2.FARE_ID = FAREalias1.FARE_ID AND FLIGHTalias2.FLIGHT_ID = FLIGHT_FAREalias2.FLIGHT_ID AND FLIGHTalias2.FROM_AIRPORT = AIRPORT_SERVICEalias4.AIRPORT_CODE ) AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ;"
+        ],
+        "variables": [
+            {
+                "example": "PITTSBURGH",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "27",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "8",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "round trip fares from city_name0 to city_name1 less than round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip fares from city_name0 to city_name1 under round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip air fares from city_name0 to city_name1 less than round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip fares from city_name0 to city_name1 less than round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip air fares from city_name0 to city_name1 less than round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip fare from city_name0 to city_name1 less than round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip fares from city_name0 to city_name1 under round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "PITTSBURGH",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            },
+            {
+                "text": "round trip fares from city_name0 to city_name1 less than round_trip_cost0 dollars",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "city_name1": "PHILADELPHIA",
+                    "round_trip_cost0": "1000"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FAREalias0.ROUND_TRIP_COST < round_trip_cost0 AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND FAREalias0.ROUND_TRIP_COST IS NOT NULL ;"
+        ],
+        "variables": [
+            {
+                "example": "DENVER",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "PHILADELPHIA",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "1000",
+                "location": "unk",
+                "name": "round_trip_cost0",
+                "type": "round_trip_cost"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "how many passengers fit on a aircraft_code0",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "D9S"
+                }
+            },
+            {
+                "text": "what type of plane is an aircraft_code0",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is the abbreviation aircraft_code0",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "D10"
+                }
+            },
+            {
+                "text": "how many people fit on a aircraft_code0",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "73S"
+                }
+            },
+            {
+                "text": "how many seats in a aircraft_code0",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "100"
+                }
+            },
+            {
+                "text": "what 's the capacity of a aircraft_code0",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "733"
+                }
+            },
+            {
+                "text": "how many people fit on a aircraft_code0 airplane",
+                "question-split": "train",
+                "variables": {
+                    "aircraft_code0": "72S"
+                }
+            },
+            {
+                "text": "how many seats in a aircraft_code0",
+                "question-split": "dev",
+                "variables": {
+                    "aircraft_code0": "734"
+                }
+            },
+            {
+                "text": "what type of airplane is an aircraft_code0",
+                "question-split": "dev",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is a aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "D9S"
+                }
+            },
+            {
+                "text": "what type of plane is a aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "D9S"
+                }
+            },
+            {
+                "text": "what is a aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "D9S"
+                }
+            },
+            {
+                "text": "what is the seating capacity on the aircraft aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "733"
+                }
+            },
+            {
+                "text": "what is the seating capacity of a aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "72S"
+                }
+            },
+            {
+                "text": "what is the seating capacity of the aircraft aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "72S"
+                }
+            },
+            {
+                "text": "what is the seating capacity of the aircraft aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is the seating capacity of the type of aircraft aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is the seating capacity of an aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is the capacity of the aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "73S"
+                }
+            },
+            {
+                "text": "what is aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "73S"
+                }
+            },
+            {
+                "text": "what is seating capacity on the aircraft aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "73S"
+                }
+            },
+            {
+                "text": "what is the seating capacity of a aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "757"
+                }
+            },
+            {
+                "text": "how many people will a aircraft_code0 hold",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "757"
+                }
+            },
+            {
+                "text": "how many passengers can fly on a aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "757"
+                }
+            },
+            {
+                "text": "what is the seating capacity of the aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "757"
+                }
+            },
+            {
+                "text": "tell me about the aircraft_code0 aircraft",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "tell me about the aircraft_code0 aircraft",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "tell me about the type of aircraft called an aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is the seating capacity of the aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "733"
+                }
+            },
+            {
+                "text": "what is the seating capacity of the aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            },
+            {
+                "text": "what is the seating capacity on the aircraft aircraft_code0",
+                "question-split": "test",
+                "variables": {
+                    "aircraft_code0": "M80"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT AIRCRAFTalias0.AIRCRAFT_CODE FROM AIRCRAFT AS AIRCRAFTalias0 WHERE AIRCRAFTalias0.AIRCRAFT_CODE = \"aircraft_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "D9S",
+                "location": "unk",
+                "name": "aircraft_code0",
+                "type": "aircraft_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me the costs and times for flights from city_name0 to city_name1",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SAN FRANCISCO",
+                    "city_name1": "ATLANTA"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID , FLIGHTalias0.ARRIVAL_TIME , FLIGHTalias0.DEPARTURE_TIME FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "ATLANTA",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "i want to fly from city_name1 to city_name0 next wednesday arriving in the evening and returning the next day",
+                "question-split": "train",
+                "variables": {
+                    "arrival_time0": "2200",
+                    "arrival_time1": "1800",
+                    "arrival_time2": "41",
+                    "time_elapsed0": "60",
+                    "day_number0": "23",
+                    "month_number0": "4",
+                    "year0": "1991",
+                    "city_name0": "CHICAGO",
+                    "city_name1": "KANSAS CITY"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( ( ( FLIGHTalias0.ARRIVAL_TIME <= arrival_time0 AND FLIGHTalias0.ARRIVAL_TIME >= arrival_time1 ) AND NOT ( ( FLIGHTalias0.ARRIVAL_TIME < arrival_time2 OR FLIGHTalias0.TIME_ELAPSED >= time_elapsed0 ) AND FLIGHTalias0.DEPARTURE_TIME > FLIGHTalias0.ARRIVAL_TIME ) ) AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) OR ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) ;"
+        ],
+        "variables": [
+            {
+                "example": "2200",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "1800",
+                "location": "unk",
+                "name": "arrival_time1",
+                "type": "arrival_time"
+            },
+            {
+                "example": "41",
+                "location": "unk",
+                "name": "arrival_time2",
+                "type": "arrival_time"
+            },
+            {
+                "example": "60",
+                "location": "unk",
+                "name": "time_elapsed0",
+                "type": "time_elapsed"
+            },
+            {
+                "example": "23",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "4",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "CHICAGO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "KANSAS CITY",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what airline_code0 flights from city_name1 to city_name0 arrive at city_name0 before arrival_time1 on saturday",
+                "question-split": "train",
+                "variables": {
+                    "arrival_time0": "41",
+                    "time_elapsed0": "60",
+                    "day_number0": "26",
+                    "month_number0": "7",
+                    "year0": "1991",
+                    "arrival_time1": "1800",
+                    "city_name0": "NEW YORK",
+                    "city_name1": "CINCINNATI",
+                    "airline_code0": "DL"
+                }
+            },
+            {
+                "text": "list all flights on airline_code0 leaving city_name1 and arriving at city_name0 on monday before arrival_time1",
+                "question-split": "train",
+                "variables": {
+                    "arrival_time0": "41",
+                    "time_elapsed0": "60",
+                    "day_number0": "21",
+                    "month_number0": "2",
+                    "year0": "1991",
+                    "arrival_time1": "1200",
+                    "city_name0": "CHICAGO",
+                    "city_name1": "DENVER",
+                    "airline_code0": "CO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( ( ( ( ( FLIGHTalias0.ARRIVAL_TIME < arrival_time0 OR FLIGHTalias0.TIME_ELAPSED >= time_elapsed0 ) AND FLIGHTalias0.DEPARTURE_TIME > FLIGHTalias0.ARRIVAL_TIME ) AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) OR ( DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND NOT ( ( FLIGHTalias0.ARRIVAL_TIME < arrival_time0 OR FLIGHTalias0.TIME_ELAPSED >= time_elapsed0 ) AND FLIGHTalias0.DEPARTURE_TIME > FLIGHTalias0.ARRIVAL_TIME ) ) ) AND FLIGHTalias0.ARRIVAL_TIME < arrival_time1 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "41",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "60",
+                "location": "unk",
+                "name": "time_elapsed0",
+                "type": "time_elapsed"
+            },
+            {
+                "example": "26",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "7",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "1800",
+                "location": "unk",
+                "name": "arrival_time1",
+                "type": "arrival_time"
+            },
+            {
+                "example": "NEW YORK",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "CINCINNATI",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "DL",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "i'd like to arrange for two friends to fly into city_name0 next saturday evening one of the people is coming from city_name1 and the other is coming from city_name2",
+                "question-split": "train",
+                "variables": {
+                    "arrival_time0": "41",
+                    "time_elapsed0": "60",
+                    "day_number0": "26",
+                    "month_number0": "7",
+                    "year0": "1991",
+                    "arrival_time1": "2200",
+                    "arrival_time2": "1800",
+                    "city_name0": "LOS ANGELES",
+                    "city_name1": "KANSAS CITY",
+                    "city_name2": "LAS VEGAS"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( ( ( ( FLIGHTalias0.ARRIVAL_TIME < arrival_time0 OR FLIGHTalias0.TIME_ELAPSED >= time_elapsed0 ) AND FLIGHTalias0.DEPARTURE_TIME > FLIGHTalias0.ARRIVAL_TIME ) AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) OR ( DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND NOT ( ( FLIGHTalias0.ARRIVAL_TIME < arrival_time0 OR FLIGHTalias0.TIME_ELAPSED >= time_elapsed0 ) AND FLIGHTalias0.DEPARTURE_TIME > FLIGHTalias0.ARRIVAL_TIME ) ) ) AND ( FLIGHTalias0.ARRIVAL_TIME <= arrival_time1 AND FLIGHTalias0.ARRIVAL_TIME >= arrival_time2 ) ) AND CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE ) AND ( ( FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" ) OR ( FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name2\" ) ) ;"
+        ],
+        "variables": [
+            {
+                "example": "41",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "60",
+                "location": "unk",
+                "name": "time_elapsed0",
+                "type": "time_elapsed"
+            },
+            {
+                "example": "26",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "7",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "2200",
+                "location": "unk",
+                "name": "arrival_time1",
+                "type": "arrival_time"
+            },
+            {
+                "example": "1800",
+                "location": "unk",
+                "name": "arrival_time2",
+                "type": "arrival_time"
+            },
+            {
+                "example": "LOS ANGELES",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "KANSAS CITY",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "LAS VEGAS",
+                "location": "unk",
+                "name": "city_name2",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me the flights that leave on day_name0 mornings from city_name0 to city_name1 and include whether meals are offered and what the prices are",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "city_name1": "WASHINGTON",
+                    "day_name0": "THURSDAY",
+                    "departure_time0": "0",
+                    "departure_time1": "1200"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID , FLIGHTalias0.FLIGHT_ID , FLIGHTalias0.MEAL_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND DAYSalias0.DAY_NAME = \"day_name0\" AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) AND DAYSalias1.DAY_NAME = \"day_name0\" AND FARE_BASISalias0.BASIS_DAYS = DAYSalias1.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.DEPARTURE_TIME BETWEEN departure_time0 AND departure_time1 AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ;"
+        ],
+        "variables": [
+            {
+                "example": "ATLANTA",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "WASHINGTON",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "THURSDAY",
+                "location": "unk",
+                "name": "day_name0",
+                "type": "day_name"
+            },
+            {
+                "example": "0",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "1200",
+                "location": "unk",
+                "name": "departure_time1",
+                "type": "departure_time"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me the least expensive flight from city_name0 to city_name1 on a day_name0 with class_type0 class fare",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "MIAMI",
+                    "city_name1": "NEW YORK",
+                    "day_name0": "SUNDAY",
+                    "class_type0": "FIRST"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias3 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , CITY AS CITYalias3 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FARE_BASIS AS FARE_BASISalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( ( ( ( CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name0\" AND CITYalias3.CITY_CODE = AIRPORT_SERVICEalias3.CITY_CODE AND CITYalias3.CITY_NAME = \"city_name1\" AND FAREalias0.FROM_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE AND FAREalias0.TO_AIRPORT = AIRPORT_SERVICEalias3.AIRPORT_CODE ) AND DAYSalias1.DAY_NAME = \"day_name0\" AND FARE_BASISalias1.BASIS_DAYS = DAYSalias1.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias1.FARE_BASIS_CODE ) AND FARE_BASISalias0.CLASS_TYPE = \"class_type0\" AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE ) AND DAYSalias0.DAY_NAME = \"day_name0\" AND FAREalias0.ONE_DIRECTION_COST = ( SELECT MIN( FAREalias1.ONE_DIRECTION_COST ) FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias4 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias5 , CITY AS CITYalias4 , CITY AS CITYalias5 , DAYS AS DAYSalias2 , FARE AS FAREalias1 , FARE_BASIS AS FARE_BASISalias2 , FARE_BASIS AS FARE_BASISalias3 WHERE ( ( CITYalias4.CITY_CODE = AIRPORT_SERVICEalias4.CITY_CODE AND CITYalias4.CITY_NAME = \"city_name0\" AND CITYalias5.CITY_CODE = AIRPORT_SERVICEalias5.CITY_CODE AND CITYalias5.CITY_NAME = \"city_name1\" AND FAREalias1.FROM_AIRPORT = AIRPORT_SERVICEalias4.AIRPORT_CODE AND FAREalias1.TO_AIRPORT = AIRPORT_SERVICEalias5.AIRPORT_CODE ) AND DAYSalias2.DAY_NAME = \"day_name0\" AND FARE_BASISalias3.BASIS_DAYS = DAYSalias2.DAYS_CODE AND FAREalias1.FARE_BASIS_CODE = FARE_BASISalias3.FARE_BASIS_CODE ) AND FARE_BASISalias2.CLASS_TYPE = \"class_type0\" AND FAREalias1.FARE_BASIS_CODE = FARE_BASISalias2.FARE_BASIS_CODE ) AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "MIAMI",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "NEW YORK",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "SUNDAY",
+                "location": "unk",
+                "name": "day_name0",
+                "type": "day_name"
+            },
+            {
+                "example": "FIRST",
+                "location": "unk",
+                "name": "class_type0",
+                "type": "class_type"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "airline_code0 flights to city_name0 please",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SAN FRANCISCO",
+                    "airline_code0": "DL"
+                }
+            },
+            {
+                "text": "how about arrivals for airline_code0 in city_name0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "ATLANTA",
+                    "airline_code0": "AA"
+                }
+            },
+            {
+                "text": "what flights arrive in city_name0 from on airline_code0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SEATTLE",
+                    "airline_code0": "CO"
+                }
+            },
+            {
+                "text": "please list all airline_code0 flights into city_name0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "airline_code0": "NW"
+                }
+            },
+            {
+                "text": "airline_code0 flights to city_name0 please",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DALLAS",
+                    "airline_code0": "DL"
+                }
+            },
+            {
+                "text": "does airline_code0 fly into city_name0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DENVER",
+                    "airline_code0": "NW"
+                }
+            },
+            {
+                "text": "list the airline_code0 flights arriving in city_name0",
+                "question-split": "test",
+                "variables": {
+                    "airline_code0": "AS",
+                    "city_name0": "BURBANK"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , CITY AS CITYalias0 , FLIGHT AS FLIGHTalias0 WHERE CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;",
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM FLIGHT AS FLIGHTalias0 WHERE ( FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias0.TO_AIRPORT IN ( SELECT AIRPORT_SERVICEalias0.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 WHERE AIRPORT_SERVICEalias0.CITY_CODE IN ( SELECT CITYalias0.CITY_CODE FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name0\" ) ) ) ;"
+        ],
+        "variables": [
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "DL",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what is the fare going from city_name2 to city_name0 city_name1 one way on month_number0 day_number0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "DALLAS",
+                    "city_name1": "FORT WORTH",
+                    "day_number0": "7",
+                    "month_number0": "11",
+                    "year0": "1991",
+                    "city_name2": "BOSTON",
+                    "round_trip_required0": "NO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias2 , CITY AS CITYalias0 , CITY AS CITYalias1 , CITY AS CITYalias2 , DATE_DAY AS DATE_DAYalias0 , DATE_DAY AS DATE_DAYalias1 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND CITYalias2.CITY_CODE = AIRPORT_SERVICEalias2.CITY_CODE AND CITYalias2.CITY_NAME = \"city_name1\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias2.AIRPORT_CODE ) AND DATE_DAYalias1.DAY_NUMBER = day_number0 AND DATE_DAYalias1.MONTH_NUMBER = month_number0 AND DATE_DAYalias1.YEAR = year0 AND DAYSalias1.DAY_NAME = DATE_DAYalias1.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias1.DAYS_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name2\" AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FARE_BASISalias0.BASIS_DAYS = DAYSalias0.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FAREalias0.ROUND_TRIP_REQUIRED = \"round_trip_required0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "DALLAS",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "FORT WORTH",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "7",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "11",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "BOSTON",
+                "location": "unk",
+                "name": "city_name2",
+                "type": "city_name"
+            },
+            {
+                "example": "NO",
+                "location": "unk",
+                "name": "round_trip_required0",
+                "type": "round_trip_required"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "how much will it cost taking class_type0 from city_name1 to city_name0 on month_number0 day_number0 flying airline_code0 flight_number0",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "29",
+                    "month_number0": "12",
+                    "year0": "1991",
+                    "flight_number0": "311",
+                    "city_name0": "INDIANAPOLIS",
+                    "city_name1": "ORLANDO",
+                    "airline_code0": "US",
+                    "class_type0": "COACH"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DATE_DAY AS DATE_DAYalias1 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FARE_BASIS AS FARE_BASISalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( ( ( DATE_DAYalias1.DAY_NUMBER = day_number0 AND DATE_DAYalias1.MONTH_NUMBER = month_number0 AND DATE_DAYalias1.YEAR = year0 AND DAYSalias1.DAY_NAME = DATE_DAYalias1.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias1.DAYS_CODE AND FLIGHTalias0.FLIGHT_NUMBER = flight_number0 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FARE_BASISalias1.BASIS_DAYS = DAYSalias0.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias1.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ) AND FARE_BASISalias0.CLASS_TYPE = \"class_type0\" AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "29",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "12",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "311",
+                "location": "unk",
+                "name": "flight_number0",
+                "type": "flight_number"
+            },
+            {
+                "example": "INDIANAPOLIS",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "ORLANDO",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "US",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            },
+            {
+                "example": "COACH",
+                "location": "unk",
+                "name": "class_type0",
+                "type": "class_type"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "airline_code0 flight flight_number0 from city_name1 to city_name0",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "HOUSTON",
+                    "airline_code0": "AA",
+                    "flight_number0": "4400",
+                    "city_name1": "CINCINNATI"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT AS FLIGHTalias1 , FLIGHT_LEG AS FLIGHT_LEGalias0 WHERE ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FLIGHT_ID = FLIGHT_LEGalias0.FLIGHT_ID AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE AND FLIGHTalias1.AIRLINE_CODE = \"airline_code0\" AND FLIGHTalias1.FLIGHT_ID = FLIGHT_LEGalias0.LEG_FLIGHT AND FLIGHTalias1.FLIGHT_NUMBER = flight_number0 ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "HOUSTON",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "AA",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            },
+            {
+                "example": "4400",
+                "location": "unk",
+                "name": "flight_number0",
+                "type": "flight_number"
+            },
+            {
+                "example": "CINCINNATI",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "what are the class_type0 flights between city_name1 and city_name0 leaving month_number0 day_number0 and returning month_number0 day_number1",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "10",
+                    "month_number0": "8",
+                    "year0": "1991",
+                    "class_type0": "COACH",
+                    "city_name0": "BALTIMORE",
+                    "city_name1": "DALLAS",
+                    "day_number1": "12"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DATE_DAY AS DATE_DAYalias1 , DAYS AS DAYSalias0 , DAYS AS DAYSalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FARE_BASIS AS FARE_BASISalias1 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( ( ( DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DATE_DAYalias1.DAY_NUMBER = day_number0 AND DATE_DAYalias1.MONTH_NUMBER = month_number0 AND DATE_DAYalias1.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND DAYSalias1.DAY_NAME = DATE_DAYalias1.DAY_NAME AND FARE_BASISalias0.CLASS_TYPE = \"class_type0\" AND FARE_BASISalias1.BASIS_DAYS = DAYSalias1.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias1.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) OR ( ( ( DATE_DAYalias0.DAY_NUMBER = day_number1 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DATE_DAYalias1.DAY_NUMBER = day_number1 AND DATE_DAYalias1.MONTH_NUMBER = month_number0 AND DATE_DAYalias1.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND DAYSalias1.DAY_NAME = DATE_DAYalias1.DAY_NAME AND FARE_BASISalias0.CLASS_TYPE = \"class_type0\" AND FARE_BASISalias1.BASIS_DAYS = DAYSalias1.DAYS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias1.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) ;"
+        ],
+        "variables": [
+            {
+                "example": "10",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "8",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "COACH",
+                "location": "unk",
+                "name": "class_type0",
+                "type": "class_type"
+            },
+            {
+                "example": "BALTIMORE",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "DALLAS",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "12",
+                "location": "unk",
+                "name": "day_number1",
+                "type": "day_number"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "on the flight from city_name1 to city_name0 on airline_code0 leaving at departure_time0 what type of aircraft is used",
+                "question-split": "train",
+                "variables": {
+                    "city_name0": "SAN FRANCISCO",
+                    "departure_time0": "1620",
+                    "city_name1": "BALTIMORE",
+                    "airline_code0": "US"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT AIRCRAFTalias0.AIRCRAFT_CODE FROM AIRCRAFT AS AIRCRAFTalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , EQUIPMENT_SEQUENCE AS EQUIPMENT_SEQUENCEalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.DEPARTURE_TIME = departure_time0 AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ) AND EQUIPMENT_SEQUENCEalias0.AIRCRAFT_CODE = AIRCRAFTalias0.AIRCRAFT_CODE AND FLIGHTalias0.AIRCRAFT_CODE_SEQUENCE = EQUIPMENT_SEQUENCEalias0.AIRCRAFT_CODE_SEQUENCE AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "SAN FRANCISCO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "1620",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "BALTIMORE",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "US",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "please list the flights from city_name1 to city_name0 on day_name0 night that serve meals",
+                "question-split": "train",
+                "variables": {
+                    "departure_time0": "2400",
+                    "departure_time1": "1800",
+                    "day_name0": "FRIDAY",
+                    "departure_time2": "600",
+                    "departure_time3": "0",
+                    "day_name1": "SATURDAY",
+                    "city_name0": "KANSAS CITY",
+                    "city_name1": "ST. PAUL"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 , FOOD_SERVICE AS FOOD_SERVICEalias0 WHERE ( ( ( ( ( FLIGHTalias0.DEPARTURE_TIME <= departure_time0 AND FLIGHTalias0.DEPARTURE_TIME >= departure_time1 ) AND DAYSalias0.DAY_NAME = \"day_name0\" AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) OR ( ( FLIGHTalias0.DEPARTURE_TIME <= departure_time2 AND FLIGHTalias0.DEPARTURE_TIME >= departure_time3 ) AND DAYSalias0.DAY_NAME = \"day_name1\" AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) ) AND FOOD_SERVICEalias0.MEAL_CODE = FLIGHTalias0.MEAL_CODE ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "2400",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "1800",
+                "location": "unk",
+                "name": "departure_time1",
+                "type": "departure_time"
+            },
+            {
+                "example": "FRIDAY",
+                "location": "unk",
+                "name": "day_name0",
+                "type": "day_name"
+            },
+            {
+                "example": "600",
+                "location": "unk",
+                "name": "departure_time2",
+                "type": "departure_time"
+            },
+            {
+                "example": "0",
+                "location": "unk",
+                "name": "departure_time3",
+                "type": "departure_time"
+            },
+            {
+                "example": "SATURDAY",
+                "location": "unk",
+                "name": "day_name1",
+                "type": "day_name"
+            },
+            {
+                "example": "KANSAS CITY",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "ST. PAUL",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "flights between city_name1 and city_name0 that arrive after arrival_time1 o'clock and before arrival_time0 o'clock on tuesday",
+                "question-split": "train",
+                "variables": {
+                    "day_number0": "22",
+                    "month_number0": "3",
+                    "year0": "1991",
+                    "arrival_time0": "500",
+                    "arrival_time1": "200",
+                    "city_name0": "PHILADELPHIA",
+                    "city_name1": "BOSTON"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , DATE_DAY AS DATE_DAYalias0 , DAYS AS DAYSalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( ( ( ( FLIGHTalias0.ARRIVAL_TIME < FLIGHTalias0.DEPARTURE_TIME ) AND DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE ) OR ( DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 AND DAYSalias0.DAY_NAME = DATE_DAYalias0.DAY_NAME AND FLIGHTalias0.FLIGHT_DAYS = DAYSalias0.DAYS_CODE AND NOT ( FLIGHTalias0.ARRIVAL_TIME < FLIGHTalias0.DEPARTURE_TIME ) ) ) AND FLIGHTalias0.ARRIVAL_TIME < arrival_time0 ) AND FLIGHTalias0.ARRIVAL_TIME > arrival_time1 ) AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name1\" AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "22",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "3",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "500",
+                "location": "unk",
+                "name": "arrival_time0",
+                "type": "arrival_time"
+            },
+            {
+                "example": "200",
+                "location": "unk",
+                "name": "arrival_time1",
+                "type": "arrival_time"
+            },
+            {
+                "example": "PHILADELPHIA",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "BOSTON",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "show me the airlines from airport_code0",
+                "question-split": "train",
+                "variables": {
+                    "airport_code0": "DAL"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT AIRLINEalias0.AIRLINE_CODE FROM AIRLINE AS AIRLINEalias0 , AIRPORT AS AIRPORTalias0 , FLIGHT AS FLIGHTalias0 WHERE AIRPORTalias0.AIRPORT_CODE = \"airport_code0\" AND FLIGHTalias0.AIRLINE_CODE = AIRLINEalias0.AIRLINE_CODE AND FLIGHTalias0.FROM_AIRPORT = AIRPORTalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "DAL",
+                "location": "unk",
+                "name": "airport_code0",
+                "type": "airport_code"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "please list all flights on airline_code0 and airline_code1 that go to city_name0",
+                "question-split": "train",
+                "variables": {
+                    "airline_code0": "NW",
+                    "airline_code1": "UA",
+                    "city_name0": "DENVER"
+                }
+            },
+            {
+                "text": "please list all flights on airline_code1 and airline_code0 which go to city_name0",
+                "question-split": "train",
+                "variables": {
+                    "airline_code0": "NW",
+                    "airline_code1": "UA",
+                    "city_name0": "DENVER"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , CITY AS CITYalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ) OR ( FLIGHTalias0.AIRLINE_CODE = \"airline_code1\" ) ) AND CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "NW",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            },
+            {
+                "example": "UA",
+                "location": "unk",
+                "name": "airline_code1",
+                "type": "airline_code"
+            },
+            {
+                "example": "DENVER",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "can you show me one way economy fares from city_name0 to city_name1",
+                "question-split": "dev",
+                "variables": {
+                    "city_name0": "DALLAS",
+                    "city_name1": "ATLANTA",
+                    "economy0": "YES",
+                    "round_trip_required0": "NO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FAREalias0.FARE_ID FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 , AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 , CITY AS CITYalias0 , CITY AS CITYalias1 , FARE AS FAREalias0 , FARE_BASIS AS FARE_BASISalias0 , FLIGHT AS FLIGHTalias0 , FLIGHT_FARE AS FLIGHT_FAREalias0 WHERE ( CITYalias0.CITY_CODE = AIRPORT_SERVICEalias0.CITY_CODE AND CITYalias0.CITY_NAME = \"city_name0\" AND CITYalias1.CITY_CODE = AIRPORT_SERVICEalias1.CITY_CODE AND CITYalias1.CITY_NAME = \"city_name1\" AND FARE_BASISalias0.ECONOMY = \"economy0\" AND FAREalias0.FARE_BASIS_CODE = FARE_BASISalias0.FARE_BASIS_CODE AND FLIGHT_FAREalias0.FARE_ID = FAREalias0.FARE_ID AND FLIGHTalias0.FLIGHT_ID = FLIGHT_FAREalias0.FLIGHT_ID AND FLIGHTalias0.FROM_AIRPORT = AIRPORT_SERVICEalias0.AIRPORT_CODE AND FLIGHTalias0.TO_AIRPORT = AIRPORT_SERVICEalias1.AIRPORT_CODE ) AND FAREalias0.ROUND_TRIP_REQUIRED = \"round_trip_required0\" ;"
+        ],
+        "variables": [
+            {
+                "example": "DALLAS",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "ATLANTA",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "YES",
+                "location": "unk",
+                "name": "economy0",
+                "type": "economy"
+            },
+            {
+                "example": "NO",
+                "location": "unk",
+                "name": "round_trip_required0",
+                "type": "round_trip_required"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "i need flight numbers and airlines for flights departing from city_name1 to city_name0 on thursday departing before departure_time0",
+                "question-split": "test",
+                "variables": {
+                    "departure_time0": "800",
+                    "day_number0": "24",
+                    "month_number0": "5",
+                    "year0": "1991",
+                    "city_name0": "SALT LAKE CITY",
+                    "city_name1": "OAKLAND"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT AIRLINEalias0.AIRLINE_CODE , FLIGHTalias0.FLIGHT_NUMBER FROM AIRLINE AS AIRLINEalias0 , FLIGHT AS FLIGHTalias0 WHERE ( ( ( FLIGHTalias0.DEPARTURE_TIME < departure_time0 AND FLIGHTalias0.FLIGHT_DAYS IN ( SELECT DAYSalias0.DAYS_CODE FROM DAYS AS DAYSalias0 WHERE DAYSalias0.DAY_NAME IN ( SELECT DATE_DAYalias0.DAY_NAME FROM DATE_DAY AS DATE_DAYalias0 WHERE DATE_DAYalias0.DAY_NUMBER = day_number0 AND DATE_DAYalias0.MONTH_NUMBER = month_number0 AND DATE_DAYalias0.YEAR = year0 ) ) ) AND FLIGHTalias0.TO_AIRPORT IN ( SELECT AIRPORT_SERVICEalias1.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 WHERE AIRPORT_SERVICEalias1.CITY_CODE IN ( SELECT CITYalias1.CITY_CODE FROM CITY AS CITYalias1 WHERE CITYalias1.CITY_NAME = \"city_name0\" ) ) ) AND FLIGHTalias0.FROM_AIRPORT IN ( SELECT AIRPORT_SERVICEalias0.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 WHERE AIRPORT_SERVICEalias0.CITY_CODE IN ( SELECT CITYalias0.CITY_CODE FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name1\" ) ) ) AND FLIGHTalias0.AIRLINE_CODE = AIRLINEalias0.AIRLINE_CODE ;"
+        ],
+        "variables": [
+            {
+                "example": "800",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "24",
+                "location": "unk",
+                "name": "day_number0",
+                "type": "day_number"
+            },
+            {
+                "example": "5",
+                "location": "unk",
+                "name": "month_number0",
+                "type": "month_number"
+            },
+            {
+                "example": "1991",
+                "location": "unk",
+                "name": "year0",
+                "type": "year"
+            },
+            {
+                "example": "SALT LAKE CITY",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "OAKLAND",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "and from city_name1 to city_name0 before departure_time0 flight_days0",
+                "question-split": "test",
+                "variables": {
+                    "departure_time0": "1000",
+                    "city_name0": "ATLANTA",
+                    "city_name1": "MILWAUKEE",
+                    "flight_days0": "DAILY"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM FLIGHT AS FLIGHTalias0 WHERE ( ( ( FLIGHTalias0.DEPARTURE_TIME < departure_time0 AND FLIGHTalias0.TO_AIRPORT IN ( SELECT AIRPORT_SERVICEalias1.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 WHERE AIRPORT_SERVICEalias1.CITY_CODE IN ( SELECT CITYalias1.CITY_CODE FROM CITY AS CITYalias1 WHERE CITYalias1.CITY_NAME = \"city_name0\" ) ) ) AND FLIGHTalias0.FROM_AIRPORT IN ( SELECT AIRPORT_SERVICEalias0.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 WHERE AIRPORT_SERVICEalias0.CITY_CODE IN ( SELECT CITYalias0.CITY_CODE FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name1\" ) ) ) AND FLIGHTalias0.FLIGHT_DAYS = \"flight_days0\" ) ;"
+        ],
+        "variables": [
+            {
+                "example": "1000",
+                "location": "unk",
+                "name": "departure_time0",
+                "type": "departure_time"
+            },
+            {
+                "example": "ATLANTA",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "MILWAUKEE",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "DAILY",
+                "location": "unk",
+                "name": "flight_days0",
+                "type": "flight_days"
+            }
+        ]
+    },
+    {
+        "comments": [],
+        "old-name": "",
+        "query-split": "dev",
+        "sentences": [
+            {
+                "text": "give me flights from city_name1 to city_name0 that have meals on airline_code0",
+                "question-split": "test",
+                "variables": {
+                    "city_name0": "CHICAGO",
+                    "city_name1": "SEATTLE",
+                    "airline_code0": "CO"
+                }
+            }
+        ],
+        "sql": [
+            "SELECT DISTINCT FLIGHTalias0.FLIGHT_ID FROM FLIGHT AS FLIGHTalias0 WHERE ( ( ( FLIGHTalias0.MEAL_CODE IN ( SELECT FOOD_SERVICEalias0.MEAL_CODE FROM FOOD_SERVICE AS FOOD_SERVICEalias0 ) AND FLIGHTalias0.TO_AIRPORT IN ( SELECT AIRPORT_SERVICEalias1.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias1 WHERE AIRPORT_SERVICEalias1.CITY_CODE IN ( SELECT CITYalias1.CITY_CODE FROM CITY AS CITYalias1 WHERE CITYalias1.CITY_NAME = \"city_name0\" ) ) ) AND FLIGHTalias0.FROM_AIRPORT IN ( SELECT AIRPORT_SERVICEalias0.AIRPORT_CODE FROM AIRPORT_SERVICE AS AIRPORT_SERVICEalias0 WHERE AIRPORT_SERVICEalias0.CITY_CODE IN ( SELECT CITYalias0.CITY_CODE FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name1\" ) ) ) AND FLIGHTalias0.AIRLINE_CODE = \"airline_code0\" ) ;"
+        ],
+        "variables": [
+            {
+                "example": "CHICAGO",
+                "location": "unk",
+                "name": "city_name0",
+                "type": "city_name"
+            },
+            {
+                "example": "SEATTLE",
+                "location": "unk",
+                "name": "city_name1",
+                "type": "city_name"
+            },
+            {
+                "example": "CO",
+                "location": "unk",
+                "name": "airline_code0",
+                "type": "airline_code"
+            }
+        ]
+    }
+]

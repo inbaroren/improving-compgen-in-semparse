@@ -1,0 +1,39 @@
+Table Name, Field Name, Is Primary Key, Is Foreign Key, Type,referenced_table,referenced_col,comparison type,original order
+STATE, STATE_NAME, y, n, varchar(255),,,state,1
+STATE, CAPITAL, n, y, varchar(255),CITY, CITY_NAME,city,2
+STATE, POPULATION, n, n, int(11),,,population,3
+STATE, AREA, n, n, double,,,area,4
+STATE, COUNTRY_NAME, n, n, varchar(255),,,country,5
+STATE, DENSITY, n, n, double,,,density,6
+-, -, -, -, -,,,,7
+BORDER_INFO, STATE_NAME, y, y, varchar(255),STATE, STATE_NAME,state,8
+BORDER_INFO, BORDER, y, y, varchar(255),STATE, STATE_NAME,state,9
+-, -, -, -, -,,,,10
+CITY, CITY_NAME, y, n, varchar(255),,,city,11
+CITY, STATE_NAME, y, y, varchar(255),STATE, STATE_NAME,state,12
+CITY, POPULATION, n, n, int(11),,,population,13
+CITY, COUNTRY_NAME, n, n, varchar(255),,,country,14
+-, -, -, -, -,,,,15
+HIGHLOW, STATE_NAME, y, y, varchar(255),STATE, STATE_NAME,state,16
+HIGHLOW, HIGHEST_POINT, n, n, varchar(255),,,place,17
+HIGHLOW, HIGHEST_ELEVATION, n, n, varchar(255),,,height,18
+HIGHLOW, LOWEST_POINT, n, n, varchar(255),,,place,19
+HIGHLOW, LOWEST_ELEVATION, n, n, varchar(255),,,height,20
+-, -, -, -, -,,,,21
+RIVER, RIVER_NAME, y, n, varchar(255),,,river,22
+RIVER, LENGTH, n, n, int(11),,,length,23
+RIVER, TRAVERSE, y, y, varchar(255),STATE, STATE_NAME,state,24
+RIVER, COUNTRY_NAME, n, n, varchar(255),,,country,25
+-, -, -, -, -,,,-,26
+MOUNTAIN, MOUNTAIN_NAME, y, n, varchar(255),,,mountain,27
+MOUNTAIN, MOUNTAIN_ALTITUDE, n, n, int(11),,,height,28
+MOUNTAIN, STATE_NAME, y, y, varchar(255),STATE, STATE_NAME,state,29
+MOUNTAIN, COUNTRY_NAME, n, n, varchar(255),,,country,30
+-, -, -, -, -,,,-,31
+ROAD, ROAD_NAME, y, n, varchar(10),,,road,32
+ROAD, STATE_NAME, y, y, varchar(255),STATE, STATE_NAME,state,33
+-, -, -, -, -,,,-,34
+LAKE, LAKE_NAME, y, n, varchar(255),,,lake,35
+LAKE, AREA, n, n, double,,,area,36
+LAKE, STATE_NAME, y, y, varchar(255),STATE, STATE_NAME,state,37
+LAKE, COUNTRY_NAME, n, n, varchar(255),,,country,38

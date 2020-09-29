@@ -1,0 +1,2850 @@
+[
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "dev",
+        "text": "what is the capital of the state with the highest point",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 10, 11 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 11 ],
+          [ 5, 7 ],
+          [ 2, 11 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 11 ],
+          [ 1, 11 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "what is the capital of the state with the highest elevation",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 4, 7 ],
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 7, 11 ],
+          [ 1, 11 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 8, 11 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 5, 7 ],
+          [ 2, 11 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.CAPITAL FROM HIGHLOW AS HIGHLOWalias0 , STATE AS STATEalias0 WHERE HIGHLOWalias0.HIGHEST_ELEVATION = ( SELECT MAX( HIGHLOWalias1.HIGHEST_ELEVATION ) FROM HIGHLOW AS HIGHLOWalias1 ) AND STATEalias0.STATE_NAME = HIGHLOWalias0.STATE_NAME ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "how many major rivers cross state_name0",
+        "variables": { "state_name0": "ohio" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 0, 4 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( RIVERalias0.RIVER_NAME ) FROM RIVER AS RIVERalias0 WHERE RIVERalias0.LENGTH > 750 AND RIVERalias0.TRAVERSE = \"state_name0\" ;" ],
+    "variables": [
+      {
+        "example": "ohio",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "where is the highest mountain of the united states",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 5, 9 ],
+          [ 1, 2 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "which state has the highest peak in the country",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 9 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT MOUNTAINalias0.STATE_NAME FROM MOUNTAIN AS MOUNTAINalias0 WHERE MOUNTAINalias0.MOUNTAIN_ALTITUDE = ( SELECT MAX( MOUNTAINalias1.MOUNTAIN_ALTITUDE ) FROM MOUNTAIN AS MOUNTAINalias1 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many states does the river_name0 run through",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "how many states does the river_name0 river flow through",
+        "variables": { "river_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "how many states does the river_name0 river run through",
+        "variables": { "river_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many states does the river_name0 river run through",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many states does the river_name0 river run through",
+        "variables": { "river_name0": "missouri" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( RIVERalias0.TRAVERSE ) FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME = \"river_name0\" ;" ],
+    "variables": [
+      {
+        "example": "mississippi",
+        "location": "both",
+        "name": "river_name0",
+        "type": "river_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is capital of the state with the lowest point",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 10 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 10 ],
+          [ 6, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 10 ],
+          [ 1, 10 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.CAPITAL FROM HIGHLOW AS HIGHLOWalias0 , STATE AS STATEalias0 WHERE HIGHLOWalias0.LOWEST_ELEVATION = ( SELECT MIN( HIGHLOWalias1.LOWEST_ELEVATION ) FROM HIGHLOW AS HIGHLOWalias1 ) AND STATEalias0.STATE_NAME = HIGHLOWalias0.STATE_NAME ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "where is state_name0",
+        "variables": { "state_name0": "new hampshire" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "where is state_name0",
+        "variables": { "state_name0": "massachusetts" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 3 ],
+          [ 2, 3 ],
+          [ 1, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.AREA FROM STATE AS STATEalias0 WHERE STATEalias0.STATE_NAME = \"state_name0\" ;" ],
+    "variables": [
+      {
+        "example": "new hampshire",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the most populous state through which the river_name0 runs",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 2, 6 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 10, 11 ],
+          [ 6, 11 ],
+          [ 5, 6 ],
+          [ 8, 11 ],
+          [ 4, 5 ],
+          [ 2, 11 ],
+          [ 8, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what state which the river_name0 runs through has the largest population",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 10, 11 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 11 ],
+          [ 5, 7 ],
+          [ 0, 7 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 7 ],
+          [ 7, 8 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.POPULATION = ( SELECT MAX( STATEalias1.POPULATION ) FROM STATE AS STATEalias1 WHERE STATEalias1.STATE_NAME IN ( SELECT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME = \"river_name0\" ) ) AND STATEalias0.STATE_NAME IN ( SELECT RIVERalias1.TRAVERSE FROM RIVER AS RIVERalias1 WHERE RIVERalias1.RIVER_NAME = \"river_name0\" ) ;", "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.STATE_NAME IN ( SELECT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME = \"river_name0\" ) ORDER BY STATEalias0.POPULATION DESC LIMIT 1 ;" ],
+    "variables": [
+      {
+        "example": "mississippi",
+        "location": "both",
+        "name": "river_name0",
+        "type": "river_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the length of the river_name0 river in state_name0",
+        "variables": {
+          "river_name0": "colorado",
+          "state_name0": "texas"
+        },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 1, 10 ],
+          [ 3, 4 ],
+          [ 2, 4 ],
+          [ 5, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT RIVERalias0.LENGTH FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME = \"river_name0\" AND RIVERalias0.TRAVERSE = \"state_name0\" ;" ],
+    "variables": [
+      {
+        "example": "colorado",
+        "location": "both",
+        "name": "river_name0",
+        "type": "river_name"
+      },
+      {
+        "example": "texas",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "dev",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many states have a city named city_name0",
+        "variables": { "city_name0": "springfield" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many states have a city called city_name0",
+        "variables": { "city_name0": "rochester" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many states have cities named city_name0",
+        "variables": { "city_name0": "austin" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "how many states have cities or towns named city_name0",
+        "variables": { "city_name0": "springfield" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( CITYalias0.STATE_NAME ) FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name0\" ;" ],
+    "variables": [
+      {
+        "example": "springfield",
+        "location": "both",
+        "name": "city_name0",
+        "type": "city_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the largest state that borders the state with the highest population",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 5, 13 ],
+          [ 8, 9 ],
+          [ 2, 5 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 12, 13 ],
+          [ 2, 13 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 1, 13 ],
+          [ 10, 13 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 11, 12 ],
+          [ 7, 9 ],
+          [ 0, 1 ],
+          [ 9, 13 ],
+          [ 7, 13 ],
+          [ 6, 13 ],
+          [ 7, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.AREA = ( SELECT MAX( STATEalias1.AREA ) FROM STATE AS STATEalias1 WHERE STATEalias1.STATE_NAME IN ( SELECT BORDER_INFOalias0.STATE_NAME FROM BORDER_INFO AS BORDER_INFOalias0 WHERE BORDER_INFOalias0.BORDER IN ( SELECT STATEalias2.STATE_NAME FROM STATE AS STATEalias2 WHERE STATEalias2.POPULATION = ( SELECT MAX( STATEalias3.POPULATION ) FROM STATE AS STATEalias3 ) ) ) ) AND STATEalias0.STATE_NAME IN ( SELECT BORDER_INFOalias1.STATE_NAME FROM BORDER_INFO AS BORDER_INFOalias1 WHERE BORDER_INFOalias1.BORDER IN ( SELECT STATEalias3.STATE_NAME FROM STATE AS STATEalias3 WHERE STATEalias3.POPULATION = ( SELECT MAX( STATEalias3.POPULATION ) FROM STATE AS STATEalias3 ) ) ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "dev",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many major cities are there",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 0, 4 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( CITYalias0.CITY_NAME ) FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION > 150000 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many cities named city_name0 are there in the usa",
+        "variables": { "city_name0": "austin" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 5, 10 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 10 ],
+          [ 8, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 10 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( CITYalias0.CITY_NAME ) FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = \"city_name0\" ;" ],
+    "variables": [
+      {
+        "example": "austin",
+        "location": "both",
+        "name": "city_name0",
+        "type": "city_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "dev",
+        "text": "what is the area of the state with the smallest population density",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 7, 12 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 4, 12 ],
+          [ 2, 12 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 5, 12 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 1, 12 ],
+          [ 8, 12 ],
+          [ 5, 7 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.AREA FROM STATE AS STATEalias0 WHERE STATEalias0.DENSITY = ( SELECT MIN( STATEalias1.DENSITY ) FROM STATE AS STATEalias1 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "which states does not border state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 1, 6 ],
+          [ 2, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.STATE_NAME NOT IN ( SELECT BORDER_INFOalias0.BORDER FROM BORDER_INFO AS BORDER_INFOalias0 WHERE BORDER_INFOalias0.STATE_NAME = \"state_name0\" ) ;" ],
+    "variables": [
+      {
+        "example": "texas",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what state has the largest capital",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "which state 's capital city is the largest",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 1, 3 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 0, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.STATE_NAME FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION = ( SELECT MAX( CITYalias1.POPULATION ) FROM CITY AS CITYalias1 , STATE AS STATEalias0 WHERE STATEalias0.CAPITAL = CITYalias1.CITY_NAME ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many citizens does the biggest city have in the usa",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 10, 11 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 11 ],
+          [ 3, 11 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 9, 11 ],
+          [ 2, 3 ],
+          [ 7, 11 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.POPULATION FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION = ( SELECT MAX( CITYalias1.POPULATION ) FROM CITY AS CITYalias1 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "dev",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "which state has the most major rivers",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "which state has the most major rivers running through it",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 10 ],
+          [ 8, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 10 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what state has the most major rivers running through it",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 10 ],
+          [ 8, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 10 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.LENGTH > 750 GROUP BY RIVERalias0.TRAVERSE ORDER BY COUNT( RIVERalias0.RIVER_NAME ) DESC LIMIT 1 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "what state has the most major cities",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "which state has the most major cities",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.STATE_NAME FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION > 150000 GROUP BY CITYalias0.STATE_NAME ORDER BY COUNT( 1 ) DESC LIMIT 1 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "what is the smallest state that borders the most states",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 5, 10 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 7, 10 ],
+          [ 1, 10 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.AREA = ( SELECT MIN( STATEalias1.AREA ) FROM STATE AS STATEalias1 WHERE STATEalias1.STATE_NAME IN ( SELECT DERIVED_TABLEalias0.STATE_NAME FROM ( SELECT BORDER_INFOalias0.STATE_NAME , COUNT( DISTINCT BORDER_INFOalias0.BORDER ) AS DERIVED_FIELDalias0 FROM BORDER_INFO AS BORDER_INFOalias0 GROUP BY BORDER_INFOalias0.STATE_NAME ) AS DERIVED_TABLEalias0 WHERE DERIVED_TABLEalias0.DERIVED_FIELDalias0 = ( SELECT MAX( DERIVED_TABLEalias1.DERIVED_FIELDalias1 ) FROM ( SELECT BORDER_INFOalias1.STATE_NAME , COUNT( DISTINCT BORDER_INFOalias1.BORDER ) AS DERIVED_FIELDalias1 FROM BORDER_INFO AS BORDER_INFOalias1 GROUP BY BORDER_INFOalias1.STATE_NAME ) AS DERIVED_TABLEalias1 ) ) ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "what rivers flow through the largest state",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT RIVERalias0.RIVER_NAME FROM RIVER AS RIVERalias0 WHERE RIVERalias0.TRAVERSE IN ( SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.AREA = ( SELECT MAX( STATEalias1.AREA ) FROM STATE AS STATEalias1 ) ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "dev",
+        "text": "what are the major cities in the states through which the major river in state_name0 runs",
+        "variables": { "state_name0": "virginia" },
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 15, 16 ],
+          [ 2, 5 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 12, 13 ],
+          [ 1, 16 ],
+          [ 8, 10 ],
+          [ 3, 4 ],
+          [ 8, 16 ],
+          [ 2, 16 ],
+          [ 4, 5 ],
+          [ 10, 13 ],
+          [ 13, 15 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 14, 15 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 6, 8 ],
+          [ 5, 16 ],
+          [ 13, 14 ],
+          [ 10, 16 ],
+          [ 7, 8 ],
+          [ 6, 16 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.CITY_NAME FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION > 150000 AND CITYalias0.STATE_NAME IN ( SELECT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME IN ( SELECT RIVERalias1.RIVER_NAME FROM RIVER AS RIVERalias1 WHERE RIVERalias1.LENGTH > 750 AND RIVERalias1.TRAVERSE = \"state_name0\" ) ) ;" ],
+    "variables": [
+      {
+        "example": "virginia",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the highest point in states bordering state_name0",
+        "variables": { "state_name0": "georgia" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what is the highest point in the states bordering state_name0",
+        "variables": { "state_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 5, 10 ],
+          [ 6, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 10 ],
+          [ 8, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 1, 10 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT HIGHLOWalias0.HIGHEST_POINT FROM HIGHLOW AS HIGHLOWalias0 WHERE HIGHLOWalias0.STATE_NAME IN ( SELECT BORDER_INFOalias0.BORDER FROM BORDER_INFO AS BORDER_INFOalias0 WHERE BORDER_INFOalias0.STATE_NAME = \"state_name0\" ) ORDER BY HIGHLOWalias0.HIGHEST_ELEVATION DESC LIMIT 1 ;" ],
+    "variables": [
+      {
+        "example": "mississippi",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many people live in the capital of state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many people live in the capital of state_name0",
+        "variables": { "state_name0": "georgia" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "what is the size of the capital of state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 3, 4 ],
+          [ 2, 4 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.POPULATION FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = ( SELECT STATEalias0.CAPITAL FROM STATE AS STATEalias0 WHERE STATEalias0.STATE_NAME = \"state_name0\" ) ;" ],
+    "variables": [
+      {
+        "example": "texas",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the population of the capital of the largest state",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 7, 11 ],
+          [ 1, 11 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 3, 4 ],
+          [ 5, 11 ],
+          [ 4, 5 ],
+          [ 8, 11 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 5, 7 ],
+          [ 2, 11 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.POPULATION FROM CITY AS CITYalias0 WHERE CITYalias0.CITY_NAME = ( SELECT STATEalias0.CAPITAL FROM STATE AS STATEalias0 WHERE STATEalias0.AREA = ( SELECT MAX( STATEalias1.AREA ) FROM STATE AS STATEalias1 ) ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many rivers are there in us",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( DISTINCT RIVERalias0.RIVER_NAME ) FROM RIVER AS RIVERalias0 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "dev",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the biggest american city in a state with a river",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 7, 12 ],
+          [ 8, 9 ],
+          [ 2, 12 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 10, 12 ],
+          [ 3, 4 ],
+          [ 2, 6 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 6, 12 ],
+          [ 11, 12 ],
+          [ 7, 9 ],
+          [ 0, 1 ],
+          [ 1, 12 ],
+          [ 7, 8 ],
+          [ 9, 12 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT CITYalias0.CITY_NAME FROM CITY AS CITYalias0 , RIVER AS RIVERalias0 WHERE CITYalias0.POPULATION = ( SELECT MAX( CITYalias1.POPULATION ) FROM CITY AS CITYalias1 , RIVER AS RIVERalias1 WHERE RIVERalias1.TRAVERSE = CITYalias1.STATE_NAME ) AND RIVERalias0.TRAVERSE = CITYalias0.STATE_NAME ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "dev",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the average population of the us by state",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 1, 10 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT AVG ( STATEalias0.POPULATION ) FROM STATE AS STATEalias0 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "dev",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "what is the shortest river in the usa",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what is the shortest river",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "what is the shortest river in the us",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what is the shortest river in the united states",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "which is the shortest river",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 1, 5 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT RIVERalias0.RIVER_NAME FROM RIVER AS RIVERalias0 WHERE RIVERalias0.LENGTH = ( SELECT MIN( RIVERalias1.LENGTH ) FROM RIVER AS RIVERalias1 ) ;", "SELECT DISTINCT RIVERalias0.RIVER_NAME FROM RIVER AS RIVERalias0 ORDER BY RIVERalias0.LENGTH LIMIT 1 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "alabama" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "alaska" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "new york" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what are the major cities in the state of state_name0",
+        "variables": { "state_name0": "california" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 5, 10 ],
+          [ 6, 8 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 10 ],
+          [ 8, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 1, 10 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "vermont" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what major cities are located in state_name0",
+        "variables": { "state_name0": "pennsylvania" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "oklahoma" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "show major cities in state_name0",
+        "variables": { "state_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 1, 3 ],
+          [ 4, 5 ],
+          [ 0, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "new mexico" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "what are the names of the major cities in state_name0",
+        "variables": { "state_name0": "illinois" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 10 ],
+          [ 7, 8 ],
+          [ 5, 10 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 10 ],
+          [ 2, 10 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 1, 10 ],
+          [ 3, 4 ],
+          [ 2, 4 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "north carolina" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "ohio" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "dev",
+        "text": "what are the major cities of state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "wyoming" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "california" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "delaware" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what is the major cities in state_name0",
+        "variables": { "state_name0": "montana" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "rhode island" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "missouri" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what are the major cities in state_name0",
+        "variables": { "state_name0": "kansas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.CITY_NAME FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION > 150000 AND CITYalias0.STATE_NAME = \"state_name0\" ;" ],
+    "variables": [
+      {
+        "example": "alabama",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many rivers are in state_name0",
+        "variables": { "state_name0": "new york" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "give me the number of rivers in state_name0",
+        "variables": { "state_name0": "california" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 6 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 0, 8 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many rivers are in state_name0",
+        "variables": { "state_name0": "iowa" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many rivers does state_name0 have",
+        "variables": { "state_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many rivers are in state_name0",
+        "variables": { "state_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "how many rivers are there in state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many rivers run through state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many rivers are found in state_name0",
+        "variables": { "state_name0": "colorado" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many rivers in state_name0",
+        "variables": { "state_name0": "washington" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many rivers does state_name0 have",
+        "variables": { "state_name0": "alaska" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many rivers are in state_name0",
+        "variables": { "state_name0": "missouri" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "how many rivers are there in state_name0",
+        "variables": { "state_name0": "idaho" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( RIVERalias0.RIVER_NAME ) FROM RIVER AS RIVERalias0 WHERE RIVERalias0.TRAVERSE = \"state_name0\" ;" ],
+    "variables": [
+      {
+        "example": "new york",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many states in the us does the shortest river run through",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 0, 3 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 10, 12 ],
+          [ 3, 6 ],
+          [ 7, 10 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 6, 12 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 3, 12 ],
+          [ 4, 6 ],
+          [ 7, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( RIVERalias0.TRAVERSE ) FROM RIVER AS RIVERalias0 WHERE RIVERalias0.LENGTH = ( SELECT MIN( RIVERalias1.LENGTH ) FROM RIVER AS RIVERalias1 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "what is the longest river in the state with the highest point",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 12 ],
+          [ 2, 5 ],
+          [ 5, 8 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 5, 12 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 6, 8 ],
+          [ 1, 12 ],
+          [ 8, 12 ],
+          [ 7, 8 ],
+          [ 9, 12 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT RIVERalias0.RIVER_NAME FROM HIGHLOW AS HIGHLOWalias0 , RIVER AS RIVERalias0 WHERE HIGHLOWalias0.HIGHEST_ELEVATION = ( SELECT MAX( HIGHLOWalias1.HIGHEST_ELEVATION ) FROM HIGHLOW AS HIGHLOWalias1 ) AND RIVERalias0.TRAVERSE = HIGHLOWalias0.STATE_NAME ORDER BY RIVERalias0.LENGTH DESC LIMIT 1 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "test",
+        "text": "what state has the smallest urban population",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 2, 7 ],
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.STATE_NAME FROM CITY AS CITYalias0 GROUP BY CITYalias0.STATE_NAME ORDER BY SUM( CITYalias0.POPULATION ) LIMIT 1 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many states border on the state whose capital is capital0",
+        "variables": { "capital0": "boston" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 10, 11 ],
+          [ 5, 11 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 3, 11 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 9, 11 ],
+          [ 2, 3 ],
+          [ 7, 11 ],
+          [ 3, 4 ],
+          [ 4, 11 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( BORDER_INFOalias0.BORDER ) FROM BORDER_INFO AS BORDER_INFOalias0 WHERE BORDER_INFOalias0.STATE_NAME = ( SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.CAPITAL = \"capital0\" ) ;" ],
+    "variables": [
+      {
+        "example": "boston",
+        "location": "both",
+        "name": "capital0",
+        "type": "capital"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what state has the smallest capital",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.STATE_NAME FROM CITY AS CITYalias0 WHERE CITYalias0.POPULATION = ( SELECT MIN( CITYalias1.POPULATION ) FROM ( SELECT CITYalias1.POPULATION FROM CITY AS CITYalias1 , STATE AS STATEalias0 WHERE STATEalias0.CAPITAL = CITYalias1.CITY_NAME ) AS DERIVED_TABLEalias0 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what state has the shortest river",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what states does the shortest river run through",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT DISTINCT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.LENGTH = ( SELECT MIN( RIVERalias1.LENGTH ) FROM RIVER AS RIVERalias1 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "dev",
+        "text": "what states border states that border the state with the largest population",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 4, 12 ],
+          [ 2, 12 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 5, 12 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 6, 12 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 6, 8 ],
+          [ 1, 12 ],
+          [ 8, 12 ],
+          [ 7, 8 ],
+          [ 2, 4 ],
+          [ 9, 12 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT BORDER_INFOalias0.BORDER FROM BORDER_INFO AS BORDER_INFOalias0 , BORDER_INFO AS BORDER_INFOalias1 WHERE BORDER_INFOalias1.BORDER = BORDER_INFOalias0.STATE_NAME AND BORDER_INFOalias1.STATE_NAME IN ( SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.POPULATION = ( SELECT MAX( STATEalias1.POPULATION ) FROM STATE AS STATEalias1 ) ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the shortest river in state_name0",
+        "variables": { "state_name0": "iowa" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what is the shortest river in state_name0",
+        "variables": { "state_name0": "nebraska" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what is the shortest river in state_name0",
+        "variables": { "state_name0": "alaska" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what is the shortest river in state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT RIVERalias0.RIVER_NAME FROM RIVER AS RIVERalias0 WHERE RIVERalias0.LENGTH = ( SELECT MIN( RIVERalias1.LENGTH ) FROM RIVER AS RIVERalias1 WHERE RIVERalias1.TRAVERSE = \"state_name0\" ) AND RIVERalias0.TRAVERSE = \"state_name0\" ;", "SELECT RIVERalias0.RIVER_NAME FROM RIVER AS RIVERalias0 WHERE RIVERalias0.TRAVERSE = \"state_name0\" ORDER BY RIVERalias0.LENGTH LIMIT 1 ;" ],
+    "variables": [
+      {
+        "example": "iowa",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many states border at least one other state",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 7, 8 ],
+          [ 0, 1 ],
+          [ 4, 7 ],
+          [ 1, 2 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( DISTINCT BORDER_INFOalias0.STATE_NAME ) FROM BORDER_INFO AS BORDER_INFOalias0 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the highest point of the state with the largest area",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 12 ],
+          [ 2, 5 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 5, 12 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 6, 12 ],
+          [ 11, 12 ],
+          [ 0, 1 ],
+          [ 6, 8 ],
+          [ 1, 12 ],
+          [ 8, 12 ],
+          [ 7, 8 ],
+          [ 9, 12 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT HIGHLOWalias0.HIGHEST_POINT FROM HIGHLOW AS HIGHLOWalias0 , STATE AS STATEalias0 WHERE STATEalias0.STATE_NAME = HIGHLOWalias0.STATE_NAME AND STATEalias0.STATE_NAME IN ( SELECT STATEalias1.STATE_NAME FROM STATE AS STATEalias1 WHERE STATEalias1.AREA = ( SELECT MAX( STATEalias2.AREA ) FROM STATE AS STATEalias2 ) ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what states border states that the river_name0 runs through",
+        "variables": { "river_name0": "ohio" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what states border states that the river_name0 runs through",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ],
+          [ 7, 9 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "which states border states through which the river_name0 traverses",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 4, 6 ],
+          [ 2, 9 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 7 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 3, 4 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what states border states which the river_name0 runs through",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 7, 8 ],
+          [ 4, 9 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 3, 4 ],
+          [ 2, 4 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT BORDER_INFOalias0.BORDER FROM BORDER_INFO AS BORDER_INFOalias0 WHERE BORDER_INFOalias0.STATE_NAME IN ( SELECT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME = \"river_name0\" ) ;" ],
+    "variables": [
+      {
+        "example": "ohio",
+        "location": "both",
+        "name": "river_name0",
+        "type": "river_name"
+      }
+    ]
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the capital of the state with the largest population",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 7, 11 ],
+          [ 1, 11 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 3, 4 ],
+          [ 5, 11 ],
+          [ 4, 5 ],
+          [ 8, 11 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 5, 7 ],
+          [ 2, 11 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what is the capital of the state with the most inhabitants",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 4, 7 ],
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 7, 11 ],
+          [ 1, 11 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 3, 4 ],
+          [ 4, 5 ],
+          [ 8, 11 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 5, 7 ],
+          [ 2, 11 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.CAPITAL FROM STATE AS STATEalias0 WHERE STATEalias0.POPULATION = ( SELECT MAX( STATEalias1.POPULATION ) FROM STATE AS STATEalias1 ) ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how many states are in the usa",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 7 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 3, 7 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many states are there",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 3, 5 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "how many states are there in the usa",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "how many states does usa have",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 0, 3 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many states are in the united states",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 4, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "how many states are there in united states",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 0, 3 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 5, 8 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT COUNT( STATEalias0.STATE_NAME ) FROM STATE AS STATEalias0 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the smallest state bordering state_name0",
+        "variables": { "state_name0": "wyoming" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what is the smallest state that borders state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 1, 8 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 3, 4 ],
+          [ 5, 8 ]
+        ]
+      },
+      {
+        "question-split": "exclude",
+        "text": "what is the smallest state bordering state_name0",
+        "variables": { "state_name0": "ohio" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 2, 7 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 5, 7 ],
+          [ 2, 3 ],
+          [ 1, 7 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "which state has the smallest area that borders state_name0",
+        "variables": { "state_name0": "texas" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 9 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 3, 9 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ],
+          [ 7, 9 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.AREA = ( SELECT MIN( STATEalias1.AREA ) FROM STATE AS STATEalias1 WHERE STATEalias1.STATE_NAME IN ( SELECT BORDER_INFOalias0.BORDER FROM BORDER_INFO AS BORDER_INFOalias0 WHERE BORDER_INFOalias0.STATE_NAME = \"state_name0\" ) ) AND STATEalias0.STATE_NAME IN ( SELECT BORDER_INFOalias1.BORDER FROM BORDER_INFO AS BORDER_INFOalias1 WHERE BORDER_INFOalias1.STATE_NAME = \"state_name0\" ) ;" ],
+    "variables": [
+      {
+        "example": "wyoming",
+        "location": "both",
+        "name": "state_name0",
+        "type": "state_name"
+      }
+    ]
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what state has the most cities",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 2, 6 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT CITYalias0.STATE_NAME FROM CITY AS CITYalias0 GROUP BY CITYalias0.STATE_NAME ORDER BY COUNT( 1 ) DESC LIMIT 1 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "train",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "how high is the highest point in america",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 6, 8 ],
+          [ 4, 5 ],
+          [ 2, 8 ],
+          [ 5, 6 ],
+          [ 3, 8 ],
+          [ 2, 3 ],
+          [ 3, 6 ],
+          [ 3, 4 ],
+          [ 0, 2 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what is the highest elevation in the united states",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 5, 9 ],
+          [ 6, 9 ],
+          [ 6, 7 ],
+          [ 7, 8 ],
+          [ 2, 9 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 2, 3 ],
+          [ 1, 9 ],
+          [ 2, 5 ],
+          [ 3, 4 ]
+        ]
+      },
+      {
+        "question-split": "train",
+        "text": "what is the elevation of the highest point in the usa",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 1, 11 ],
+          [ 5, 8 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 9, 11 ],
+          [ 3, 4 ],
+          [ 5, 11 ],
+          [ 4, 5 ],
+          [ 8, 11 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 2, 11 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      },
+      {
+        "question-split": "test",
+        "text": "what is the height of the highest point in the usa",
+        "variables": {},
+        "constituency_parser_spans": [
+          [ 10, 11 ],
+          [ 5, 6 ],
+          [ 8, 9 ],
+          [ 1, 11 ],
+          [ 5, 8 ],
+          [ 1, 2 ],
+          [ 6, 7 ],
+          [ 9, 11 ],
+          [ 3, 4 ],
+          [ 5, 11 ],
+          [ 4, 5 ],
+          [ 8, 11 ],
+          [ 9, 10 ],
+          [ 2, 3 ],
+          [ 4, 11 ],
+          [ 0, 1 ],
+          [ 2, 11 ],
+          [ 7, 8 ],
+          [ 2, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT MAX( HIGHLOWalias0.HIGHEST_ELEVATION ) FROM HIGHLOW AS HIGHLOWalias0 ;" ],
+    "variables": []
+  },
+  {
+    "query-split": "test",
+    "sentences": [
+      {
+        "question-split": "train",
+        "text": "what is the smallest state that the river_name0 river runs through",
+        "variables": { "river_name0": "mississippi" },
+        "constituency_parser_spans": [
+          [ 0, 1 ],
+          [ 1, 2 ],
+          [ 6, 9 ],
+          [ 7, 8 ],
+          [ 6, 7 ],
+          [ 10, 11 ],
+          [ 5, 11 ],
+          [ 4, 5 ],
+          [ 5, 6 ],
+          [ 6, 11 ],
+          [ 2, 11 ],
+          [ 8, 9 ],
+          [ 9, 10 ],
+          [ 9, 11 ],
+          [ 2, 3 ],
+          [ 2, 5 ],
+          [ 1, 11 ],
+          [ 3, 4 ]
+        ]
+      }
+    ],
+    "sql": [ "SELECT STATEalias0.STATE_NAME FROM STATE AS STATEalias0 WHERE STATEalias0.AREA = ( SELECT MIN( STATEalias1.AREA ) FROM STATE AS STATEalias1 WHERE STATEalias1.STATE_NAME IN ( SELECT RIVERalias0.TRAVERSE FROM RIVER AS RIVERalias0 WHERE RIVERalias0.RIVER_NAME = \"river_name0\" ) ) AND STATEalias0.STATE_NAME IN ( SELECT RIVERalias1.TRAVERSE FROM RIVER AS RIVERalias1 WHERE RIVERalias1.RIVER_NAME = \"river_name0\" ) ;" ],
+    "variables": [
+      {
+        "example": "mississippi",
+        "location": "both",
+        "name": "river_name0",
+        "type": "river_name"
+      }
+    ]
+  }
+]

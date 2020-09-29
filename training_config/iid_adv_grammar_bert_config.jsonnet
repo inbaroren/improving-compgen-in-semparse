@@ -1,0 +1,78 @@
+local local_dir = ""; 
+{
+  "dataset_reader": {
+    "type": "grammar_based_text2sql_v3",
+    "database_file": "",
+    "load_cache": true,
+    "save_cache": false,
+    "schema_path": local_dir +"data/sql data/advising-schema.csv",
+    "token_indexers": {
+      "bert": {
+        "type": "bert-pretrained",
+        "pretrained_model": "bert-base-uncased"
+      },
+      "tokens": { "type": "single_id" }
+    }
+  },
+  "iterator": {
+    "type": "bucket",
+    "batch_size": 1,
+    "padding_noise": 0,
+    "sorting_keys": [ [ "tokens", "num_tokens" ] ]
+  },
+  "model": {
+    "type": "my_text2sql_parser",
+    "action_embedding_dim": 100,
+    "decoder_beam_search": { "beam_size": 5 },
+    "dropout": 0.5,
+    "encoder": {
+      "type": "lstm",
+      "bidirectional": true,
+      "dropout": 0,
+      "hidden_size": 200,
+      "input_size": 868,
+      "num_layers": 1
+    },
+    "input_attention": { "type": "dot_product" },
+    "max_decoding_steps": 200,
+    "mydatabase": "advising",
+    "schema_path": local_dir +"data/sql data/advising-schema.csv",
+    "utterance_embedder": {
+      "allow_unmatched_keys": true,
+      "bert": {
+        "type": "bert-pretrained",
+        "pretrained_model": "bert-base-uncased",
+        "top_layer_only": true
+      },
+      "embedder_to_indexer_map": {
+        "bert": [ "bert", "bert-offsets" ],
+        "tokens": [ "tokens" ]
+      },
+      "tokens": {
+        "type": "embedding",
+        "embedding_dim": 100,
+        "pretrained_file": "https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.100d.txt.gz",
+        "trainable": true,
+        "vocab_namespace": "tokens"
+      }
+    }
+  },
+  "train_data_path": local_dir +"data/sql data/advising/new_question_split/aligned_train.json",
+  "validation_data_path": local_dir +"data/sql data/advising/new_question_split/aligned_final_dev.json",
+  "trainer": {
+    "cuda_device": 0,
+    "learning_rate_scheduler": {
+      "type": "noam",
+      "model_size": 400,
+      "warmup_steps": 800
+    },
+    "num_epochs": 30,
+    "num_serialized_models_to_keep": 1,
+    "optimizer": {
+      "type": "bert_adam",
+      "lr": 0.0001
+    },
+    "patience": 15,
+    "validation_metric": "+seq_acc"
+  }
+}
